@@ -21,10 +21,23 @@ object dbModFrm: TdbModFrm
     Top = 112
   end
   object qUsers: TFDQuery
+    Active = True
     Connection = KPcon
     SQL.Strings = (
       'SELECT * FROM Users')
     Left = 136
     Top = 112
+  end
+  object qKP: TFDQuery
+    Connection = KPcon
+    SQL.Strings = (
+      'SELECT * FROM KP')
+    Left = 216
+    Top = 112
+  end
+  object dsUsers: TDataSource
+    DataSet = qUsers
+    Left = 136
+    Top = 208
   end
 end

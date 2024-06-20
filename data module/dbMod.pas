@@ -22,6 +22,8 @@ type
     KPcon: TFDConnection;
     qTemp: TFDQuery;
     qUsers: TFDQuery;
+    qKP: TFDQuery;
+    dsUsers: TDataSource;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private

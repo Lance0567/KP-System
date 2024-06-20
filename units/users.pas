@@ -5,7 +5,10 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ExtCtrls, Vcl.DBCtrls,
-  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Mask, Vcl.ComCtrls;
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Mask, Vcl.ComCtrls, dbMod,
+  System.Rtti, System.Bindings.Outputs, Vcl.Bind.Editors, Data.Bind.EngExt,
+  Vcl.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, AdvSmoothEdit,
+  AdvSmoothEditButton, AdvSmoothDatePicker, DBAdvSmoothDatePicker;
 
 type
   TfrmUsers = class(TForm)
@@ -13,23 +16,24 @@ type
     DBGrid1: TDBGrid;
     GroupBox1: TGroupBox;
     GroupBox3: TGroupBox;
-    DBEdit1: TDBEdit;
+    dbUserName: TDBEdit;
     GroupBox4: TGroupBox;
-    DBEdit2: TDBEdit;
+    dbPassword: TDBEdit;
     GroupBox5: TGroupBox;
-    DBEdit3: TDBEdit;
+    dbEmailAddress: TDBEdit;
     GroupBox6: TGroupBox;
-    DBEdit4: TDBEdit;
+    dbFirstName: TDBEdit;
     DBNavigator1: TDBNavigator;
     GroupBox7: TGroupBox;
-    DBEdit5: TDBEdit;
+    dbLastName: TDBEdit;
     GroupBox8: TGroupBox;
-    DateTimePicker1: TDateTimePicker;
     GroupBox9: TGroupBox;
-    DateTimePicker2: TDateTimePicker;
-    DBCheckBox1: TDBCheckBox;
-    DBCheckBox2: TDBCheckBox;
+    cbIsAdmin: TDBCheckBox;
+    cbIsActive: TDBCheckBox;
+    dpLastLogin: TDBAdvSmoothDatePicker;
+    dpDateJoined: TDBAdvSmoothDatePicker;
     procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,6 +47,14 @@ implementation
 
 {$R *.dfm}
 
+procedure TfrmUsers.FormShow(Sender: TObject);
+begin
+  with dbModFrm do
+  begin
+    qUsers.Open;
+  end;
+end;
+
 procedure TfrmUsers.FormKeyUp(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
@@ -52,8 +64,5 @@ begin
             close;
         end;
 end;
-
-
-
 
 end.

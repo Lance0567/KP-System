@@ -94,23 +94,23 @@
     <File Path="units"/>
     <File Path="units\abtPas.pas"/>
     <File Path="units\abtPas.dfm"/>
-    <File Path="units\KPdataentry.pas"/>
-    <File Path="units\KPdataentry.dfm"/>
-    <File Path="units\uMainFrm.pas"/>
-    <File Path="units\uMainFrm.dfm"/>
-    <File Path="units\uLoginFrm.pas"/>
-    <File Path="units\uLoginFrm.dfm"/>
-    <File Path="units\Signatories.pas"/>
-    <File Path="units\Signatories.dfm"/>
-    <File Path="units\Settings.pas"/>
-    <File Path="units\Settings.dfm"/>
-    <File Path="units\users.pas"/>
-    <File Path="units\users.dfm"/>
     <File Path="units\crimeType.pas"/>
     <File Path="units\crimeType.dfm"/>
+    <File Path="units\KPdataentry.pas"/>
+    <File Path="units\KPdataentry.dfm"/>
     <File Path="units\LuponMem.pas"/>
     <File Path="units\LuponMem.dfm"/>
     <File Path="units\msgPas.pas"/>
     <File Path="units\msgPas.dfm"/>
+    <File Path="units\Settings.pas"/>
+    <File Path="units\Settings.dfm"/>
+    <File Path="units\Signatories.pas"/>
+    <File Path="units\Signatories.dfm"/>
+    <File Path="units\uLoginFrm.pas"/>
+    <File Path="units\uLoginFrm.dfm"/>
+    <File Path="units\uMainFrm.pas"/>
+    <File Path="units\uMainFrm.dfm"/>
+    <File Path="units\users.pas"/>
+    <File Path="units\users.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

@@ -40,7 +40,7 @@ object MainFrm: TMainFrm
     Width = 1077
     Height = 712
     Cursor = crHandPoint
-    ActivePage = AdvTabSheet1
+    ActivePage = AdvTabSheet2
     ActiveFont.Charset = ANSI_CHARSET
     ActiveFont.Color = clWindowText
     ActiveFont.Height = -15
@@ -64,8 +64,6 @@ object MainFrm: TMainFrm
     PersistPagesState.Enabled = False
     TabOrder = 1
     OnChanging = AdvPageControl1Changing
-    ExplicitWidth = 1075
-    ExplicitHeight = 708
     object AdvTabSheet1: TAdvTabSheet
       Caption = 'Home'
       Color = clBtnFace
@@ -18625,7 +18623,7 @@ object MainFrm: TMainFrm
         ButtonHeight = 40
         Caption = 'ToolBar1'
         TabOrder = 0
-        object Button1: TButton
+        object btAdd1: TButton
           Left = 0
           Top = 0
           Width = 40
@@ -18638,7 +18636,7 @@ object MainFrm: TMainFrm
           ParentShowHint = False
           ShowHint = True
           TabOrder = 0
-          OnClick = Button1Click
+          OnClick = btAdd1Click
         end
         object btEdit1: TButton
           Left = 40
@@ -18904,7 +18902,7 @@ object MainFrm: TMainFrm
         ButtonHeight = 40
         Caption = 'ToolBar1'
         TabOrder = 0
-        object Button4: TButton
+        object btAdd2: TButton
           Left = 0
           Top = 0
           Width = 40
@@ -18917,7 +18915,7 @@ object MainFrm: TMainFrm
           ParentShowHint = False
           ShowHint = True
           TabOrder = 0
-          OnClick = Button4Click
+          OnClick = btAdd2Click
         end
         object btEdit2: TButton
           Left = 40
@@ -19036,7 +19034,7 @@ object MainFrm: TMainFrm
         ButtonHeight = 40
         Caption = 'ToolBar1'
         TabOrder = 0
-        object Button10: TButton
+        object btAdd3: TButton
           Left = 0
           Top = 0
           Width = 40
@@ -19049,7 +19047,7 @@ object MainFrm: TMainFrm
           ParentShowHint = False
           ShowHint = True
           TabOrder = 0
-          OnClick = Button10Click
+          OnClick = btAdd3Click
         end
         object btEdit3: TButton
           Left = 40

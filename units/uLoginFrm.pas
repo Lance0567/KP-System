@@ -23,6 +23,7 @@ type
     procedure chckShowpassClick(Sender: TObject);
     procedure btLoginClick(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -55,11 +56,17 @@ begin
         end;
 end;
 
+procedure TLoginFrm.FormShow(Sender: TObject);
+begin
+  edUserName.Text := 'admin';
+  edPassword.Text := 'admin@123';
+end;
+
 procedure TLoginFrm.btLoginClick(Sender: TObject);
 var
   pwd: string;
 begin
-  if trim(edUserName.Text) = '' then
+  if trim(edUserName.Text) = '' then    // if empty
   begin
     ShowMessage('Please enter user name!');
     edUserName.SetFocus;

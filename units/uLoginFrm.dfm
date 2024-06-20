@@ -149,6 +149,7 @@ object LoginFrm: TLoginFrm
   KeyPreview = True
   Position = poScreenCenter
   OnKeyDown = FormKeyDown
+  OnShow = FormShow
   TextHeight = 15
   object imgHeader: TImage
     AlignWithMargins = True
@@ -6800,7 +6801,7 @@ object LoginFrm: TLoginFrm
         12985E410000000049454E44AE426082}
     end
     object imgLock: TImage
-      Left = 515
+      Left = 513
       Top = 32
       Width = 77
       Height = 85
@@ -7114,7 +7115,7 @@ object LoginFrm: TLoginFrm
     object chckShowpass: TCheckBox
       Left = 230
       Top = 111
-      Width = 97
+      Width = 143
       Height = 17
       Caption = 'Show password'
       TabOrder = 4

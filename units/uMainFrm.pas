@@ -33,13 +33,13 @@ type
     Image2: TImage;
     Image1: TImage;
     ToolBar1: TToolBar;
-    Button1: TButton;
+    btAdd1: TButton;
     btEdit1: TButton;
     btDele1: TButton;
     btFind1: TButton;
     ImageList1: TImageList;
     ToolBar2: TToolBar;
-    Button4: TButton;
+    btAdd2: TButton;
     btEdit2: TButton;
     btDele2: TButton;
     btFind2: TButton;
@@ -54,7 +54,7 @@ type
     Splitter1: TSplitter;
     AdvTabSheet4: TAdvTabSheet;
     ToolBar3: TToolBar;
-    Button10: TButton;
+    btAdd3: TButton;
     btEdit3: TButton;
     btDele3: TButton;
     btFind3: TButton;
@@ -81,15 +81,15 @@ type
     procedure FormShow(Sender: TObject);
     procedure Refresh1Click(Sender: TObject);
     procedure AboutUs1Click(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
+    procedure btAdd1Click(Sender: TObject);
     procedure Signatories1Click(Sender: TObject);
     procedure SystemPatch1Click(Sender: TObject);
     procedure UsersCredentials1Click(Sender: TObject);
     procedure Backup1Click(Sender: TObject);
     procedure AdvPageControl1Changing(Sender: TObject;
       var AllowChange: Boolean);
-    procedure Button4Click(Sender: TObject);
-    procedure Button10Click(Sender: TObject);
+    procedure btAdd2Click(Sender: TObject);
+    procedure btAdd3Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -130,17 +130,17 @@ begin
      ShowMessage(' Backup Database... ');
 end;
 
-procedure TMainFrm.Button10Click(Sender: TObject);
+procedure TMainFrm.btAdd3Click(Sender: TObject);
 begin
      frmCaseType.ShowModal;
 end;
 
-procedure TMainFrm.Button1Click(Sender: TObject);
+procedure TMainFrm.btAdd1Click(Sender: TObject);
 begin
      KPdataentryFrm.showModal;
 end;
 
-procedure TMainFrm.Button4Click(Sender: TObject);
+procedure TMainFrm.btAdd2Click(Sender: TObject);
 begin
      frmLuponMem.ShowModal;
 end;
