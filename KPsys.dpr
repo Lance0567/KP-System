@@ -2,11 +2,11 @@ program KPsys;
 
 uses
   Vcl.Forms,
-  KpPrj in 'KpPrj.pas' {MainFrm},
+  uMainFrm in 'uMainFrm.pas' {MainFrm},
   Vcl.Themes,
   Vcl.Styles,
   abtPas in 'abtPas.pas' {abtFrm},
-  splash in 'splash.pas' {SplashFrm},
+  uLoginFrm in 'uLoginFrm.pas' {LoginFrm},
   KPdataentry in 'KPdataentry.pas' {KPdataentryFrm},
   Signatories in 'Signatories.pas' {frmSignatories},
   Settings in 'Settings.pas' {frmSettings},
@@ -23,10 +23,10 @@ begin
   Application.MainFormOnTaskbar := True;
   TStyleManager.TrySetStyle('Aqua Light Slate');
   Application.CreateForm(TMainFrm, MainFrm);
+  Application.CreateForm(TLoginFrm, LoginFrm);
   Application.CreateForm(TKPdataentryFrm, KPdataentryFrm);
   Application.CreateForm(TfrmSettings, frmSettings);
   Application.CreateForm(TabtFrm, abtFrm);
-  Application.CreateForm(TSplashFrm, SplashFrm);
   Application.CreateForm(TfrmSignatories, frmSignatories);
   Application.CreateForm(TfrmUsers, frmUsers);
   Application.CreateForm(TfrmLuponMem, frmLuponMem);

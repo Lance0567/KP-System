@@ -1,0 +1,29 @@
+object dbModFrm: TdbModFrm
+  OnCreate = DataModuleCreate
+  Height = 797
+  Width = 823
+  object KPcon: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\Users\pc\Documents\Delphi\MCS Project\___KPsys\Win32' +
+        '\Debug\database\Kp.db'
+      'LockingMode=Normal'
+      'DriverID=SQLite')
+    Connected = True
+    LoginPrompt = False
+    Left = 120
+    Top = 32
+  end
+  object qTemp: TFDQuery
+    Connection = KPcon
+    Left = 64
+    Top = 112
+  end
+  object qUsers: TFDQuery
+    Connection = KPcon
+    SQL.Strings = (
+      'SELECT * FROM Users')
+    Left = 136
+    Top = 112
+  end
+end

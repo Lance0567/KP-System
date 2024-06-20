@@ -1,0 +1,118 @@
+unit uLoginFrm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.StdCtrls;
+
+type
+  TLoginFrm = class(TForm)
+    imgHeader: TImage;
+    GroupBox1: TGroupBox;
+    edUserName: TEdit;
+    edPassword: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    btLogin: TButton;
+    imgMCS: TImage;
+    btnOpenDb: TButton;
+    imgLock: TImage;
+    chckShowpass: TCheckBox;
+    procedure chckShowpassClick(Sender: TObject);
+    procedure btLoginClick(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  LoginFrm: TLoginFrm;
+
+implementation
+
+{$R *.dfm}
+
+uses dbMod, abtPas, uMainFrm;
+
+procedure TLoginFrm.chckShowpassClick(Sender: TObject);
+begin
+  if chckShowpass.Checked then
+    edPassword.PasswordChar := #0  // Show plain text
+  else
+    edPassword.PasswordChar := '*'; // Mask the password
+end;
+
+procedure TLoginFrm.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+     if (Key=13) or (Key=27)then
+        begin
+            btLoginClick(Sender);
+        end;
+end;
+
+procedure TLoginFrm.btLoginClick(Sender: TObject);
+var
+  pwd: string;
+begin
+  if trim(edUserName.Text) = '' then
+  begin
+    ShowMessage('Please enter user name!');
+    edUserName.SetFocus;
+  end
+  else
+  begin
+    // validate the username and password
+    with dbModFrm do
+    begin
+      KPcon.Open;
+      qTemp.SQL.Clear;
+      qTemp.SQL.Text := 'Select * From Users Where username=' + QuotedStr(edUserName.Text);
+      qTemp.Open;
+
+      // checking if the username is in the database
+      if qTemp.RecordCount > 0 then
+      begin
+        // check if the user is active
+        if qTemp.FieldByName('is_active').AsBoolean then
+        begin
+          pwd := qTemp.FieldByName('password').AsString;
+          if pwd = edPassword.Text then
+          begin
+            // update user last login
+            qTemp.Edit;
+            qTemp.FieldByName('last_login').AsDateTime := GetCurrentTime;
+            qTemp.Post;
+            qTemp.Refresh;
+
+            // show Main form
+            LoginFrm.Tag := 1; // logged
+            dbModFrm.User.id := qTemp.FieldByName('id').asInteger;
+            dbModFrm.User.username := qTemp.FieldByName('username').AsString;
+            LoginFrm.close;
+          end
+          else
+          begin
+            ShowMessage('Incorrect Password!');
+          end;
+        end
+        else
+        begin
+          ShowMessage('User is not active!');
+        end;
+      end
+      else
+      begin
+        // user does not exist
+        ShowMessage('Username not valid!');
+      end;
+    end;
+  end;
+end;
+
+
+end.

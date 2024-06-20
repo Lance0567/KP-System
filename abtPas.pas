@@ -41,7 +41,7 @@ implementation
 
 {$R *.dfm}
 
-uses KpPrj, splash;
+uses uMainFrm, uLoginFrm;
 
 
 procedure TabtFrm.FormKeyDown(Sender: TObject; var Key: Word;

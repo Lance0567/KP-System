@@ -1,0 +1,105 @@
+unit splash;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.StdCtrls;
+
+type
+  TSplashFrm = class(TForm)
+    imgHeader: TImage;
+    GroupBox1: TGroupBox;
+    edUserName: TEdit;
+    edPassword: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    btLogin: TButton;
+    imgMCS: TImage;
+    btnOpenDb: TButton;
+    imgLock: TImage;
+    chckShowpass: TCheckBox;
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure chckShowpassClick(Sender: TObject);
+    procedure btLoginClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  SplashFrm: TSplashFrm;
+
+implementation
+
+{$R *.dfm}
+
+uses dbMod, abtPas, KpPrj;
+
+procedure TSplashFrm.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+     if (Key=13) or (Key=27)then
+        begin
+            close;
+        end;
+end;
+
+procedure TSplashFrm.btLoginClick(Sender: TObject);
+var
+  pwd: string;
+begin
+  if trim(edUserName.Text) = '' then
+  begin
+    Showmessage('Please enter user name! ');
+    edUserName.SetFocus;
+  end
+  else
+  begin
+    // validate the username and password
+    with dbModFrm do
+    begin
+      KPcon.Open;
+      qTemp.SQL.clear;
+      qTemp.SQL.Text := 'Select * From users Where username=' + quotedstr(edUserName.Text);
+                        // checking if the username is in the database
+      qTemp.Open;
+      if qTemp.RecordCount > 0 then
+      begin
+        pwd := qTemp.FieldByName('password').AsString;
+        if pwd = edPassword.Text then
+        begin
+          // valid user & password, go to Purok form
+          // hide Login form & Create and show Purok form
+
+//          FrmPurokMasterDetails.Edit1.Text := edUserName.Text;
+
+          // show Main form
+          MainFrm.Show;
+          SplashFrm.Hide;
+        end
+        else
+        begin
+          Showmessage(' Incorrect Password! ');
+        end;
+      end
+      else
+      begin
+        // does not exist
+        Showmessage(' Username not valid!');
+      end;
+    end; // end with
+  end;
+end;
+
+procedure TSplashFrm.chckShowpassClick(Sender: TObject);
+begin
+  if chckShowpass.Checked then
+    edPassword.PasswordChar := #0  // Show plain text
+  else
+    edPassword.PasswordChar := '*'; // Mask the password
+end;
+
+end.
