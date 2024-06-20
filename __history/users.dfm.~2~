@@ -1,0 +1,198 @@
+object frmUsers: TfrmUsers
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Users Credentials'
+  ClientHeight = 305
+  ClientWidth = 550
+  Color = clBtnFace
+  DoubleBuffered = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  KeyPreview = True
+  Position = poScreenCenter
+  OnKeyUp = FormKeyUp
+  TextHeight = 15
+  object GroupBox2: TGroupBox
+    Left = 0
+    Top = 0
+    Width = 205
+    Height = 280
+    Align = alLeft
+    Caption = 'Users List'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    ExplicitHeight = 380
+    DesignSize = (
+      205
+      280)
+    object DBGrid1: TDBGrid
+      Left = 8
+      Top = 16
+      Width = 190
+      Height = 253
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+      TabOrder = 0
+      TitleFont.Charset = ANSI_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -12
+      TitleFont.Name = 'Segoe UI Semibold'
+      TitleFont.Style = [fsBold]
+    end
+  end
+  object GroupBox1: TGroupBox
+    Left = 205
+    Top = 0
+    Width = 345
+    Height = 280
+    Align = alClient
+    Caption = 'Users Details'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+    ExplicitLeft = 271
+    ExplicitTop = 8
+    ExplicitWidth = 352
+    ExplicitHeight = 313
+    DesignSize = (
+      345
+      280)
+    object GroupBox3: TGroupBox
+      Left = 12
+      Top = 28
+      Width = 325
+      Height = 49
+      Anchors = [akLeft, akTop, akRight]
+      Caption = 'Punong Barang Fullname'
+      TabOrder = 0
+      ExplicitWidth = 349
+      DesignSize = (
+        325
+        49)
+      object DBEdit1: TDBEdit
+        Left = 12
+        Top = 17
+        Width = 301
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        ExplicitWidth = 309
+      end
+    end
+    object GroupBox4: TGroupBox
+      Left = 12
+      Top = 91
+      Width = 325
+      Height = 49
+      Anchors = [akLeft, akTop, akRight]
+      Caption = 'Lupon Chairman'
+      TabOrder = 1
+      ExplicitWidth = 349
+      DesignSize = (
+        325
+        49)
+      object DBEdit2: TDBEdit
+        Left = 12
+        Top = 16
+        Width = 301
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        ExplicitWidth = 309
+      end
+    end
+    object GroupBox5: TGroupBox
+      Left = 12
+      Top = 154
+      Width = 325
+      Height = 49
+      Anchors = [akLeft, akTop, akRight]
+      Caption = 'Barangay Secretary Name'
+      TabOrder = 2
+      ExplicitWidth = 349
+      DesignSize = (
+        325
+        49)
+      object DBEdit3: TDBEdit
+        Left = 12
+        Top = 16
+        Width = 301
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        ExplicitWidth = 309
+      end
+    end
+    object GroupBox6: TGroupBox
+      Left = 12
+      Top = 217
+      Width = 325
+      Height = 49
+      Anchors = [akLeft, akTop, akRight]
+      Caption = 'Lupon Secretary Name'
+      TabOrder = 3
+      ExplicitWidth = 349
+      DesignSize = (
+        325
+        49)
+      object DBEdit4: TDBEdit
+        Left = 12
+        Top = 16
+        Width = 301
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        ExplicitWidth = 309
+      end
+    end
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Top = 280
+    Width = 550
+    Height = 25
+    Align = alBottom
+    TabOrder = 2
+    ExplicitLeft = -1
+    ExplicitTop = 352
+    ExplicitWidth = 379
+  end
+end

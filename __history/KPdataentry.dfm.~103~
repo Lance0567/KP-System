@@ -1,0 +1,3549 @@
+object KPdataentryFrm: TKPdataentryFrm
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMaximize]
+  Caption = 'Katarungang Pambarangay Proceedings'
+  ClientHeight = 750
+  ClientWidth = 1034
+  Color = clBtnFace
+  DoubleBuffered = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  KeyPreview = True
+  PopupMenu = pan
+  Position = poScreenCenter
+  OnKeyDown = FormKeyDown
+  OnKeyUp = FormKeyUp
+  OnShow = FormShow
+  TextHeight = 15
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 1034
+    Height = 29
+    Align = alTop
+    Caption = 'Katarungang Pambarangay Proceedings'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    ExplicitWidth = 1032
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 731
+    Width = 1034
+    Height = 19
+    Panels = <
+      item
+        Text = ' KP Data Entry Form Tracking'
+        Width = 50
+      end>
+    ExplicitTop = 727
+    ExplicitWidth = 1032
+  end
+  object Panel10: TPanel
+    Left = 0
+    Top = 694
+    Width = 1034
+    Height = 37
+    Align = alBottom
+    TabOrder = 3
+    ExplicitTop = 690
+    ExplicitWidth = 1032
+    DesignSize = (
+      1034
+      37)
+    object btSave: TButton
+      Left = 111
+      Top = 3
+      Width = 93
+      Height = 30
+      Cursor = crHandPoint
+      Anchors = [akLeft, akBottom]
+      Cancel = True
+      Caption = 'Save All'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+    end
+    object btClose: TButton
+      Left = 12
+      Top = 3
+      Width = 93
+      Height = 30
+      Cursor = crHandPoint
+      Anchors = [akLeft, akBottom]
+      Caption = 'Close'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      OnClick = btCloseClick
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 29
+    Width = 1034
+    Height = 665
+    Align = alClient
+    TabOrder = 2
+    ExplicitWidth = 1032
+    ExplicitHeight = 661
+    object PageControl1: TPageControl
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 1026
+      Height = 657
+      Cursor = crHandPoint
+      ActivePage = TabSheet1
+      Align = alClient
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = [fsBold]
+      MultiLine = True
+      ParentFont = False
+      TabOrder = 0
+      ExplicitWidth = 1024
+      ExplicitHeight = 653
+      object TabSheet1: TTabSheet
+        Caption = #9632' (1) Complaints  '
+        object PageControl2: TPageControl
+          Left = 0
+          Top = 270
+          Width = 1018
+          Height = 355
+          Cursor = crHandPoint
+          ActivePage = TabSheet7
+          Align = alClient
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 2
+          ExplicitWidth = 1016
+          ExplicitHeight = 351
+          object TabSheet7: TTabSheet
+            Caption = #9632' Complaint(s) FORM 7 '
+            DesignSize = (
+              1010
+              323)
+            object AdvRichEditorFormatToolBar1: TAdvRichEditorFormatToolBar
+              Left = 3
+              Top = 0
+              Width = 709
+              Height = 28
+              UIStyle = tsOffice2007Luna
+              AllowFloating = True
+              Caption = ''
+              CaptionFont.Charset = DEFAULT_CHARSET
+              CaptionFont.Color = clWindowText
+              CaptionFont.Height = -12
+              CaptionFont.Name = 'Segoe UI'
+              CaptionFont.Style = []
+              CompactImageIndex = -1
+              ShowRightHandle = False
+              TextAutoOptionMenu = 'Add or Remove Buttons'
+              TextOptionMenu = 'Options'
+              ParentStyler = False
+              ParentOptionPicture = True
+              ToolBarIndex = -1
+              RichEditor = AdvRichEditor1
+              Hints.BoldTitle = 'Bold (Ctrl+B)'
+              Hints.BoldContent = 'Select bold font style'
+              Hints.ItalicTitle = 'Italic (Ctrl+I)'
+              Hints.ItalicContent = 'Select italic font style'
+              Hints.UnderlineTitle = 'Underline (Ctrl+U)'
+              Hints.UnderlineContent = 'Select underline font style'
+              Hints.StrikeThroughTitle = 'Strikethrough'
+              Hints.StrikeThroughContent = 'Select strikethrough font style'
+              Hints.SubScriptTitle = 'Subscript'
+              Hints.SubScriptContent = 'Set subscript text'
+              Hints.SuperScriptTitle = 'Superscript'
+              Hints.SuperScriptContent = 'Set superscript text'
+              Hints.InsertPictureTitle = 'Insert picture'
+              Hints.InsertPictureContent = 'Insert a picture from file'
+              Hints.InsertSpecialCharTitle = 'Insert special character'
+              Hints.InsertSpecialCharContent = 'Insert a special character'
+              Hints.BulletTitle = 'Insert bullet'
+              Hints.BulletContent = 'Insert a bullet for list'
+              Hints.NumberedBulletTitle = 'Start list'
+              Hints.NumberedBulletContent = 'Start a numbered list'
+              Hints.TextColorTitle = 'Text color'
+              Hints.TextColorContent = 'Set selection text color'
+              Hints.BackgroundColorTitle = 'Background color'
+              Hints.BackgroundColorContent = 'Set selection background color'
+              Hints.AlignLeftTitle = 'Align text left (Ctrl+L)'
+              Hints.AlignLeftContent = 'Align the text to left'
+              Hints.AlignCenterTitle = 'Align center (Ctrl+E)'
+              Hints.AlignCenterContent = 'Center text'
+              Hints.AlignRightTitle = 'Align text right (Ctrl+R)'
+              Hints.AlignRightContent = 'Align the text to right'
+              Hints.InsertHyperlinkTitle = 'Set hyperlink'
+              Hints.InsertHyperlinkContent = 'Set hyperlink for text'
+              Hints.IndentTitle = 'Increase indent'
+              Hints.IndentContent = 'Increase the indent level of the paragraph'
+              Hints.UnIndentTitle = 'Decrease indent'
+              Hints.UnIndentContent = 'Decrease the indent level of the paragraph'
+              Hints.FontSizeUpTitle = 'Increase font size'
+              Hints.FontSizeUpContent = 'Make your text a bit bigger'
+              Hints.FontSizeDownTitle = 'Decrease font size'
+              Hints.FontSizeDownContent = 'Make your text a bit smaller'
+              Options = [btBold, btItalic, btUnderline, btStrikeThrough, btSubscript, btSuperScript, btInsertPicture, btInsertspecialChar, btBullet, btNumberedBullet, btTextColor, btBackgroundColor, btAlignLeft, btAlignCenter, btAlignRight, btInsertHyperlink, btIndent, btUnindent, btFontSizeDown, btFontSizeUp]
+            end
+            object AdvRichEditor1: TAdvRichEditor
+              AlignWithMargins = True
+              Left = 4
+              Top = 32
+              Width = 996
+              Height = 285
+              Cursor = crIBeam
+              Margins.Left = 8
+              Margins.Top = 8
+              Margins.Right = 8
+              Margins.Bottom = 8
+              HorzScrollBar.Tracking = True
+              HorzScrollBar.Visible = False
+              VertScrollBar.Range = 6
+              VertScrollBar.Smooth = True
+              VertScrollBar.Tracking = True
+              Anchors = [akLeft, akTop, akRight, akBottom]
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              TabOrder = 1
+              TabStop = True
+              SelectionColor = clHighlight
+              SelectionTextColor = clHighlightText
+              Color = clWindow
+              ParentFont = False
+              Version = '1.8.9.12'
+              ExplicitWidth = 994
+              ExplicitHeight = 281
+            end
+          end
+          object TabSheet8: TTabSheet
+            Caption = #9632' Main Point of Agreement FORM 7 '
+            ImageIndex = 1
+            DesignSize = (
+              1010
+              323)
+            object AdvRichEditor2: TAdvRichEditor
+              AlignWithMargins = True
+              Left = 4
+              Top = 32
+              Width = 996
+              Height = 285
+              Cursor = crIBeam
+              Margins.Left = 8
+              Margins.Top = 8
+              Margins.Right = 8
+              Margins.Bottom = 8
+              HorzScrollBar.Tracking = True
+              HorzScrollBar.Visible = False
+              VertScrollBar.Range = 6
+              VertScrollBar.Smooth = True
+              VertScrollBar.Tracking = True
+              Anchors = [akLeft, akTop, akRight, akBottom]
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              TabOrder = 0
+              TabStop = True
+              SelectionColor = clHighlight
+              SelectionTextColor = clHighlightText
+              Color = clWindow
+              ParentFont = False
+              Version = '1.8.9.12'
+            end
+            object AdvRichEditorFormatToolBar2: TAdvRichEditorFormatToolBar
+              Left = 3
+              Top = 0
+              Width = 709
+              Height = 28
+              UIStyle = tsOffice2007Luna
+              AllowFloating = True
+              Caption = ''
+              CaptionFont.Charset = DEFAULT_CHARSET
+              CaptionFont.Color = clWindowText
+              CaptionFont.Height = -12
+              CaptionFont.Name = 'Segoe UI'
+              CaptionFont.Style = []
+              CompactImageIndex = -1
+              ShowRightHandle = False
+              TextAutoOptionMenu = 'Add or Remove Buttons'
+              TextOptionMenu = 'Options'
+              ParentStyler = False
+              ParentOptionPicture = True
+              ToolBarIndex = -1
+              RichEditor = AdvRichEditor2
+              Hints.BoldTitle = 'Bold (Ctrl+B)'
+              Hints.BoldContent = 'Select bold font style'
+              Hints.ItalicTitle = 'Italic (Ctrl+I)'
+              Hints.ItalicContent = 'Select italic font style'
+              Hints.UnderlineTitle = 'Underline (Ctrl+U)'
+              Hints.UnderlineContent = 'Select underline font style'
+              Hints.StrikeThroughTitle = 'Strikethrough'
+              Hints.StrikeThroughContent = 'Select strikethrough font style'
+              Hints.SubScriptTitle = 'Subscript'
+              Hints.SubScriptContent = 'Set subscript text'
+              Hints.SuperScriptTitle = 'Superscript'
+              Hints.SuperScriptContent = 'Set superscript text'
+              Hints.InsertPictureTitle = 'Insert picture'
+              Hints.InsertPictureContent = 'Insert a picture from file'
+              Hints.InsertSpecialCharTitle = 'Insert special character'
+              Hints.InsertSpecialCharContent = 'Insert a special character'
+              Hints.BulletTitle = 'Insert bullet'
+              Hints.BulletContent = 'Insert a bullet for list'
+              Hints.NumberedBulletTitle = 'Start list'
+              Hints.NumberedBulletContent = 'Start a numbered list'
+              Hints.TextColorTitle = 'Text color'
+              Hints.TextColorContent = 'Set selection text color'
+              Hints.BackgroundColorTitle = 'Background color'
+              Hints.BackgroundColorContent = 'Set selection background color'
+              Hints.AlignLeftTitle = 'Align text left (Ctrl+L)'
+              Hints.AlignLeftContent = 'Align the text to left'
+              Hints.AlignCenterTitle = 'Align center (Ctrl+E)'
+              Hints.AlignCenterContent = 'Center text'
+              Hints.AlignRightTitle = 'Align text right (Ctrl+R)'
+              Hints.AlignRightContent = 'Align the text to right'
+              Hints.InsertHyperlinkTitle = 'Set hyperlink'
+              Hints.InsertHyperlinkContent = 'Set hyperlink for text'
+              Hints.IndentTitle = 'Increase indent'
+              Hints.IndentContent = 'Increase the indent level of the paragraph'
+              Hints.UnIndentTitle = 'Decrease indent'
+              Hints.UnIndentContent = 'Decrease the indent level of the paragraph'
+              Hints.FontSizeUpTitle = 'Increase font size'
+              Hints.FontSizeUpContent = 'Make your text a bit bigger'
+              Hints.FontSizeDownTitle = 'Decrease font size'
+              Hints.FontSizeDownContent = 'Make your text a bit smaller'
+              Options = [btBold, btItalic, btUnderline, btStrikeThrough, btSubscript, btSuperScript, btInsertPicture, btInsertspecialChar, btBullet, btNumberedBullet, btTextColor, btBackgroundColor, btAlignLeft, btAlignCenter, btAlignRight, btInsertHyperlink, btIndent, btUnindent]
+            end
+          end
+          object TabSheet9: TTabSheet
+            Caption = #9632' Purpose '
+            ImageIndex = 2
+            DesignSize = (
+              1010
+              323)
+            object AdvRichEditor3: TAdvRichEditor
+              AlignWithMargins = True
+              Left = 4
+              Top = 32
+              Width = 996
+              Height = 285
+              Cursor = crIBeam
+              Margins.Left = 8
+              Margins.Top = 8
+              Margins.Right = 8
+              Margins.Bottom = 8
+              HorzScrollBar.Tracking = True
+              HorzScrollBar.Visible = False
+              VertScrollBar.Range = 6
+              VertScrollBar.Smooth = True
+              VertScrollBar.Tracking = True
+              Anchors = [akLeft, akTop, akRight, akBottom]
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              TabOrder = 0
+              TabStop = True
+              SelectionColor = clHighlight
+              SelectionTextColor = clHighlightText
+              Color = clWindow
+              ParentFont = False
+              Version = '1.8.9.12'
+            end
+            object AdvRichEditorFormatToolBar3: TAdvRichEditorFormatToolBar
+              Left = 3
+              Top = 0
+              Width = 709
+              Height = 28
+              UIStyle = tsOffice2007Luna
+              AllowFloating = True
+              Caption = ''
+              CaptionFont.Charset = DEFAULT_CHARSET
+              CaptionFont.Color = clWindowText
+              CaptionFont.Height = -12
+              CaptionFont.Name = 'Segoe UI'
+              CaptionFont.Style = []
+              CompactImageIndex = -1
+              ShowRightHandle = False
+              TextAutoOptionMenu = 'Add or Remove Buttons'
+              TextOptionMenu = 'Options'
+              ParentStyler = False
+              ParentOptionPicture = True
+              ToolBarIndex = -1
+              RichEditor = AdvRichEditor3
+              Hints.BoldTitle = 'Bold (Ctrl+B)'
+              Hints.BoldContent = 'Select bold font style'
+              Hints.ItalicTitle = 'Italic (Ctrl+I)'
+              Hints.ItalicContent = 'Select italic font style'
+              Hints.UnderlineTitle = 'Underline (Ctrl+U)'
+              Hints.UnderlineContent = 'Select underline font style'
+              Hints.StrikeThroughTitle = 'Strikethrough'
+              Hints.StrikeThroughContent = 'Select strikethrough font style'
+              Hints.SubScriptTitle = 'Subscript'
+              Hints.SubScriptContent = 'Set subscript text'
+              Hints.SuperScriptTitle = 'Superscript'
+              Hints.SuperScriptContent = 'Set superscript text'
+              Hints.InsertPictureTitle = 'Insert picture'
+              Hints.InsertPictureContent = 'Insert a picture from file'
+              Hints.InsertSpecialCharTitle = 'Insert special character'
+              Hints.InsertSpecialCharContent = 'Insert a special character'
+              Hints.BulletTitle = 'Insert bullet'
+              Hints.BulletContent = 'Insert a bullet for list'
+              Hints.NumberedBulletTitle = 'Start list'
+              Hints.NumberedBulletContent = 'Start a numbered list'
+              Hints.TextColorTitle = 'Text color'
+              Hints.TextColorContent = 'Set selection text color'
+              Hints.BackgroundColorTitle = 'Background color'
+              Hints.BackgroundColorContent = 'Set selection background color'
+              Hints.AlignLeftTitle = 'Align text left (Ctrl+L)'
+              Hints.AlignLeftContent = 'Align the text to left'
+              Hints.AlignCenterTitle = 'Align center (Ctrl+E)'
+              Hints.AlignCenterContent = 'Center text'
+              Hints.AlignRightTitle = 'Align text right (Ctrl+R)'
+              Hints.AlignRightContent = 'Align the text to right'
+              Hints.InsertHyperlinkTitle = 'Set hyperlink'
+              Hints.InsertHyperlinkContent = 'Set hyperlink for text'
+              Hints.IndentTitle = 'Increase indent'
+              Hints.IndentContent = 'Increase the indent level of the paragraph'
+              Hints.UnIndentTitle = 'Decrease indent'
+              Hints.UnIndentContent = 'Decrease the indent level of the paragraph'
+              Hints.FontSizeUpTitle = 'Increase font size'
+              Hints.FontSizeUpContent = 'Make your text a bit bigger'
+              Hints.FontSizeDownTitle = 'Decrease font size'
+              Hints.FontSizeDownContent = 'Make your text a bit smaller'
+              Options = [btBold, btItalic, btUnderline, btStrikeThrough, btSubscript, btSuperScript, btInsertPicture, btInsertspecialChar, btBullet, btNumberedBullet, btTextColor, btBackgroundColor, btAlignLeft, btAlignCenter, btAlignRight, btInsertHyperlink, btIndent, btUnindent]
+            end
+          end
+          object TabSheet11: TTabSheet
+            Caption = #9632' Overall Remarks'
+            ImageIndex = 3
+            DesignSize = (
+              1010
+              323)
+            object AdvRichEditorFormatToolBar4: TAdvRichEditorFormatToolBar
+              Left = 3
+              Top = 0
+              Width = 709
+              Height = 28
+              UIStyle = tsOffice2007Luna
+              AllowFloating = True
+              Caption = ''
+              CaptionFont.Charset = DEFAULT_CHARSET
+              CaptionFont.Color = clWindowText
+              CaptionFont.Height = -12
+              CaptionFont.Name = 'Segoe UI'
+              CaptionFont.Style = []
+              CompactImageIndex = -1
+              ShowRightHandle = False
+              TextAutoOptionMenu = 'Add or Remove Buttons'
+              TextOptionMenu = 'Options'
+              ParentStyler = False
+              ParentOptionPicture = True
+              ToolBarIndex = -1
+              RichEditor = AdvRichEditor1
+              Hints.BoldTitle = 'Bold (Ctrl+B)'
+              Hints.BoldContent = 'Select bold font style'
+              Hints.ItalicTitle = 'Italic (Ctrl+I)'
+              Hints.ItalicContent = 'Select italic font style'
+              Hints.UnderlineTitle = 'Underline (Ctrl+U)'
+              Hints.UnderlineContent = 'Select underline font style'
+              Hints.StrikeThroughTitle = 'Strikethrough'
+              Hints.StrikeThroughContent = 'Select strikethrough font style'
+              Hints.SubScriptTitle = 'Subscript'
+              Hints.SubScriptContent = 'Set subscript text'
+              Hints.SuperScriptTitle = 'Superscript'
+              Hints.SuperScriptContent = 'Set superscript text'
+              Hints.InsertPictureTitle = 'Insert picture'
+              Hints.InsertPictureContent = 'Insert a picture from file'
+              Hints.InsertSpecialCharTitle = 'Insert special character'
+              Hints.InsertSpecialCharContent = 'Insert a special character'
+              Hints.BulletTitle = 'Insert bullet'
+              Hints.BulletContent = 'Insert a bullet for list'
+              Hints.NumberedBulletTitle = 'Start list'
+              Hints.NumberedBulletContent = 'Start a numbered list'
+              Hints.TextColorTitle = 'Text color'
+              Hints.TextColorContent = 'Set selection text color'
+              Hints.BackgroundColorTitle = 'Background color'
+              Hints.BackgroundColorContent = 'Set selection background color'
+              Hints.AlignLeftTitle = 'Align text left (Ctrl+L)'
+              Hints.AlignLeftContent = 'Align the text to left'
+              Hints.AlignCenterTitle = 'Align center (Ctrl+E)'
+              Hints.AlignCenterContent = 'Center text'
+              Hints.AlignRightTitle = 'Align text right (Ctrl+R)'
+              Hints.AlignRightContent = 'Align the text to right'
+              Hints.InsertHyperlinkTitle = 'Set hyperlink'
+              Hints.InsertHyperlinkContent = 'Set hyperlink for text'
+              Hints.IndentTitle = 'Increase indent'
+              Hints.IndentContent = 'Increase the indent level of the paragraph'
+              Hints.UnIndentTitle = 'Decrease indent'
+              Hints.UnIndentContent = 'Decrease the indent level of the paragraph'
+              Hints.FontSizeUpTitle = 'Increase font size'
+              Hints.FontSizeUpContent = 'Make your text a bit bigger'
+              Hints.FontSizeDownTitle = 'Decrease font size'
+              Hints.FontSizeDownContent = 'Make your text a bit smaller'
+              Options = [btBold, btItalic, btUnderline, btStrikeThrough, btSubscript, btSuperScript, btInsertPicture, btInsertspecialChar, btBullet, btNumberedBullet, btTextColor, btBackgroundColor, btAlignLeft, btAlignCenter, btAlignRight, btInsertHyperlink, btIndent, btUnindent]
+            end
+            object AdvRichEditor4: TAdvRichEditor
+              AlignWithMargins = True
+              Left = 4
+              Top = 32
+              Width = 996
+              Height = 285
+              Cursor = crIBeam
+              Margins.Left = 8
+              Margins.Top = 8
+              Margins.Right = 8
+              Margins.Bottom = 8
+              HorzScrollBar.Tracking = True
+              HorzScrollBar.Visible = False
+              VertScrollBar.Range = 6
+              VertScrollBar.Smooth = True
+              VertScrollBar.Tracking = True
+              Anchors = [akLeft, akTop, akRight, akBottom]
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              TabOrder = 1
+              TabStop = True
+              SelectionColor = clHighlight
+              SelectionTextColor = clHighlightText
+              Color = clWindow
+              ParentFont = False
+              Version = '1.8.9.12'
+            end
+          end
+        end
+        object Panel12: TPanel
+          Left = 0
+          Top = 0
+          Width = 1018
+          Height = 237
+          Align = alTop
+          TabOrder = 0
+          ExplicitWidth = 1016
+          object Panel3: TPanel
+            Left = 7
+            Top = 7
+            Width = 141
+            Height = 46
+            Caption = 'Case Number'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            VerticalAlignment = taAlignTop
+            DesignSize = (
+              141
+              46)
+            object DBEdit1: TDBEdit
+              Left = 8
+              Top = 16
+              Width = 125
+              Height = 25
+              Anchors = [akLeft, akTop, akRight]
+              ImeName = 'DBEdit1'
+              TabOrder = 0
+            end
+          end
+          object Panel4: TPanel
+            Left = 151
+            Top = 7
+            Width = 178
+            Height = 46
+            Caption = 'Date: Case Filed'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            VerticalAlignment = taAlignTop
+            DesignSize = (
+              178
+              46)
+            object DateTimePicker1: TDateTimePicker
+              Left = 8
+              Top = 16
+              Width = 161
+              Height = 25
+              Anchors = [akLeft, akTop, akRight]
+              Date = 45452.000000000000000000
+              Time = 0.333221643515571500
+              TabOrder = 0
+            end
+          end
+          object Panel5: TPanel
+            Left = 335
+            Top = 7
+            Width = 178
+            Height = 46
+            Caption = 'Date: Official Receipt'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 2
+            VerticalAlignment = taAlignTop
+            DesignSize = (
+              178
+              46)
+            object DateTimePicker2: TDateTimePicker
+              Left = 8
+              Top = 16
+              Width = 161
+              Height = 25
+              Anchors = [akLeft, akTop, akRight]
+              Date = 45452.000000000000000000
+              Time = 0.333221643515571500
+              TabOrder = 0
+            end
+          end
+          object Panel6: TPanel
+            Left = 519
+            Top = 7
+            Width = 141
+            Height = 46
+            Caption = 'Filing Fee'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 3
+            VerticalAlignment = taAlignTop
+            DesignSize = (
+              141
+              46)
+            object DBEdit2: TDBEdit
+              Left = 8
+              Top = 16
+              Width = 125
+              Height = 25
+              Anchors = [akLeft, akTop, akRight]
+              TabOrder = 0
+            end
+          end
+          object Panel7: TPanel
+            Left = 666
+            Top = 7
+            Width = 141
+            Height = 46
+            Caption = 'OR Number'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 4
+            VerticalAlignment = taAlignTop
+            DesignSize = (
+              141
+              46)
+            object DBEdit3: TDBEdit
+              Left = 8
+              Top = 16
+              Width = 125
+              Height = 25
+              Anchors = [akLeft, akTop, akRight]
+              TabOrder = 0
+            end
+          end
+          object Panel8: TPanel
+            Left = 813
+            Top = 7
+            Width = 206
+            Height = 46
+            Caption = 'Nature of Case'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 5
+            VerticalAlignment = taAlignTop
+            DesignSize = (
+              206
+              46)
+            object DBComboBox1: TDBComboBox
+              Left = 8
+              Top = 16
+              Width = 190
+              Height = 25
+              Anchors = [akLeft, akTop, akRight]
+              AutoDropDown = True
+              Items.Strings = (
+                'Criminal'
+                'Civil'
+                'Others')
+              TabOrder = 0
+            end
+          end
+          object GroupBox1: TGroupBox
+            Left = 7
+            Top = 54
+            Width = 1012
+            Height = 49
+            Caption = 'TYPE OF COMPLAINT/CASE NAME:'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 6
+            DesignSize = (
+              1012
+              49)
+            object DBComboBox2: TDBComboBox
+              Left = 10
+              Top = 16
+              Width = 994
+              Height = 25
+              Anchors = [akLeft, akTop, akRight]
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI Semibold'
+              Font.Style = [fsBold]
+              ParentFont = False
+              TabOrder = 0
+            end
+          end
+          object GroupBox2: TGroupBox
+            Left = 7
+            Top = 104
+            Width = 1012
+            Height = 63
+            Caption = 'List of Complainant(s)'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 7
+            DesignSize = (
+              1012
+              63)
+            object Label2: TLabel
+              Left = 9
+              Top = 45
+              Width = 205
+              Height = 15
+              Anchors = [akLeft, akBottom]
+              Caption = 'type the names with comma separated'
+              Enabled = False
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+            end
+            object DBEdit5: TDBEdit
+              Left = 12
+              Top = 20
+              Width = 994
+              Height = 25
+              Anchors = [akLeft, akTop, akRight]
+              TabOrder = 0
+            end
+          end
+          object GroupBox3: TGroupBox
+            Left = 7
+            Top = 166
+            Width = 1012
+            Height = 63
+            Caption = 'List of Respondent(s)'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 8
+            DesignSize = (
+              1012
+              63)
+            object Label3: TLabel
+              Left = 9
+              Top = 45
+              Width = 205
+              Height = 15
+              Anchors = [akLeft, akBottom]
+              Caption = 'type the names with comma separated'
+              Enabled = False
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+            end
+            object DBEdit6: TDBEdit
+              Left = 9
+              Top = 20
+              Width = 995
+              Height = 25
+              Anchors = [akLeft, akTop, akRight]
+              TabOrder = 0
+            end
+          end
+        end
+        object Panel13: TPanel
+          Left = 0
+          Top = 237
+          Width = 1018
+          Height = 33
+          Align = alTop
+          TabOrder = 1
+          ExplicitWidth = 1016
+          object btF7: TButton
+            Left = 8
+            Top = 1
+            Width = 50
+            Height = 30
+            Cursor = crHandPoint
+            Hint = 'Print Form'
+            Caption = 'F7'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 0
+          end
+        end
+      end
+      object TabSheet2: TTabSheet
+        Caption = #9632' (2) Mediation  '
+        ImageIndex = 1
+        object GroupBox10: TGroupBox
+          Left = 0
+          Top = 55
+          Width = 533
+          Height = 570
+          Align = alLeft
+          Caption = 'Reminders'
+          Enabled = False
+          TabOrder = 1
+          DesignSize = (
+            533
+            570)
+          object rtReminders: TRichEdit
+            Left = 8
+            Top = 16
+            Width = 517
+            Height = 546
+            Anchors = [akLeft, akTop, akRight, akBottom]
+            HideScrollBars = False
+            Lines.Strings = (
+              'rtReminders')
+            ReadOnly = True
+            ScrollBars = ssVertical
+            TabOrder = 0
+          end
+        end
+        object DateTimePicker4: TDateTimePicker
+          Left = 71
+          Top = 546
+          Width = 186
+          Height = 25
+          Date = 45452.000000000000000000
+          Time = 0.733176562498556500
+          TabOrder = 3
+          TabStop = False
+          Visible = False
+        end
+        object DateTimePicker3: TDateTimePicker
+          Left = 71
+          Top = 522
+          Width = 186
+          Height = 25
+          Date = 45452.000000000000000000
+          Time = 0.733176562498556500
+          TabOrder = 4
+          TabStop = False
+          Visible = False
+        end
+        object DateTimePicker5: TDateTimePicker
+          Left = 299
+          Top = 522
+          Width = 186
+          Height = 25
+          Date = 45452.000000000000000000
+          Time = 0.733176562498556500
+          TabOrder = 5
+          TabStop = False
+          Visible = False
+        end
+        object DateTimePicker6: TDateTimePicker
+          Left = 299
+          Top = 546
+          Width = 186
+          Height = 25
+          Date = 45452.000000000000000000
+          Time = 0.733176562498556500
+          TabOrder = 6
+          TabStop = False
+          Visible = False
+        end
+        object Panel21: TPanel
+          Left = 0
+          Top = 0
+          Width = 1018
+          Height = 55
+          Align = alTop
+          TabOrder = 0
+          object Image1: TImage
+            Left = 10
+            Top = 3
+            Width = 50
+            Height = 50
+            AutoSize = True
+            Center = True
+            Picture.Data = {
+              0954506E67496D61676589504E470D0A1A0A0000000D49484452000000320000
+              003208060000001E3F88B10000000970485973000099CA000099CA01E391A422
+              0000092C4944415478DADD5A0950555518FE5814C9421091304328C39CCC8132
+              B542D3C62DDC92D031A5D234175C2A2DC5CA242B19DB4DCD05D2329732D14CA0
+              904A4BCDC85C4A73C94AC4B5451444C514EDFBEF3DCFE0F1DE3B1778D4E43FF3
+              CFBBDB3BF7FFCEBF9F733D2E5EBC88CB813C2E3B201E1E1EEE1AF31A7233F24D
+              EAD85F5D3F493E44DE45DE4EDEEF8E975D92DF4D4082C99DC89DC991210D1071
+              7D186A04D401AEF4E5D8BC78EA0C904F28FBF380BC3CECE6A5EFC99F915793F3
+              FE6B20B793C7F8F8E2DE2E9DE0DDA727700BF5D0A411C70B76F28F63C0DE7DC0
+              36EA65792690F9295078023CC2EB0AD8BF0AE4567252C40DE896301488BF0F08
+              0C5377CEC334A2B3F216BB7FC92B6A92AF22D7302F151D0696AC04DE9A4B70DB
+              B086979E25AFFF37804CACED8BC9CF4D06C68E5682D16C90AF04B73A8CED599A
+              1FAE342FA5CC06263C45A51D37B433A6BA80D423AFE8710FA253E70041D7F2EC
+              B89A7D2FAB73E0842E907DCD3714D1F4468C02162CC18FBC722FF9677702B991
+              BC3E7912021393D46C8A7B7ADB3D750E669CAA61411BFB1D3C57420E31AFCF9D
+              010C1D6518EA5DE4AFDD01A40979DB3BB350EBA161304DA8C88116645683801C
+              5A795A066F7B3A1EAC84CF7568CB102773FD1BD9D3C1383EE4FA0C04CB81AEF7
+              19575B9373AA02442C38EFBDB7E0173F9C4747D4AC397AD4D39CCD9B19B576EC
+              74AD103F3FA04026E404B9D889C6841A02D92B083AD6D0750439B7B240B62627
+              22323159034286B81A38B015086D094BF40D2355AB1E3C3808D70182A69AF20A
+              30E449239936AC0C90499DDA2029EB2B18B11FA751DE0C6C24E640E71F4BADBD
+              36DB1A90017D81F94B7870C0C5B8229A44459AD98038E0DD34CCE3D9A08A0089
+              F0F4C29E9374E82B380818EB5D46A6DAE64FDD7006B213D6807871BC02C6A3DA
+              9238F35D3C289354CF0415D080D65880362895677440BE9AFE3CDA8C7C066674
+              720542FE4E85672D04BA3C600D848D52693283C66AB42224B18BD5C2AA77801E
+              038D707C831520CDAF6980EF0F0A80429826E58A1490D86E4C32191503D2220A
+              D8B485074761FA9F2B92504DEB886ACE10BA1D5D7996A9039231730A62122658
+              D086505D626518F56B4C5974C238A003DF711E22151857A4FC309D5AE93ED0A8
+              9E9BBB0252D7D313C74EB3A8F311BB3C6E6DF0B92F31798DAF3808A1449639C9
+              D3A0372F21296528A63FDF59506884E3BDCE800CE8DE19F33F66456A043B1DD5
+              343512C194B9F797CA01A9C34C7542B2BC88714AF3B032E3471F01DE4C8578F0
+              8BCE807CF0612AFAC44980D3C577F91B63FC8ECF99043B560E848D562F023AF6
+              B3F84E02D9F03110DD139218EEA6FC25F64098D2B02E77231A3792A476C4DAEC
+              8C24E899F3AA06A4175D77793AAC59012DE024CD30B0190ACF9D437BCABFC51E
+              48E7E0FAC83CBA9D962A114217ADCADA6B95C883BE718AA6E92B394BE79752A8
+              D27F6F6D016CD98621943FC51E48E25D772279ADA41AD1C605BD3696B119EA3D
+              B46A206CF45A12F0F824E89D5E4C8F8931AE9B519C2653FEA7EC814CEF158391
+              CB332C005183B565A3BBEE1BD702863732B3F8CFBFBA7EAE09C3F76EE9E425CB
+              FFA57FF79078D6608B309BF20FB707F2F6FDB17878719A05203481A36C7B42A2
+              F433FD32673A98A6F0E048FDB3DBB381661D60A99054916B1EE51F540E483F02
+              59A4032231221478692230FE05BD703BD89F340E036A85EB9F1D4DE1A6D15CB5
+              E6A5013223B62B46A4A56B80D482512486B367CCD5AC4C8949FDC9DEC49FFEE4
+              C75EE5A42628F8FBD3D773D5499193876CA6C5BA2E65A163D39AD02E1A53D6AC
+              73014439F93A6AAD6D9C7E86054843BEF43CC73AC656A0B858FF9F8C05408C14
+              9FCECC4B01E9CD5E66D92AC7CE1ED32004E9877EE0A3A2D633CE81F42708C397
+              AA8138993026F330CA2F2719B303C3475BDE66149CC329FF6C7B20C489F57939
+              08BF5656AD1C1571547D31A38A3F8BE8B367AB0788D0EF2C0983A492FAC3C1CD
+              00E61C26CEC09B51441924B36FB207223F4BD3E6A177EC409457AD2A1017B0C0
+              7BE8B1EA032134F569609C04127BA75716B1917E7C4777A3B96AE7A844919FC1
+              EC2B52D256A17CB9A06C33BA356B9D1C542B4530A7ECD903B3C52E9D53D4643E
+              9100BC3A0B493C7BCE59D118E4ED8DDFCFE4B212A00ACB940B6C49F7B177B8EE
+              76BD203558E2F464E6BD781EFF040D0EEFE5037C92C5E855A41F238793D99263
+              94B10C69A959A20432C9E6E7A329CF76BB6AACB2535E4187C1D282DA1AABB233
+              A1A5518319E3531CDF532B225A7AA037CD786929204A06A9943BC71BABF902C4
+              6587D822AC1136EDA3568C7241A2D715305ACDFA4C6A7FFCA917623F4D2F9451
+              C508E3A5FD8C5A2EE1983599502F68BA491F6AEF3465F0142D149A9A10AB68C5
+              62F1DBCD88E5D90A1D10A18D73A7A2F523E39456F8E26CCE44A7783D8896B7D0
+              2C36C3712E52CEDAB7171B9F8FF4632D9A01F41B01737995E6B47A31B5D1DF58
+              A4BB5427E88034F5F2C6CEE243CA5778AB556B6326B4B4603ACD42EA2A476586
+              02F225E7B25DAC7EACB030E0979D6A18F10D6A24FF38DAF36CAD552042537B74
+              C4B895B29FC4E8914527653F0F674BC4B6DCD58109CD435A606715ACB709F0F3
+              B5A679391D8F03163357C5DC4D37A56F2430DBCF5A88F779EBFEB2CF595B32DD
+              356D326E1C3D513F7B97487CE814CAAFD4DB487C4316A9832D8F88C50C30FD13
+              8C9183CA03B606447AB60369EFA266EC8330CB06B17BB7ED9B3AA1528BD81B68
+              09D15D8C33D9DAD853592042B2EAB4F9C3F7E01917AF665CDAE0AA6EEE382399
+              2869B5AFA62F11443B134419BFA82C101B98352FBF00FF27583E184B9892F9BD
+              E15E12B3131B60AB307F0EF0F0300396ACD17CE1EC2F95D97A93A2329D5D64D4
+              1C363F5705C2D48EE419DDC29A8E445C0910F49B12FAD728D672B352B18F5724
+              B7BBDC6DA9CA66E8D47A0118F7E21466E861EA8AEC2316A8E38A6C860AC96A8C
+              FAA4E0FD852C16C7D3290F2395A7D2309DD70E53C5EDE9B6E4A4A848B497EDE9
+              FE3D01DF1075E7AC0276CE4E60DBF0DE4A785FF35432FD52D6553329FA86F5F8
+              16E6F674965541DCF5C180D8EF9880BAE8D2AD2B10478E646C09BD0EE65EBA23
+              62A038920B6C65FC599949CE007E3B62AC1ABE0155765484DCFD0987887EE913
+              8E880884853274D6ABC332CDD74C7A67D8E61EA3F9E53184EFFE09075919CB27
+              1CD9303FE1D855D917BB1B486992DEAEB90227CBB05272CAE01216641F3797FC
+              034C27AEF2A749E580FCDFE9B201F2376FCFADCA668AB5A40000000049454E44
+              AE426082}
+          end
+          object ckMediation: TCheckBox
+            Left = 66
+            Top = 11
+            Width = 187
+            Height = 34
+            Cursor = crHandPoint
+            Caption = 'MEDIATION'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -27
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+          end
+        end
+        object Panel22: TPanel
+          Left = 533
+          Top = 55
+          Width = 485
+          Height = 570
+          Align = alClient
+          TabOrder = 2
+          DesignSize = (
+            485
+            570)
+          object GroupBox4: TGroupBox
+            Left = 18
+            Top = 6
+            Width = 222
+            Height = 563
+            Anchors = [akLeft, akTop, akBottom]
+            Caption = 'Issuance of Notice of Hearing'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            object Panel9: TPanel
+              Left = 12
+              Top = 235
+              Width = 201
+              Height = 54
+              Caption = 'Hearing/Mediation Time:'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI Semibold'
+              Font.Style = [fsBold]
+              ParentFont = False
+              TabOrder = 1
+              VerticalAlignment = taAlignTop
+              DesignSize = (
+                201
+                54)
+              object DBEdit4: TDBEdit
+                Left = 7
+                Top = 24
+                Width = 185
+                Height = 25
+                Anchors = [akLeft, akTop, akRight]
+                TabOrder = 0
+              end
+            end
+            object GroupBox5: TGroupBox
+              Left = 12
+              Top = 16
+              Width = 201
+              Height = 213
+              Caption = 'Hearing/Mediation Date:'
+              TabOrder = 0
+              DesignSize = (
+                201
+                213)
+              object TMSFNCCalendar1: TTMSFNCCalendar
+                Left = 8
+                Top = 20
+                Width = 185
+                Height = 185
+                ParentDoubleBuffered = False
+                Anchors = [akLeft, akTop, akRight, akBottom]
+                DoubleBuffered = True
+                TabOrder = 0
+                Header.Arrow.ArrowLeftBitmap = <>
+                Header.Arrow.ArrowRightBitmap = <>
+                Header.Fill.Kind = gfkGradient
+                Header.Fill.Color = 16578806
+                Header.Fill.ColorTo = 16380654
+                Header.Font.Charset = DEFAULT_CHARSET
+                Header.Font.Color = 4539717
+                Header.Font.Height = -13
+                Header.Font.Name = 'Segoe UI'
+                Header.Font.Style = [fsBold]
+                Footer.Fill.Kind = gfkGradient
+                Footer.Fill.Color = 16578806
+                Footer.Fill.ColorTo = 16380654
+                Footer.Font.Charset = DEFAULT_CHARSET
+                Footer.Font.Color = 4539717
+                Footer.Font.Height = -13
+                Footer.Font.Name = 'Segoe UI'
+                Footer.Font.Style = []
+                Day = 9
+                Month = 6
+                Year = 2024
+                Date = 45452.000000000000000000
+                Events = <>
+                WeekNumberAppearance.Font.Charset = DEFAULT_CHARSET
+                WeekNumberAppearance.Font.Color = 8026746
+                WeekNumberAppearance.Font.Height = -11
+                WeekNumberAppearance.Font.Name = 'Segoe UI'
+                WeekNumberAppearance.Font.Style = []
+                DayNameAppearance.Font.Charset = DEFAULT_CHARSET
+                DayNameAppearance.Font.Color = 8026746
+                DayNameAppearance.Font.Height = -11
+                DayNameAppearance.Font.Name = 'Segoe UI'
+                DayNameAppearance.Font.Style = []
+                DateAppearance.Font.Charset = DEFAULT_CHARSET
+                DateAppearance.Font.Color = 8026746
+                DateAppearance.Font.Height = -11
+                DateAppearance.Font.Name = 'Segoe UI'
+                DateAppearance.Font.Style = []
+                DateAppearance.SelectedFill.Color = 16380654
+                DateAppearance.SelectedFont.Charset = DEFAULT_CHARSET
+                DateAppearance.SelectedFont.Color = 4539717
+                DateAppearance.SelectedFont.Height = -13
+                DateAppearance.SelectedFont.Name = 'Segoe UI'
+                DateAppearance.SelectedFont.Style = [fsBold]
+                DateAppearance.SelectedStroke.Color = 15702829
+                DateAppearance.DisabledFont.Charset = DEFAULT_CHARSET
+                DateAppearance.DisabledFont.Color = 13882323
+                DateAppearance.DisabledFont.Height = -11
+                DateAppearance.DisabledFont.Name = 'Segoe UI'
+                DateAppearance.DisabledFont.Style = []
+                DateAppearance.DateBeforeFont.Charset = DEFAULT_CHARSET
+                DateAppearance.DateBeforeFont.Color = 12303291
+                DateAppearance.DateBeforeFont.Height = -11
+                DateAppearance.DateBeforeFont.Name = 'Segoe UI'
+                DateAppearance.DateBeforeFont.Style = []
+                DateAppearance.DateAfterFont.Charset = DEFAULT_CHARSET
+                DateAppearance.DateAfterFont.Color = 12303291
+                DateAppearance.DateAfterFont.Height = -11
+                DateAppearance.DateAfterFont.Name = 'Segoe UI'
+                DateAppearance.DateAfterFont.Style = []
+                DateAppearance.TodayFont.Charset = DEFAULT_CHARSET
+                DateAppearance.TodayFont.Color = 15702829
+                DateAppearance.TodayFont.Height = -11
+                DateAppearance.TodayFont.Name = 'Segoe UI'
+                DateAppearance.TodayFont.Style = [fsBold]
+                DateAppearance.BadgeFont.Charset = DEFAULT_CHARSET
+                DateAppearance.BadgeFont.Color = clWhite
+                DateAppearance.BadgeFont.Height = -9
+                DateAppearance.BadgeFont.Name = 'Segoe UI'
+                DateAppearance.BadgeFont.Style = []
+                DateAppearance.ShowFocus = False
+                LineAppearance.Stroke.Color = 11119017
+                GlobalFont.Scale = 1.000000000000000000
+                GlobalFont.Style = []
+              end
+            end
+            object GroupBox6: TGroupBox
+              Left = 12
+              Top = 310
+              Width = 201
+              Height = 213
+              Caption = 'Made this Date:'
+              TabOrder = 2
+              DesignSize = (
+                201
+                213)
+              object TMSFNCCalendar2: TTMSFNCCalendar
+                Left = 8
+                Top = 20
+                Width = 185
+                Height = 185
+                ParentDoubleBuffered = False
+                Anchors = [akLeft, akTop, akRight, akBottom]
+                DoubleBuffered = True
+                TabOrder = 0
+                Header.Arrow.ArrowLeftBitmap = <>
+                Header.Arrow.ArrowRightBitmap = <>
+                Header.Fill.Kind = gfkGradient
+                Header.Fill.Color = 16578806
+                Header.Fill.ColorTo = 16380654
+                Header.Font.Charset = DEFAULT_CHARSET
+                Header.Font.Color = 4539717
+                Header.Font.Height = -13
+                Header.Font.Name = 'Segoe UI'
+                Header.Font.Style = [fsBold]
+                Footer.Fill.Kind = gfkGradient
+                Footer.Fill.Color = 16578806
+                Footer.Fill.ColorTo = 16380654
+                Footer.Font.Charset = DEFAULT_CHARSET
+                Footer.Font.Color = 4539717
+                Footer.Font.Height = -13
+                Footer.Font.Name = 'Segoe UI'
+                Footer.Font.Style = []
+                Day = 9
+                Month = 6
+                Year = 2024
+                Date = 45452.000000000000000000
+                Events = <>
+                WeekNumberAppearance.Font.Charset = DEFAULT_CHARSET
+                WeekNumberAppearance.Font.Color = 8026746
+                WeekNumberAppearance.Font.Height = -11
+                WeekNumberAppearance.Font.Name = 'Segoe UI'
+                WeekNumberAppearance.Font.Style = []
+                DayNameAppearance.Font.Charset = DEFAULT_CHARSET
+                DayNameAppearance.Font.Color = 8026746
+                DayNameAppearance.Font.Height = -11
+                DayNameAppearance.Font.Name = 'Segoe UI'
+                DayNameAppearance.Font.Style = []
+                DateAppearance.Font.Charset = DEFAULT_CHARSET
+                DateAppearance.Font.Color = 8026746
+                DateAppearance.Font.Height = -11
+                DateAppearance.Font.Name = 'Segoe UI'
+                DateAppearance.Font.Style = []
+                DateAppearance.SelectedFill.Color = 16380654
+                DateAppearance.SelectedFont.Charset = DEFAULT_CHARSET
+                DateAppearance.SelectedFont.Color = 4539717
+                DateAppearance.SelectedFont.Height = -13
+                DateAppearance.SelectedFont.Name = 'Segoe UI'
+                DateAppearance.SelectedFont.Style = [fsBold]
+                DateAppearance.SelectedStroke.Color = 15702829
+                DateAppearance.DisabledFont.Charset = DEFAULT_CHARSET
+                DateAppearance.DisabledFont.Color = 13882323
+                DateAppearance.DisabledFont.Height = -11
+                DateAppearance.DisabledFont.Name = 'Segoe UI'
+                DateAppearance.DisabledFont.Style = []
+                DateAppearance.DateBeforeFont.Charset = DEFAULT_CHARSET
+                DateAppearance.DateBeforeFont.Color = 12303291
+                DateAppearance.DateBeforeFont.Height = -11
+                DateAppearance.DateBeforeFont.Name = 'Segoe UI'
+                DateAppearance.DateBeforeFont.Style = []
+                DateAppearance.DateAfterFont.Charset = DEFAULT_CHARSET
+                DateAppearance.DateAfterFont.Color = 12303291
+                DateAppearance.DateAfterFont.Height = -11
+                DateAppearance.DateAfterFont.Name = 'Segoe UI'
+                DateAppearance.DateAfterFont.Style = []
+                DateAppearance.TodayFont.Charset = DEFAULT_CHARSET
+                DateAppearance.TodayFont.Color = 15702829
+                DateAppearance.TodayFont.Height = -11
+                DateAppearance.TodayFont.Name = 'Segoe UI'
+                DateAppearance.TodayFont.Style = [fsBold]
+                DateAppearance.BadgeFont.Charset = DEFAULT_CHARSET
+                DateAppearance.BadgeFont.Color = clWhite
+                DateAppearance.BadgeFont.Height = -9
+                DateAppearance.BadgeFont.Name = 'Segoe UI'
+                DateAppearance.BadgeFont.Style = []
+                DateAppearance.ShowFocus = False
+                LineAppearance.Stroke.Color = 11119017
+                GlobalFont.Scale = 1.000000000000000000
+                GlobalFont.Style = []
+              end
+            end
+            object btF8: TButton
+              Left = 19
+              Top = 529
+              Width = 50
+              Height = 30
+              Cursor = crHandPoint
+              Hint = 'Print Form'
+              Caption = 'F8'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 3
+            end
+          end
+          object GroupBox7: TGroupBox
+            Left = 251
+            Top = 6
+            Width = 222
+            Height = 563
+            Anchors = [akLeft, akTop, akBottom]
+            Caption = 'Summons Information'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            object Panel11: TPanel
+              Left = 12
+              Top = 235
+              Width = 201
+              Height = 54
+              Caption = 'Summons Time:'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI Semibold'
+              Font.Style = [fsBold]
+              ParentFont = False
+              TabOrder = 1
+              VerticalAlignment = taAlignTop
+              DesignSize = (
+                201
+                54)
+              object DBEdit7: TDBEdit
+                Left = 7
+                Top = 24
+                Width = 185
+                Height = 25
+                Anchors = [akLeft, akTop, akRight]
+                TabOrder = 0
+              end
+            end
+            object GroupBox8: TGroupBox
+              Left = 12
+              Top = 16
+              Width = 201
+              Height = 213
+              Caption = 'Summons Date:'
+              TabOrder = 0
+              DesignSize = (
+                201
+                213)
+              object TMSFNCCalendar3: TTMSFNCCalendar
+                Left = 8
+                Top = 20
+                Width = 185
+                Height = 185
+                ParentDoubleBuffered = False
+                Anchors = [akLeft, akTop, akRight, akBottom]
+                DoubleBuffered = True
+                TabOrder = 0
+                Header.Arrow.ArrowLeftBitmap = <>
+                Header.Arrow.ArrowRightBitmap = <>
+                Header.Fill.Kind = gfkGradient
+                Header.Fill.Color = 16578806
+                Header.Fill.ColorTo = 16380654
+                Header.Font.Charset = DEFAULT_CHARSET
+                Header.Font.Color = 4539717
+                Header.Font.Height = -13
+                Header.Font.Name = 'Segoe UI'
+                Header.Font.Style = [fsBold]
+                Footer.Fill.Kind = gfkGradient
+                Footer.Fill.Color = 16578806
+                Footer.Fill.ColorTo = 16380654
+                Footer.Font.Charset = DEFAULT_CHARSET
+                Footer.Font.Color = 4539717
+                Footer.Font.Height = -13
+                Footer.Font.Name = 'Segoe UI'
+                Footer.Font.Style = []
+                Day = 9
+                Month = 6
+                Year = 2024
+                Date = 45452.000000000000000000
+                Events = <>
+                WeekNumberAppearance.Font.Charset = DEFAULT_CHARSET
+                WeekNumberAppearance.Font.Color = 8026746
+                WeekNumberAppearance.Font.Height = -11
+                WeekNumberAppearance.Font.Name = 'Segoe UI'
+                WeekNumberAppearance.Font.Style = []
+                DayNameAppearance.Font.Charset = DEFAULT_CHARSET
+                DayNameAppearance.Font.Color = 8026746
+                DayNameAppearance.Font.Height = -11
+                DayNameAppearance.Font.Name = 'Segoe UI'
+                DayNameAppearance.Font.Style = []
+                DateAppearance.Font.Charset = DEFAULT_CHARSET
+                DateAppearance.Font.Color = 8026746
+                DateAppearance.Font.Height = -11
+                DateAppearance.Font.Name = 'Segoe UI'
+                DateAppearance.Font.Style = []
+                DateAppearance.SelectedFill.Color = 16380654
+                DateAppearance.SelectedFont.Charset = DEFAULT_CHARSET
+                DateAppearance.SelectedFont.Color = 4539717
+                DateAppearance.SelectedFont.Height = -13
+                DateAppearance.SelectedFont.Name = 'Segoe UI'
+                DateAppearance.SelectedFont.Style = [fsBold]
+                DateAppearance.SelectedStroke.Color = 15702829
+                DateAppearance.DisabledFont.Charset = DEFAULT_CHARSET
+                DateAppearance.DisabledFont.Color = 13882323
+                DateAppearance.DisabledFont.Height = -11
+                DateAppearance.DisabledFont.Name = 'Segoe UI'
+                DateAppearance.DisabledFont.Style = []
+                DateAppearance.DateBeforeFont.Charset = DEFAULT_CHARSET
+                DateAppearance.DateBeforeFont.Color = 12303291
+                DateAppearance.DateBeforeFont.Height = -11
+                DateAppearance.DateBeforeFont.Name = 'Segoe UI'
+                DateAppearance.DateBeforeFont.Style = []
+                DateAppearance.DateAfterFont.Charset = DEFAULT_CHARSET
+                DateAppearance.DateAfterFont.Color = 12303291
+                DateAppearance.DateAfterFont.Height = -11
+                DateAppearance.DateAfterFont.Name = 'Segoe UI'
+                DateAppearance.DateAfterFont.Style = []
+                DateAppearance.TodayFont.Charset = DEFAULT_CHARSET
+                DateAppearance.TodayFont.Color = 15702829
+                DateAppearance.TodayFont.Height = -11
+                DateAppearance.TodayFont.Name = 'Segoe UI'
+                DateAppearance.TodayFont.Style = [fsBold]
+                DateAppearance.BadgeFont.Charset = DEFAULT_CHARSET
+                DateAppearance.BadgeFont.Color = clWhite
+                DateAppearance.BadgeFont.Height = -9
+                DateAppearance.BadgeFont.Name = 'Segoe UI'
+                DateAppearance.BadgeFont.Style = []
+                DateAppearance.ShowFocus = False
+                LineAppearance.Stroke.Color = 11119017
+                GlobalFont.Scale = 1.000000000000000000
+                GlobalFont.Style = []
+              end
+            end
+            object GroupBox9: TGroupBox
+              Left = 12
+              Top = 310
+              Width = 201
+              Height = 213
+              Caption = 'Made this Date:'
+              TabOrder = 2
+              DesignSize = (
+                201
+                213)
+              object TMSFNCCalendar4: TTMSFNCCalendar
+                Left = 8
+                Top = 21
+                Width = 185
+                Height = 185
+                ParentDoubleBuffered = False
+                Anchors = [akLeft, akTop, akRight, akBottom]
+                DoubleBuffered = True
+                TabOrder = 0
+                Header.Arrow.ArrowLeftBitmap = <>
+                Header.Arrow.ArrowRightBitmap = <>
+                Header.Fill.Kind = gfkGradient
+                Header.Fill.Color = 16578806
+                Header.Fill.ColorTo = 16380654
+                Header.Font.Charset = DEFAULT_CHARSET
+                Header.Font.Color = 4539717
+                Header.Font.Height = -13
+                Header.Font.Name = 'Segoe UI'
+                Header.Font.Style = [fsBold]
+                Footer.Fill.Kind = gfkGradient
+                Footer.Fill.Color = 16578806
+                Footer.Fill.ColorTo = 16380654
+                Footer.Font.Charset = DEFAULT_CHARSET
+                Footer.Font.Color = 4539717
+                Footer.Font.Height = -13
+                Footer.Font.Name = 'Segoe UI'
+                Footer.Font.Style = []
+                Day = 9
+                Month = 6
+                Year = 2024
+                Date = 45452.000000000000000000
+                Events = <>
+                WeekNumberAppearance.Font.Charset = DEFAULT_CHARSET
+                WeekNumberAppearance.Font.Color = 8026746
+                WeekNumberAppearance.Font.Height = -11
+                WeekNumberAppearance.Font.Name = 'Segoe UI'
+                WeekNumberAppearance.Font.Style = []
+                DayNameAppearance.Font.Charset = DEFAULT_CHARSET
+                DayNameAppearance.Font.Color = 8026746
+                DayNameAppearance.Font.Height = -11
+                DayNameAppearance.Font.Name = 'Segoe UI'
+                DayNameAppearance.Font.Style = []
+                DateAppearance.Font.Charset = DEFAULT_CHARSET
+                DateAppearance.Font.Color = 8026746
+                DateAppearance.Font.Height = -11
+                DateAppearance.Font.Name = 'Segoe UI'
+                DateAppearance.Font.Style = []
+                DateAppearance.SelectedFill.Color = 16380654
+                DateAppearance.SelectedFont.Charset = DEFAULT_CHARSET
+                DateAppearance.SelectedFont.Color = 4539717
+                DateAppearance.SelectedFont.Height = -13
+                DateAppearance.SelectedFont.Name = 'Segoe UI'
+                DateAppearance.SelectedFont.Style = [fsBold]
+                DateAppearance.SelectedStroke.Color = 15702829
+                DateAppearance.DisabledFont.Charset = DEFAULT_CHARSET
+                DateAppearance.DisabledFont.Color = 13882323
+                DateAppearance.DisabledFont.Height = -11
+                DateAppearance.DisabledFont.Name = 'Segoe UI'
+                DateAppearance.DisabledFont.Style = []
+                DateAppearance.DateBeforeFont.Charset = DEFAULT_CHARSET
+                DateAppearance.DateBeforeFont.Color = 12303291
+                DateAppearance.DateBeforeFont.Height = -11
+                DateAppearance.DateBeforeFont.Name = 'Segoe UI'
+                DateAppearance.DateBeforeFont.Style = []
+                DateAppearance.DateAfterFont.Charset = DEFAULT_CHARSET
+                DateAppearance.DateAfterFont.Color = 12303291
+                DateAppearance.DateAfterFont.Height = -11
+                DateAppearance.DateAfterFont.Name = 'Segoe UI'
+                DateAppearance.DateAfterFont.Style = []
+                DateAppearance.TodayFont.Charset = DEFAULT_CHARSET
+                DateAppearance.TodayFont.Color = 15702829
+                DateAppearance.TodayFont.Height = -11
+                DateAppearance.TodayFont.Name = 'Segoe UI'
+                DateAppearance.TodayFont.Style = [fsBold]
+                DateAppearance.BadgeFont.Charset = DEFAULT_CHARSET
+                DateAppearance.BadgeFont.Color = clWhite
+                DateAppearance.BadgeFont.Height = -9
+                DateAppearance.BadgeFont.Name = 'Segoe UI'
+                DateAppearance.BadgeFont.Style = []
+                DateAppearance.ShowFocus = False
+                LineAppearance.Stroke.Color = 11119017
+                GlobalFont.Scale = 1.000000000000000000
+                GlobalFont.Style = []
+              end
+            end
+            object btF9: TButton
+              Left = 21
+              Top = 529
+              Width = 50
+              Height = 30
+              Cursor = crHandPoint
+              Hint = 'Print Form'
+              Caption = 'F9'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 3
+            end
+            object btF9a: TButton
+              Left = 77
+              Top = 529
+              Width = 50
+              Height = 30
+              Cursor = crHandPoint
+              Hint = 'Print Form'
+              Caption = 'F9a'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 4
+            end
+          end
+        end
+      end
+      object TabSheet3: TTabSheet
+        Caption = #9632' (3) Conciliation  '
+        ImageIndex = 2
+        object Panel18: TPanel
+          Left = 0
+          Top = 0
+          Width = 1018
+          Height = 55
+          Align = alTop
+          TabOrder = 0
+          object Image2: TImage
+            Left = 10
+            Top = 3
+            Width = 50
+            Height = 50
+            AutoSize = True
+            Center = True
+            Picture.Data = {
+              0954506E67496D61676589504E470D0A1A0A0000000D49484452000000320000
+              003208060000001E3F88B10000000970485973000099CA000099CA01E391A422
+              0000074D4944415478DADD5A7950555518FF915B9AE09282A1082EA589639A5A
+              23B9A4C9801A2848215A2EE492E08259638E592AFE41A3B954AE8C20CDA4B8E5
+              52A9588A899AA3420A63A04D805B82A668A0B401FDBE7BEFB3F76EC25BB82CF9
+              CD7CDC7BEEE19DFBFDCE39DF7AAE535959191E06727AE8803839391935E693E4
+              CEE4A7C8ADC94DB4E7BF917F215F206791CF1BF1B2FBF21B04A42D79087920B9
+              B7A727DA7BB6015C1F079C1BA9FF50540CDCB8095CBC0AE4E420978F4E910F93
+              F793B36B1A88081EE5EC8CC061FEC0703FA04F4FC05360359341F56F25DF062E
+              5F064EA401BB9380BDE48202EC63CF4A72527503F1212FECD6058323A7026123
+              38F36DB49E3F65FAB56B99C6D04009D723372637501FDFE366DBB20758B51648
+              3D8B237CF43EF9BBEA0012D3DC1973A2A38188696CD521DF55675A11DAD6614C
+              0045839CD5DB0DAB8179F381FC5BCAEA4455151051DCAFC282D07D2D5FE8D28A
+              AD5BDAECD7B1750ECAA152B2E81275AA987A14391D88DF8C4C3E0920FF6C2490
+              EEE4E465D1683AEB3DDE9590AF1A00404F32EE1350B6DFBA65C09BB3F13B5B83
+              C8DF1B01A42B397D5B1C9C4226182CB8894C7A55AC817994EC4A43B0151816AA
+              FCC77350AD9CC340640365EFD88086C1E1BCE3B267FCC0CB6D63E4975736A4D0
+              6E14DAD38B0F5A6A1DB2DA22160D4812C1F887E26FA87E29C7512099CBE7A373
+              D422DEE593DD80177A03C74F1BBF2862B27D070093C672FA076BAB744D3A80F5
+              31C094B9A0D156FC95DD409607FB226AC701DEFDAA0DEC0E0CE58EDD976C3C10
+              730A0BA18ED06E39CB7EC853DF3B3E1848D88978B6C2ED01D2B55E3D64145FA1
+              3E37D36646EC3F1531C097A6EBDBAA0522D4962032CFD29889BFA94FE6E672E1
+              FB0BEFA20F5B276C0572EAB3A5E8F5FA6CDE5D826A9D1EA95E2042135F0162B7
+              6A3270537D190B044E56E2B4A76D01D2AB9D074E655FE45D01544B829A01D292
+              7EE57A96F66EB16634065D198E9E3B8F97D83A640DC8C1848F3068EC5B66ABE1
+              001019AE0E7F53AACB12E42DF2A8B4D40620CD098456124DA1460E5C955DEB81
+              A029489509AF08885B8306C82BA22FAD6BFAB189EC04B2E86D5A1A72D9351D10
+              8E71FC6B0AF386F531DC6925AF8AC8129B899F718162749AB4634E5008FE456E
+              7940225E0DC02A09E270059671939D406297708F1388E29BCD897E239DBF7FC6
+              D701209A6F993C86E36FC2BB6C7D581E901DDBD621386472E5812C5FC0A8EF03
+              A8CECD9C18B11DF9021830D271200736017E63F00D5BFE94BF540FA43D2F29F9
+              A97077ED06D5019A939D4012560063673EB82F87C6B37D1FEB63B851B9F30488
+              44C885DA431A80A25CAA8D37EE9494A23FE54FD70309F470C7EE4BE9DA4A14EB
+              46B513C8AC49C01872E90D5D470BA684DB99742CB13E460BFAB01BE778D3106A
+              AA20243E8591B2770FE0C79FF01AE5FF5C0F64CE8B3E88493E06D59B96540E88
+              11E4F32C704CC2A17C33792CE55840F917EA817C121A886989BBA17A72BD79AC
+              012029D4A5BECC3E153D33E9AB5C19B24C0C6322968835943F420F242E7C1426
+              6CD80CB5D6A1AF12553390D95380A54C7F2D7C9989683066D27C7F1C8778CA1F
+              5EAB8174EEC815D94B3DE1EC2B1186B905B502E4536EADC8DAB4B5C605011BB9
+              BD2C4CB8E5D65A4DF923F540E60CA4B21F3A0A4BE57210C8CBFCBFFECC2BCAEE
+              E83AE89D8F314ADA73C0FA188AF9CD84A515B541D955F39BA1FDA092E6377135
+              103AF5C17DD9CCC03BF8581F43091AD3A0C65A263FA299DF2E34BF99E5985FD5
+              21A6D1214A967EBD72402AF2EC293BB95AC1D6C7F88F6717B2C121CAC5B01065
+              25177C8694DAF2741D4C988EEE02FA053900C414A2D020F98D2E3F44918B6141
+              634521CA8514A0537F078088C81EB6058DAE0CE3F38D08E33B7500BCB8594BFF
+              B07CEEC4D4F516B7EDE9B3D6C7684565BF661E6BD911C60B1DDCC8C46A5C2513
+              2B23A83927F3A6C45A8F91C5FAD9915809F566AA7BB236A4BAFD28EA1129CB99
+              8A1F2DEC4B75856A45F1212D19E8D117AAE5F3A4EF890586DB517C10AAD17290
+              6CA9C48D80EF7036646750E945375C68BA0B8BEC2B07093DB040D78D73919155
+              3500DA7901A3438077A653A1A5A628B5C5FA2A10AD4017C79645B66F6BC9346B
+              C57C749A292553F107F4A809718A47358C1A714C2F9A546F4E504FE61FE2F014
+              BD14875C178A038D8DA1C9AD44C914EA5C20E77E115BF4C503B61FE6D84B72DE
+              724FBB775241246DA1D71BA514B1E59035D751204212B0646C8F07468E87BACD
+              64C61EA92230E2F4A44CEA0AECDB0A0C35E858C14472D07378D9623499350FD5
+              79D023EE540E5C0D39E83151D51EBD4981817EA2982B1E39A3EA8EDECC49390C
+              5D1C0D4C35F830346E0D30972B7EBDA06A0F43CD493D9EF6C6E008E6D6A3E578
+              DA43EB11332D71D15FDA4C9B1F4F8B5E95773CBD0E483DA31C4B2F80FA21816D
+              F361D00703725019E5EC8280617EC08821C0F3D4262FD307037A8320C018335D
+              A2F53B79869E3A897B757FCD7E30A02711DD1FFF7EC2D1C1B3B59AE13DE8138E
+              DC5CE52CF0346AD1271C7A9241A4E02AB15047A8C79B8DB53ED124A93B8AF24A
+              6C20817C8903EFA818C8FF9D1E1A20FF00C0749ACA82F027DF0000000049454E
+              44AE426082}
+          end
+          object ckConciliation: TCheckBox
+            Left = 66
+            Top = 11
+            Width = 226
+            Height = 34
+            Cursor = crHandPoint
+            Caption = 'CONCILIATION'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -27
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+          end
+        end
+        object Panel19: TPanel
+          Left = 0
+          Top = 55
+          Width = 377
+          Height = 570
+          Align = alLeft
+          TabOrder = 1
+          DesignSize = (
+            377
+            570)
+          object GroupBox11: TGroupBox
+            Left = 10
+            Top = 4
+            Width = 358
+            Height = 145
+            Caption = 'NOTICE OF HEARING (CONCILIATION PROCEEDINGS)'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            DesignSize = (
+              358
+              145)
+            object Label1: TLabel
+              Left = 20
+              Top = 91
+              Width = 91
+              Height = 17
+              Caption = 'Made this date:'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+            end
+            object GroupBox12: TGroupBox
+              Left = 12
+              Top = 24
+              Width = 333
+              Height = 61
+              Anchors = [akLeft, akTop, akRight]
+              Caption = 'You are hereby required to appear this date and time:'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+              object DateTimePicker7: TDateTimePicker
+                Left = 8
+                Top = 24
+                Width = 217
+                Height = 25
+                Date = 45453.000000000000000000
+                Time = 0.810943680553464200
+                DateFormat = dfLong
+                TabOrder = 0
+              end
+              object DBEdit8: TDBEdit
+                Left = 231
+                Top = 24
+                Width = 70
+                Height = 25
+                Hint = 'Time'
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 1
+              end
+            end
+            object DateTimePicker8: TDateTimePicker
+              Left = 20
+              Top = 108
+              Width = 217
+              Height = 25
+              Date = 45453.000000000000000000
+              Time = 0.810943680553464200
+              DateFormat = dfLong
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 1
+            end
+            object btF12: TButton
+              Left = 296
+              Top = 108
+              Width = 50
+              Height = 30
+              Hint = 'Print Form'
+              Caption = 'F12'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 2
+            end
+          end
+          object GroupBox13: TGroupBox
+            Left = 10
+            Top = 155
+            Width = 358
+            Height = 145
+            Caption = 'NOTICE FOR CONTITUTION OF PANGKAT:'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            DesignSize = (
+              358
+              145)
+            object Label4: TLabel
+              Left = 20
+              Top = 91
+              Width = 91
+              Height = 17
+              Caption = 'Made this date:'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+            end
+            object GroupBox14: TGroupBox
+              Left = 12
+              Top = 24
+              Width = 333
+              Height = 61
+              Anchors = [akLeft, akTop, akRight]
+              Caption = 'You are hereby required to appear this date and time:'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+              object DateTimePicker9: TDateTimePicker
+                Left = 8
+                Top = 24
+                Width = 217
+                Height = 25
+                Date = 45453.000000000000000000
+                Time = 0.810943680553464200
+                DateFormat = dfLong
+                TabOrder = 0
+              end
+              object DBEdit9: TDBEdit
+                Left = 231
+                Top = 24
+                Width = 70
+                Height = 25
+                Hint = 'Time'
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 1
+              end
+            end
+            object DateTimePicker10: TDateTimePicker
+              Left = 20
+              Top = 108
+              Width = 217
+              Height = 25
+              Date = 45453.000000000000000000
+              Time = 0.810943680553464200
+              DateFormat = dfLong
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 1
+            end
+            object btF10: TButton
+              Left = 296
+              Top = 104
+              Width = 50
+              Height = 30
+              Hint = 'Print Form'
+              Caption = 'F10'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 2
+            end
+          end
+          object GroupBox15: TGroupBox
+            Left = 10
+            Top = 310
+            Width = 358
+            Height = 253
+            Anchors = [akLeft, akTop, akBottom]
+            Caption = 'NOTICE TO CHOSEN PANGKAT MEMBERS: (Selection)'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 2
+            object GroupBox16: TGroupBox
+              Left = 12
+              Top = 20
+              Width = 333
+              Height = 53
+              Caption = 'Pangkat Chairman'
+              TabOrder = 0
+              object DBComboBox3: TDBComboBox
+                Left = 8
+                Top = 21
+                Width = 261
+                Height = 25
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = []
+                ParentFont = False
+                TabOrder = 0
+              end
+              object btF11: TButton
+                Left = 275
+                Top = 16
+                Width = 50
+                Height = 30
+                Hint = 'Print Form'
+                Caption = 'F11'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsBold]
+                ParentFont = False
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 1
+              end
+            end
+            object GroupBox17: TGroupBox
+              Left = 12
+              Top = 75
+              Width = 333
+              Height = 54
+              Caption = 'Pangkat Secretary'
+              TabOrder = 1
+              object DBComboBox4: TDBComboBox
+                Left = 8
+                Top = 21
+                Width = 261
+                Height = 25
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = []
+                ParentFont = False
+                TabOrder = 0
+              end
+              object btF12a: TButton
+                Left = 275
+                Top = 19
+                Width = 50
+                Height = 30
+                Hint = 'Print Form'
+                Caption = 'F11'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsBold]
+                ParentFont = False
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 1
+              end
+            end
+            object GroupBox18: TGroupBox
+              Left = 12
+              Top = 130
+              Width = 333
+              Height = 55
+              Caption = 'Pangkat Member'
+              TabOrder = 2
+              object DBComboBox5: TDBComboBox
+                Left = 8
+                Top = 21
+                Width = 261
+                Height = 25
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = []
+                ParentFont = False
+                TabOrder = 0
+              end
+              object btF12b: TButton
+                Left = 275
+                Top = 16
+                Width = 50
+                Height = 30
+                Hint = 'Print Form'
+                Caption = 'F11'
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = [fsBold]
+                ParentFont = False
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 1
+              end
+            end
+            object DBEdit13: TDBEdit
+              Left = 12
+              Top = 200
+              Width = 70
+              Height = 25
+              Hint = 'Time'
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 3
+              Visible = False
+            end
+            object DBEdit14: TDBEdit
+              Left = 88
+              Top = 200
+              Width = 70
+              Height = 25
+              Hint = 'Time'
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 4
+              Visible = False
+            end
+            object DBEdit15: TDBEdit
+              Left = 164
+              Top = 200
+              Width = 70
+              Height = 25
+              Hint = 'Time'
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 5
+              Visible = False
+            end
+          end
+        end
+        object Panel20: TPanel
+          Left = 377
+          Top = 55
+          Width = 641
+          Height = 570
+          Align = alClient
+          TabOrder = 2
+          object GroupBox31: TGroupBox
+            Left = 6
+            Top = 509
+            Width = 629
+            Height = 61
+            Caption = 
+              'Failure to Appear  w/out Justifiable Reason by a respondent(s) F' +
+              'ORM 24'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 6
+            object DateTimePicker21: TDateTimePicker
+              Left = 8
+              Top = 24
+              Width = 217
+              Height = 25
+              Date = 45453.000000000000000000
+              Time = 0.810943680553464200
+              DateFormat = dfLong
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+            end
+            object btF24: TButton
+              Left = 231
+              Top = 19
+              Width = 50
+              Height = 30
+              Hint = 'Print Form'
+              Caption = 'F24'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 1
+            end
+          end
+          object GroupBox28: TGroupBox
+            Left = 6
+            Top = 428
+            Width = 630
+            Height = 75
+            Caption = 
+              'Failure to Appear  w/out Justifiable Reason by a complainant(s) ' +
+              'FORM 23'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 5
+            object btF23: TButton
+              Left = 573
+              Top = 31
+              Width = 50
+              Height = 30
+              Hint = 'Print Form'
+              Caption = 'F23'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 2
+            end
+            object GroupBox29: TGroupBox
+              Left = 12
+              Top = 19
+              Width = 237
+              Height = 53
+              Caption = 'Notify this Date:'
+              TabOrder = 0
+              object DateTimePicker19: TDateTimePicker
+                Left = 12
+                Top = 20
+                Width = 217
+                Height = 25
+                Date = 45453.000000000000000000
+                Time = 0.810943680553464200
+                DateFormat = dfLong
+                TabOrder = 0
+              end
+            end
+            object GroupBox30: TGroupBox
+              Left = 255
+              Top = 19
+              Width = 238
+              Height = 53
+              Caption = 'Order Date:'
+              TabOrder = 1
+              object DateTimePicker20: TDateTimePicker
+                Left = 12
+                Top = 20
+                Width = 217
+                Height = 25
+                Date = 45453.000000000000000000
+                Time = 0.810943680553464200
+                DateFormat = dfLong
+                TabOrder = 0
+              end
+            end
+          end
+          object GroupBox27: TGroupBox
+            Left = 6
+            Top = 366
+            Width = 350
+            Height = 61
+            Caption = '(REFUSAL TO APPEAR BEFORE THE PANGKAT) FORM 22'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 3
+            object DateTimePicker18: TDateTimePicker
+              Left = 8
+              Top = 24
+              Width = 217
+              Height = 25
+              Date = 45453.000000000000000000
+              Time = 0.810943680553464200
+              DateFormat = dfLong
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+            end
+            object btF22: TButton
+              Left = 231
+              Top = 19
+              Width = 50
+              Height = 30
+              Hint = 'Print Form'
+              Caption = 'F22'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 1
+            end
+          end
+          object GroupBox26: TGroupBox
+            Left = 362
+            Top = 366
+            Width = 274
+            Height = 61
+            Caption = '(FAILURE OF SETTLEMENT) FORM 21'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 4
+            object DateTimePicker17: TDateTimePicker
+              Left = 8
+              Top = 24
+              Width = 205
+              Height = 25
+              Date = 45453.000000000000000000
+              Time = 0.810943680553464200
+              DateFormat = dfLong
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+            end
+            object btF21: TButton
+              Left = 219
+              Top = 19
+              Width = 50
+              Height = 30
+              Hint = 'Print Form'
+              Caption = 'F21'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 1
+            end
+          end
+          object GroupBox24: TGroupBox
+            Left = 6
+            Top = 268
+            Width = 630
+            Height = 92
+            Caption = 'NOTICE OF HEARING (RE: FAILURE TO APPEAR)/(Respondent(s)'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 2
+            DesignSize = (
+              630
+              92)
+            object Label7: TLabel
+              Left = 351
+              Top = 22
+              Width = 91
+              Height = 17
+              Caption = 'Made this date:'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+            end
+            object GroupBox25: TGroupBox
+              Left = 12
+              Top = 19
+              Width = 333
+              Height = 61
+              Anchors = [akLeft, akTop, akRight]
+              Caption = 'You are hereby required to appear this date and time:'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+              object DateTimePicker15: TDateTimePicker
+                Left = 8
+                Top = 24
+                Width = 217
+                Height = 25
+                Date = 45453.000000000000000000
+                Time = 0.810943680553464200
+                DateFormat = dfLong
+                TabOrder = 0
+              end
+              object DBEdit12: TDBEdit
+                Left = 231
+                Top = 24
+                Width = 70
+                Height = 25
+                Hint = 'Time'
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 1
+              end
+            end
+            object DateTimePicker16: TDateTimePicker
+              Left = 351
+              Top = 39
+              Width = 217
+              Height = 25
+              Date = 45453.000000000000000000
+              Time = 0.810943680553464200
+              DateFormat = dfLong
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 1
+            end
+            object btF19: TButton
+              Left = 574
+              Top = 38
+              Width = 50
+              Height = 30
+              Hint = 'Print Form'
+              Caption = 'F19'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 2
+            end
+          end
+          object GroupBox22: TGroupBox
+            Left = 6
+            Top = 170
+            Width = 630
+            Height = 92
+            Caption = 'NOTICE OF HEARING (RE: FAILURE TO APPEAR)/(Complainant(s)'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            DesignSize = (
+              630
+              92)
+            object Label6: TLabel
+              Left = 351
+              Top = 22
+              Width = 91
+              Height = 17
+              Caption = 'Made this date:'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+            end
+            object GroupBox23: TGroupBox
+              Left = 12
+              Top = 19
+              Width = 333
+              Height = 61
+              Anchors = [akLeft, akTop, akRight]
+              Caption = 'You are hereby required to appear this date and time:'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+              object DateTimePicker13: TDateTimePicker
+                Left = 8
+                Top = 24
+                Width = 217
+                Height = 25
+                Date = 45453.000000000000000000
+                Time = 0.810943680553464200
+                DateFormat = dfLong
+                TabOrder = 0
+              end
+              object DBEdit11: TDBEdit
+                Left = 231
+                Top = 24
+                Width = 70
+                Height = 25
+                Hint = 'Time'
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 1
+              end
+            end
+            object DateTimePicker14: TDateTimePicker
+              Left = 351
+              Top = 39
+              Width = 217
+              Height = 25
+              Date = 45453.000000000000000000
+              Time = 0.810943680553464200
+              DateFormat = dfLong
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 1
+            end
+            object btF18: TButton
+              Left = 574
+              Top = 34
+              Width = 50
+              Height = 30
+              Hint = 'Print Form'
+              Caption = 'F18'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 2
+            end
+          end
+          object GroupBox19: TGroupBox
+            Left = 6
+            Top = 6
+            Width = 629
+            Height = 158
+            Caption = 'SUBPOENA (for the WITNESS of/Complainant(s) and Respondent(s):'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            DesignSize = (
+              629
+              158)
+            object Label5: TLabel
+              Left = 351
+              Top = 19
+              Width = 91
+              Height = 17
+              Caption = 'Made this date:'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+            end
+            object GroupBox20: TGroupBox
+              Left = 12
+              Top = 18
+              Width = 333
+              Height = 61
+              Anchors = [akLeft, akTop, akRight]
+              Caption = 'You are hereby required to appear this date and time:'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+              object DateTimePicker11: TDateTimePicker
+                Left = 8
+                Top = 24
+                Width = 217
+                Height = 25
+                Date = 45453.000000000000000000
+                Time = 0.810943680553464200
+                DateFormat = dfLong
+                TabOrder = 0
+              end
+              object DBEdit10: TDBEdit
+                Left = 231
+                Top = 24
+                Width = 70
+                Height = 25
+                Hint = 'Time'
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 1
+              end
+            end
+            object DateTimePicker12: TDateTimePicker
+              Left = 351
+              Top = 35
+              Width = 217
+              Height = 25
+              Date = 45453.000000000000000000
+              Time = 0.810943680553464200
+              DateFormat = dfLong
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 1
+            end
+            object btF13: TButton
+              Left = 574
+              Top = 35
+              Width = 50
+              Height = 30
+              Hint = 'Print Form'
+              Caption = 'F13'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 2
+            end
+            object GroupBox21: TGroupBox
+              Left = 12
+              Top = 81
+              Width = 605
+              Height = 68
+              Caption = 'WITNESS NAME(S) : please encode the names with comma separated.'
+              TabOrder = 3
+              DesignSize = (
+                605
+                68)
+              object DBMemo1: TDBMemo
+                Left = 8
+                Top = 16
+                Width = 585
+                Height = 49
+                Anchors = [akLeft, akTop, akRight, akBottom]
+                Font.Charset = ANSI_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -13
+                Font.Name = 'Segoe UI'
+                Font.Style = []
+                ParentFont = False
+                ScrollBars = ssVertical
+                TabOrder = 0
+              end
+            end
+          end
+        end
+      end
+      object TabSheet4: TTabSheet
+        Caption = #9632' (4) Arbitration  '
+        ImageIndex = 3
+        object GroupBox35: TGroupBox
+          Left = 0
+          Top = 131
+          Width = 1018
+          Height = 494
+          Align = alClient
+          Caption = 'NOTICE OF EXECUTION:'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 2
+          DesignSize = (
+            1018
+            494)
+          object Label8: TLabel
+            Left = 8
+            Top = 467
+            Width = 325
+            Height = 21
+            Anchors = [akLeft, akBottom]
+            Caption = 'Note: Fill the blank lines in the form freely.'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -16
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            ExplicitTop = 310
+          end
+          object f52: TDBRichEdit
+            Left = 8
+            Top = 20
+            Width = 1001
+            Height = 445
+            Anchors = [akLeft, akTop, akRight, akBottom]
+            HideScrollBars = False
+            ParentFont = True
+            ScrollBars = ssVertical
+            TabOrder = 0
+          end
+        end
+        object Panel16: TPanel
+          Left = 0
+          Top = 0
+          Width = 1018
+          Height = 55
+          Align = alTop
+          TabOrder = 1
+          object Image3: TImage
+            Left = 10
+            Top = 3
+            Width = 50
+            Height = 50
+            AutoSize = True
+            Center = True
+            Picture.Data = {
+              0954506E67496D61676589504E470D0A1A0A0000000D49484452000000320000
+              003208060000001E3F88B10000000970485973000099CA000099CA01E391A422
+              000007714944415478DADD5A7B50546514FF211A3E5A30142C9448CD52F1556A
+              A539E603045310F1094A2A369AA089399399D9F8FA83660A2BDF3A803AE31399
+              42534405CC6C341453315F2920A6892F02795828F43BF7DE05DC9965777117D1
+              3373D8FBDD65BF7B7EDF779EDFB976E5E5E57816C8EE990362676767AD39DB91
+              DB935F23B7243B69F70BC8D7C917C9E7C917ACF1B00AF9AD04E465F260727F72
+              4F0F0FB4F16805B83603748DD57F282C016EDD01AE5C03B2B290CD5BC7C807C9
+              7BC9994F1A88081EA1D3C17F882F30CC07E8D51DF010582FC8A4864F25FF035C
+              BD0A1C3D012424017BC8797948E437DF91936A1B486FF2C22E1DE1153E0D080A
+              E0CAB7D2BEF94F965FFB2CD7181A28E106E4E7C90EEAED622ADBB69DC08AD540
+              FA291CE2AD2FC93FD7069048671DE62C5E0C844DE7C89E5CA4AEB422B4B9D3E8
+              018A05E9D4CBE895C0BCF940EE5D6577226C05440CF7A7A0E1E8B69A0F747C91
+              A3BBDAEADB9BBB0646A88C2CB6449B2AA11D85CF0062B7E01CEFF8912F5B1348
+              37726AD462349DF505AF1E92FF82AA1E4D34216A0AE601B918EAAE8A3ABA4151
+              BF3551C047B3719FA301E423D600D2897C3A2E06762327F1EA16D9510341218A
+              AE10133DD16DEE4EE903F3354BA8010576694E9747FB72F0D06E0AA07B64EEF8
+              9EEDC09031CADDB7A07AB91A031105CA8C8F46A3C050A86A4443CD3A096C8AA3
+              DF4C0632A800050535DC0D8D9C9D81AE5CAEA18380905104271148D496F79308
+              C6778CB26F7237ABA640CE2D9D8FF6118BA0EA712930F7735A7BD4E3095E1D35
+              6C4877C8677C4AA357148BE3B591C0D4B9A0D356E295C54096067A23227E1F14
+              9B28CD07FA505BD34ED90E4455F265844ADC0DD5BBD1062706021B7E402C47A1
+              9600E944FDCD28A141DBD3938821070C64004BA91D107A9A160CACDC047567A8
+              0D8E2FD17C8AD08BA3A3E60239B6F16BF40899AD4E70E620D07950ED82D0D3D5
+              E340AB0E507665D73AC07F8A92A7753007488FD6EE3896496F843C2806B76539
+              103CC3F443EB73E71A8B2BAE2EA1D61E5348EF5456667ACEC48D54B310A8DED2
+              85AAC274F48F0BA07E20C51490E40DDF60C0079FF02A078A79C5AD05464F35FD
+              D0F7DEA197D9CFC9C5E33C308243DC3601777D97E9AF19A9E2BECD807750A52C
+              3F5296E153912E0B5E1D90160E0EB851C8585ABF29D4B483F13C9E5B3A728AE9
+              877AF7E583254B2A310E44893FF5014FAEECD93F4DCF79602B30506209639512
+              BF18349D5AD3E5DF03FF22DB1890B0D17E5821499C12B9ED2C03D29FA9648A00
+              B963020877A4434F1625974DCFF908101195C173CA3860DD667CC6D157C680C4
+              C7AD41A022741D0622EAE6330E5462F852FE3243206DF8F14B6E3ADC5CBBF02A
+              579BA92E0111623828CC069A7A22FF6119FA52FED38640FCDDDD9090735ADB89
+              923A0AE43928AED8F30DC5C6C653FE4D8640E6F4EB8DC8D45F39B80135C3B505
+              90862A90260C6EC5F74DCFB96B3D73B0095580D423F3B77EDEAC290E6001E55F
+              680864D9187F4CDF9AC0C1DF50732B5B0069A00209E17C39D74CCF19B500E82E
+              05F56DED86680B53FD0FE992A3B76215E50F330412133A1693A2B7403DEBD007
+              356B03D1CFEBA6ADAE2992B98AF068BD4399664E06BE8F412CE50F7DB2405CA1
+              C4139324C1B5D83220CBA95AE1B5A55A417C7CB6DEC51B238AB66C3143B817D4
+              14053054AD95943FDC10C81C0A12997218AAEBB5B1B1EB386F61B1E9396B62EC
+              AAFBCDD07E50C7DD6F47BADF7346DCAF1A104F30204A957EB38E02312320CAC7
+              D391A2D021F9041B4F51E4A36E278D22B2BB7949A32BD3F8DC9AA6F103586324
+              1F360F48C737A9E3972C0462411A2F94BC9E85D5842A85D50E1633A3CC28AC7C
+              FBB1A24BD506C68068B1A333EB9133663416F6538DBCC6C2E2C24AA8274BDDB4
+              AAA5EE6696BAE3CC28759D744CE63A69208C95BBDA61F6EF34D1123372ADDD2C
+              75DF9752575294E69695BA4295870F8C274718247B8F30FD505BD0D964DA531F
+              286E7727557C9805870F4295C741924AFC0B74638D72EA62ED82E8478790FA1B
+              D41D665C73A4BDDE2BB4EC3848A8F2808E74ED2CD58613E79B118DAD412D5DB8
+              70690C1B72B658AFE2802E86A3C955FFCFDC23D3F3DFCEC7EB3317A983EB34CE
+              F1F45EA9876C0B226028855EC31D7053C7EB22E9721FE3C854A80539ABE2105B
+              F92590404FB2816E3199800AF2AD23BC3323F620D61D931923BC02A0AA133D5C
+              D2367AC3B1CA489AACD9350522247E2863472C306222AF4470AD4F5B94051C3F
+              095CCAA483E3FD3249342DE858D9339E34A3576CD796BE94B99383BE7D277188
+              C012B7D36359A9ADA02769F41C8C5A02A759F3B4D592545F82A6CE3A3BA22C90
+              B034329EAB68F4D0CD280D57AB347AF464DBD65B232871A284F122FC63DBB5DE
+              AA92D20C5DC282679A959BA131AB80B9DCF19B79B66D865625B53DED09AF30A6
+              2EC1D29E76D7BE913EA0B4CE4AB595AEDA9E96A2C8587B9A5E2AFDA4D2965E00
+              F54502F3D6C34A2F0C48A33242E708BF213E749B8381B7694DAFE85F18303C5C
+              1060B4831CE64D6974123B93A8AB7B9FEC0B038624A2FBA2F2158EB61EB42817
+              23AF7064672BBDC0E3A843AF7018924C2207AE920BBD0AA5A3A128929058921C
+              2188F14ABE244DBC87357846F5409E767A6680FC0F501BEDCA7699E21E000000
+              0049454E44AE426082}
+          end
+          object ckArbitration: TCheckBox
+            Left = 66
+            Top = 11
+            Width = 267
+            Height = 34
+            Cursor = crHandPoint
+            Caption = 'ARBITRATION'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -27
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+          end
+        end
+        object Panel17: TPanel
+          Left = 0
+          Top = 55
+          Width = 1018
+          Height = 76
+          Align = alTop
+          TabOrder = 0
+          object GroupBox32: TGroupBox
+            Left = 7
+            Top = 6
+            Width = 320
+            Height = 61
+            Caption = 'AGREEMENT FOR ARBITRATION DATE:'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            DesignSize = (
+              320
+              61)
+            object DateTimePicker22: TDateTimePicker
+              Left = 8
+              Top = 24
+              Width = 217
+              Height = 25
+              Date = 45453.000000000000000000
+              Time = 0.810943680553464200
+              DateFormat = dfLong
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+            end
+            object btF14: TButton
+              Left = 262
+              Top = 19
+              Width = 50
+              Height = 30
+              Hint = 'Print Form'
+              Anchors = [akRight]
+              Caption = 'F14'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 1
+            end
+          end
+          object GroupBox33: TGroupBox
+            Left = 346
+            Top = 6
+            Width = 320
+            Height = 61
+            Caption = 'MOTION FOR EXECUTION DATE:'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            DesignSize = (
+              320
+              61)
+            object DateTimePicker23: TDateTimePicker
+              Left = 8
+              Top = 24
+              Width = 217
+              Height = 25
+              Date = 45453.000000000000000000
+              Time = 0.810943680553464200
+              DateFormat = dfLong
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+            end
+            object btF25: TButton
+              Left = 262
+              Top = 19
+              Width = 50
+              Height = 30
+              Hint = 'Print Form'
+              Anchors = [akRight]
+              Caption = 'F25'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 1
+            end
+          end
+          object GroupBox34: TGroupBox
+            Left = 685
+            Top = 6
+            Width = 320
+            Height = 61
+            Caption = 'MOTION FOR EXECUTION DATE:'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 2
+            DesignSize = (
+              320
+              61)
+            object DateTimePicker24: TDateTimePicker
+              Left = 8
+              Top = 24
+              Width = 217
+              Height = 25
+              Date = 45453.000000000000000000
+              Time = 0.810943680553464200
+              DateFormat = dfLong
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+            end
+            object btF26: TButton
+              Left = 262
+              Top = 19
+              Width = 50
+              Height = 30
+              Hint = 'Print Form'
+              Anchors = [akRight]
+              Caption = 'F26'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 1
+            end
+          end
+        end
+      end
+      object TabSheet5: TTabSheet
+        Caption = #9632' (5) Proceeding Result'
+        ImageIndex = 4
+        object PageControl3: TPageControl
+          Left = 0
+          Top = 0
+          Width = 1018
+          Height = 404
+          Cursor = crHandPoint
+          ActivePage = TabSheet12
+          Align = alClient
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 0
+          object TabSheet12: TTabSheet
+            Caption = #9616' Amicable Settlement Statement'
+            DesignSize = (
+              1010
+              372)
+            object AdvRichEditor5: TAdvRichEditor
+              AlignWithMargins = True
+              Left = 10
+              Top = 32
+              Width = 989
+              Height = 303
+              Cursor = crIBeam
+              Margins.Left = 8
+              Margins.Top = 8
+              Margins.Right = 8
+              Margins.Bottom = 8
+              HorzScrollBar.Tracking = True
+              HorzScrollBar.Visible = False
+              VertScrollBar.Range = 6
+              VertScrollBar.Tracking = True
+              Anchors = [akLeft, akTop, akRight, akBottom]
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              TabOrder = 0
+              TabStop = True
+              SelectionColor = clHighlight
+              SelectionTextColor = clHighlightText
+              Color = clWindow
+              ParentFont = False
+              Version = '1.8.9.12'
+            end
+            object AdvRichEditorFormatToolBar5: TAdvRichEditorFormatToolBar
+              Left = 10
+              Top = 0
+              Width = 709
+              Height = 28
+              UIStyle = tsOffice2007Luna
+              AllowFloating = True
+              Caption = ''
+              CaptionFont.Charset = DEFAULT_CHARSET
+              CaptionFont.Color = clWindowText
+              CaptionFont.Height = -12
+              CaptionFont.Name = 'Segoe UI'
+              CaptionFont.Style = []
+              CompactImageIndex = -1
+              ShowRightHandle = False
+              TextAutoOptionMenu = 'Add or Remove Buttons'
+              TextOptionMenu = 'Options'
+              ParentStyler = False
+              ParentOptionPicture = True
+              ToolBarIndex = -1
+              RichEditor = AdvRichEditor5
+              Hints.BoldTitle = 'Bold (Ctrl+B)'
+              Hints.BoldContent = 'Select bold font style'
+              Hints.ItalicTitle = 'Italic (Ctrl+I)'
+              Hints.ItalicContent = 'Select italic font style'
+              Hints.UnderlineTitle = 'Underline (Ctrl+U)'
+              Hints.UnderlineContent = 'Select underline font style'
+              Hints.StrikeThroughTitle = 'Strikethrough'
+              Hints.StrikeThroughContent = 'Select strikethrough font style'
+              Hints.SubScriptTitle = 'Subscript'
+              Hints.SubScriptContent = 'Set subscript text'
+              Hints.SuperScriptTitle = 'Superscript'
+              Hints.SuperScriptContent = 'Set superscript text'
+              Hints.InsertPictureTitle = 'Insert picture'
+              Hints.InsertPictureContent = 'Insert a picture from file'
+              Hints.InsertSpecialCharTitle = 'Insert special character'
+              Hints.InsertSpecialCharContent = 'Insert a special character'
+              Hints.BulletTitle = 'Insert bullet'
+              Hints.BulletContent = 'Insert a bullet for list'
+              Hints.NumberedBulletTitle = 'Start list'
+              Hints.NumberedBulletContent = 'Start a numbered list'
+              Hints.TextColorTitle = 'Text color'
+              Hints.TextColorContent = 'Set selection text color'
+              Hints.BackgroundColorTitle = 'Background color'
+              Hints.BackgroundColorContent = 'Set selection background color'
+              Hints.AlignLeftTitle = 'Align text left (Ctrl+L)'
+              Hints.AlignLeftContent = 'Align the text to left'
+              Hints.AlignCenterTitle = 'Align center (Ctrl+E)'
+              Hints.AlignCenterContent = 'Center text'
+              Hints.AlignRightTitle = 'Align text right (Ctrl+R)'
+              Hints.AlignRightContent = 'Align the text to right'
+              Hints.InsertHyperlinkTitle = 'Set hyperlink'
+              Hints.InsertHyperlinkContent = 'Set hyperlink for text'
+              Hints.IndentTitle = 'Increase indent'
+              Hints.IndentContent = 'Increase the indent level of the paragraph'
+              Hints.UnIndentTitle = 'Decrease indent'
+              Hints.UnIndentContent = 'Decrease the indent level of the paragraph'
+              Hints.FontSizeUpTitle = 'Increase font size'
+              Hints.FontSizeUpContent = 'Make your text a bit bigger'
+              Hints.FontSizeDownTitle = 'Decrease font size'
+              Hints.FontSizeDownContent = 'Make your text a bit smaller'
+              Options = [btBold, btItalic, btUnderline, btStrikeThrough, btSubscript, btSuperScript, btInsertPicture, btInsertspecialChar, btBullet, btNumberedBullet, btTextColor, btBackgroundColor, btAlignLeft, btAlignCenter, btAlignRight, btInsertHyperlink, btIndent, btUnindent]
+            end
+            object btF16: TButton
+              Left = 10
+              Top = 339
+              Width = 50
+              Height = 30
+              Hint = 'Print Form'
+              Anchors = [akLeft, akBottom]
+              Caption = 'F16'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 2
+            end
+          end
+          object TabSheet13: TTabSheet
+            Caption = #9616' Arbitration Award Statement'
+            ImageIndex = 1
+            DesignSize = (
+              1010
+              372)
+            object AdvRichEditorFormatToolBar6: TAdvRichEditorFormatToolBar
+              Left = 10
+              Top = 0
+              Width = 709
+              Height = 28
+              UIStyle = tsOffice2007Luna
+              AllowFloating = True
+              Caption = ''
+              CaptionFont.Charset = DEFAULT_CHARSET
+              CaptionFont.Color = clWindowText
+              CaptionFont.Height = -12
+              CaptionFont.Name = 'Segoe UI'
+              CaptionFont.Style = []
+              CompactImageIndex = -1
+              ShowRightHandle = False
+              TextAutoOptionMenu = 'Add or Remove Buttons'
+              TextOptionMenu = 'Options'
+              ParentStyler = False
+              ParentOptionPicture = True
+              ToolBarIndex = -1
+              RichEditor = AdvRichEditor6
+              Hints.BoldTitle = 'Bold (Ctrl+B)'
+              Hints.BoldContent = 'Select bold font style'
+              Hints.ItalicTitle = 'Italic (Ctrl+I)'
+              Hints.ItalicContent = 'Select italic font style'
+              Hints.UnderlineTitle = 'Underline (Ctrl+U)'
+              Hints.UnderlineContent = 'Select underline font style'
+              Hints.StrikeThroughTitle = 'Strikethrough'
+              Hints.StrikeThroughContent = 'Select strikethrough font style'
+              Hints.SubScriptTitle = 'Subscript'
+              Hints.SubScriptContent = 'Set subscript text'
+              Hints.SuperScriptTitle = 'Superscript'
+              Hints.SuperScriptContent = 'Set superscript text'
+              Hints.InsertPictureTitle = 'Insert picture'
+              Hints.InsertPictureContent = 'Insert a picture from file'
+              Hints.InsertSpecialCharTitle = 'Insert special character'
+              Hints.InsertSpecialCharContent = 'Insert a special character'
+              Hints.BulletTitle = 'Insert bullet'
+              Hints.BulletContent = 'Insert a bullet for list'
+              Hints.NumberedBulletTitle = 'Start list'
+              Hints.NumberedBulletContent = 'Start a numbered list'
+              Hints.TextColorTitle = 'Text color'
+              Hints.TextColorContent = 'Set selection text color'
+              Hints.BackgroundColorTitle = 'Background color'
+              Hints.BackgroundColorContent = 'Set selection background color'
+              Hints.AlignLeftTitle = 'Align text left (Ctrl+L)'
+              Hints.AlignLeftContent = 'Align the text to left'
+              Hints.AlignCenterTitle = 'Align center (Ctrl+E)'
+              Hints.AlignCenterContent = 'Center text'
+              Hints.AlignRightTitle = 'Align text right (Ctrl+R)'
+              Hints.AlignRightContent = 'Align the text to right'
+              Hints.InsertHyperlinkTitle = 'Set hyperlink'
+              Hints.InsertHyperlinkContent = 'Set hyperlink for text'
+              Hints.IndentTitle = 'Increase indent'
+              Hints.IndentContent = 'Increase the indent level of the paragraph'
+              Hints.UnIndentTitle = 'Decrease indent'
+              Hints.UnIndentContent = 'Decrease the indent level of the paragraph'
+              Hints.FontSizeUpTitle = 'Increase font size'
+              Hints.FontSizeUpContent = 'Make your text a bit bigger'
+              Hints.FontSizeDownTitle = 'Decrease font size'
+              Hints.FontSizeDownContent = 'Make your text a bit smaller'
+              Options = [btBold, btItalic, btUnderline, btStrikeThrough, btSubscript, btSuperScript, btInsertPicture, btInsertspecialChar, btBullet, btNumberedBullet, btTextColor, btBackgroundColor, btAlignLeft, btAlignCenter, btAlignRight, btInsertHyperlink, btIndent, btUnindent]
+            end
+            object AdvRichEditor6: TAdvRichEditor
+              AlignWithMargins = True
+              Left = 10
+              Top = 32
+              Width = 989
+              Height = 303
+              Cursor = crIBeam
+              Margins.Left = 8
+              Margins.Top = 8
+              Margins.Right = 8
+              Margins.Bottom = 8
+              HorzScrollBar.Tracking = True
+              HorzScrollBar.Visible = False
+              VertScrollBar.Range = 6
+              VertScrollBar.Tracking = True
+              Anchors = [akLeft, akTop, akRight, akBottom]
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              TabOrder = 1
+              TabStop = True
+              SelectionColor = clHighlight
+              SelectionTextColor = clHighlightText
+              Color = clWindow
+              ParentFont = False
+              Version = '1.8.9.12'
+            end
+            object btF15: TButton
+              Left = 10
+              Top = 339
+              Width = 50
+              Height = 30
+              Hint = 'Print Form'
+              Anchors = [akLeft, akBottom]
+              Caption = 'F15'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 2
+            end
+          end
+        end
+        object GroupBox40: TGroupBox
+          Left = 0
+          Top = 463
+          Width = 1018
+          Height = 162
+          Align = alBottom
+          Caption = 'IF REPUDIATED, pls enter grounds of repudiation and date:'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 2
+          DesignSize = (
+            1018
+            162)
+          object DateTimePicker27: TDateTimePicker
+            Left = 10
+            Top = 20
+            Width = 217
+            Height = 25
+            Date = 45453.000000000000000000
+            Time = 0.810943680553464200
+            DateFormat = dfLong
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+          end
+          object DBMemo2: TDBMemo
+            Left = 10
+            Top = 51
+            Width = 995
+            Height = 105
+            Anchors = [akLeft, akTop, akRight, akBottom]
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentFont = False
+            ScrollBars = ssVertical
+            TabOrder = 1
+          end
+          object btF20: TButton
+            Left = 233
+            Top = 19
+            Width = 50
+            Height = 30
+            Hint = 'Print Form'
+            Caption = 'F20'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 2
+          end
+          object btF17: TButton
+            Left = 286
+            Top = 19
+            Width = 50
+            Height = 30
+            Hint = 'Print Form'
+            Caption = 'F17'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 3
+          end
+        end
+        object Panel14: TPanel
+          Left = 0
+          Top = 404
+          Width = 1018
+          Height = 59
+          Align = alBottom
+          TabOrder = 1
+          object GroupBox36: TGroupBox
+            Left = 4
+            Top = 2
+            Width = 234
+            Height = 49
+            Caption = 'Date of Settlement/Award:'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+            object DateTimePicker25: TDateTimePicker
+              Left = 8
+              Top = 16
+              Width = 217
+              Height = 25
+              Date = 45453.000000000000000000
+              Time = 0.810943680553464200
+              DateFormat = dfLong
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+            end
+          end
+          object GroupBox37: TGroupBox
+            Left = 244
+            Top = 2
+            Width = 234
+            Height = 49
+            Caption = 'Date of Execution of Settlement:'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            object DateTimePicker26: TDateTimePicker
+              Left = 8
+              Top = 16
+              Width = 217
+              Height = 25
+              Date = 45453.000000000000000000
+              Time = 0.810943680553464200
+              DateFormat = dfLong
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+            end
+          end
+          object GroupBox38: TGroupBox
+            Left = 484
+            Top = 2
+            Width = 158
+            Height = 49
+            Caption = 'Last Proceeding Taken:'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 2
+            DesignSize = (
+              158
+              49)
+            object DBComboBox6: TDBComboBox
+              Left = 8
+              Top = 16
+              Width = 141
+              Height = 25
+              Anchors = [akLeft, akTop, akRight]
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+            end
+          end
+          object GroupBox39: TGroupBox
+            Left = 648
+            Top = 2
+            Width = 362
+            Height = 49
+            Caption = 'Status of Compliance on the Settlement or Award:'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI Semibold'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 3
+            DesignSize = (
+              362
+              49)
+            object DBComboBox7: TDBComboBox
+              Left = 8
+              Top = 16
+              Width = 345
+              Height = 25
+              Anchors = [akLeft, akTop, akRight]
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+            end
+          end
+        end
+      end
+      object TabSheet6: TTabSheet
+        Caption = #9632' (6) Minutes Report  '
+        ImageIndex = 5
+        object GroupBox41: TGroupBox
+          Left = 0
+          Top = 0
+          Width = 1018
+          Height = 481
+          Align = alClient
+          Caption = 'MINUTES of PROCEEDINGS REPORT LOGs'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 0
+          DesignSize = (
+            1018
+            481)
+          object AdvRichEditor7: TAdvRichEditor
+            AlignWithMargins = True
+            Left = 8
+            Top = 52
+            Width = 998
+            Height = 421
+            Cursor = crIBeam
+            Margins.Left = 8
+            Margins.Top = 8
+            Margins.Right = 8
+            Margins.Bottom = 8
+            HorzScrollBar.Tracking = True
+            VertScrollBar.Range = 6
+            VertScrollBar.Smooth = True
+            VertScrollBar.Tracking = True
+            Anchors = [akLeft, akTop, akRight, akBottom]
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -13
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            TabOrder = 0
+            TabStop = True
+            SelectionColor = clHighlight
+            SelectionTextColor = clHighlightText
+            Color = clWindow
+            ParentFont = False
+            Version = '1.8.9.12'
+          end
+          object AdvRichEditorFormatToolBar7: TAdvRichEditorFormatToolBar
+            Left = 8
+            Top = 20
+            Width = 709
+            Height = 28
+            UIStyle = tsOffice2007Luna
+            AllowFloating = True
+            Caption = ''
+            CaptionFont.Charset = DEFAULT_CHARSET
+            CaptionFont.Color = clWindowText
+            CaptionFont.Height = -12
+            CaptionFont.Name = 'Segoe UI'
+            CaptionFont.Style = []
+            CompactImageIndex = -1
+            ShowRightHandle = False
+            TextAutoOptionMenu = 'Add or Remove Buttons'
+            TextOptionMenu = 'Options'
+            ParentStyler = False
+            ParentOptionPicture = True
+            ToolBarIndex = -1
+            RichEditor = AdvRichEditor7
+            Hints.BoldTitle = 'Bold (Ctrl+B)'
+            Hints.BoldContent = 'Select bold font style'
+            Hints.ItalicTitle = 'Italic (Ctrl+I)'
+            Hints.ItalicContent = 'Select italic font style'
+            Hints.UnderlineTitle = 'Underline (Ctrl+U)'
+            Hints.UnderlineContent = 'Select underline font style'
+            Hints.StrikeThroughTitle = 'Strikethrough'
+            Hints.StrikeThroughContent = 'Select strikethrough font style'
+            Hints.SubScriptTitle = 'Subscript'
+            Hints.SubScriptContent = 'Set subscript text'
+            Hints.SuperScriptTitle = 'Superscript'
+            Hints.SuperScriptContent = 'Set superscript text'
+            Hints.InsertPictureTitle = 'Insert picture'
+            Hints.InsertPictureContent = 'Insert a picture from file'
+            Hints.InsertSpecialCharTitle = 'Insert special character'
+            Hints.InsertSpecialCharContent = 'Insert a special character'
+            Hints.BulletTitle = 'Insert bullet'
+            Hints.BulletContent = 'Insert a bullet for list'
+            Hints.NumberedBulletTitle = 'Start list'
+            Hints.NumberedBulletContent = 'Start a numbered list'
+            Hints.TextColorTitle = 'Text color'
+            Hints.TextColorContent = 'Set selection text color'
+            Hints.BackgroundColorTitle = 'Background color'
+            Hints.BackgroundColorContent = 'Set selection background color'
+            Hints.AlignLeftTitle = 'Align text left (Ctrl+L)'
+            Hints.AlignLeftContent = 'Align the text to left'
+            Hints.AlignCenterTitle = 'Align center (Ctrl+E)'
+            Hints.AlignCenterContent = 'Center text'
+            Hints.AlignRightTitle = 'Align text right (Ctrl+R)'
+            Hints.AlignRightContent = 'Align the text to right'
+            Hints.InsertHyperlinkTitle = 'Set hyperlink'
+            Hints.InsertHyperlinkContent = 'Set hyperlink for text'
+            Hints.IndentTitle = 'Increase indent'
+            Hints.IndentContent = 'Increase the indent level of the paragraph'
+            Hints.UnIndentTitle = 'Decrease indent'
+            Hints.UnIndentContent = 'Decrease the indent level of the paragraph'
+            Hints.FontSizeUpTitle = 'Increase font size'
+            Hints.FontSizeUpContent = 'Make your text a bit bigger'
+            Hints.FontSizeDownTitle = 'Decrease font size'
+            Hints.FontSizeDownContent = 'Make your text a bit smaller'
+            Options = [btBold, btItalic, btUnderline, btStrikeThrough, btSubscript, btSuperScript, btInsertPicture, btInsertspecialChar, btBullet, btNumberedBullet, btTextColor, btBackgroundColor, btAlignLeft, btAlignCenter, btAlignRight, btInsertHyperlink, btIndent, btUnindent]
+          end
+        end
+        object Panel15: TPanel
+          Left = 0
+          Top = 481
+          Width = 1018
+          Height = 41
+          Align = alBottom
+          TabOrder = 1
+          DesignSize = (
+            1018
+            41)
+          object btMinutes: TButton
+            Left = 11
+            Top = 6
+            Width = 102
+            Height = 30
+            Hint = 'Print Form'
+            Anchors = [akLeft, akBottom]
+            Caption = 'Print Minutes'
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 0
+          end
+        end
+        object GroupBox42: TGroupBox
+          Left = 0
+          Top = 522
+          Width = 1018
+          Height = 103
+          Align = alBottom
+          Caption = 'Uploaded Pertinent Files'
+          TabOrder = 2
+          object Label9: TLabel
+            Left = 16
+            Top = 28
+            Width = 191
+            Height = 17
+            Caption = 'Signed Minutes of the Meeting:'
+          end
+          object Label10: TLabel
+            Left = 16
+            Top = 63
+            Width = 150
+            Height = 17
+            Caption = 'Signed Repudiated Docs:'
+          end
+        end
+      end
+      object TabSheet10: TTabSheet
+        Caption = #9632' KP Legal Forms'
+        ImageIndex = 6
+        DesignSize = (
+          1018
+          625)
+        object rtForms: TRichEdit
+          Left = 3
+          Top = 3
+          Width = 1015
+          Height = 621
+          Anchors = [akLeft, akTop, akBottom]
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Segoe UI Semibold'
+          Font.Style = [fsBold]
+          HideScrollBars = False
+          Lines.Strings = (
+            'rtForms')
+          ParentFont = False
+          ReadOnly = True
+          ScrollBars = ssVertical
+          TabOrder = 0
+        end
+      end
+    end
+  end
+  object pan: TPopupMenu
+    Left = 1104
+    Top = 56
+    object Refresh1: TMenuItem
+      Caption = 'Refresh'
+    end
+  end
+end

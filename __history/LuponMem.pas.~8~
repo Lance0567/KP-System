@@ -1,0 +1,64 @@
+unit LuponMem;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask,
+  Vcl.ExtCtrls, Vcl.ComCtrls;
+
+type
+  TfrmLuponMem = class(TForm)
+    GroupBox1: TGroupBox;
+    DBCheckBox1: TDBCheckBox;
+    DBCheckBox2: TDBCheckBox;
+    GroupBox2: TGroupBox;
+    DBEdit1: TDBEdit;
+    GroupBox3: TGroupBox;
+    DBEdit2: TDBEdit;
+    GroupBox4: TGroupBox;
+    DBImage1: TDBImage;
+    GroupBox5: TGroupBox;
+    DBMemo1: TDBMemo;
+    GroupBox6: TGroupBox;
+    DateTimePicker1: TDateTimePicker;
+    GroupBox7: TGroupBox;
+    DateTimePicker2: TDateTimePicker;
+    GroupBox8: TGroupBox;
+    DBEdit3: TDBEdit;
+    GroupBox9: TGroupBox;
+    DateTimePicker3: TDateTimePicker;
+    GroupBox10: TGroupBox;
+    DBEdit4: TDBEdit;
+    GroupBox11: TGroupBox;
+    DateTimePicker4: TDateTimePicker;
+    Button5: TButton;
+    GroupBox12: TGroupBox;
+    Button4: TButton;
+    Button3: TButton;
+    Button1: TButton;
+    Button2: TButton;
+    procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmLuponMem: TfrmLuponMem;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmLuponMem.FormKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+     if (Key=27)then
+        begin
+            close;
+        end;
+end;
+
+end.

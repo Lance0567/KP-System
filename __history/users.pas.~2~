@@ -1,0 +1,48 @@
+unit users;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ExtCtrls, Vcl.DBCtrls,
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Mask;
+
+type
+  TfrmUsers = class(TForm)
+    GroupBox2: TGroupBox;
+    DBGrid1: TDBGrid;
+    GroupBox1: TGroupBox;
+    GroupBox3: TGroupBox;
+    DBEdit1: TDBEdit;
+    GroupBox4: TGroupBox;
+    DBEdit2: TDBEdit;
+    GroupBox5: TGroupBox;
+    DBEdit3: TDBEdit;
+    GroupBox6: TGroupBox;
+    DBEdit4: TDBEdit;
+    DBNavigator1: TDBNavigator;
+    procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmUsers: TfrmUsers;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmUsers.FormKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+     keypreview := true;
+    if (Key=27)then
+        begin
+            close;
+        end;
+end;
+
+end.

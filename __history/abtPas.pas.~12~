@@ -1,0 +1,73 @@
+unit abtPas;
+
+interface
+
+uses
+  ShellAPI, Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls,
+  Vcl.Imaging.pngimage, Vcl.ExtCtrls;
+
+type
+  TabtFrm = class(TForm)
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    TabSheet3: TTabSheet;
+    TabSheet5: TTabSheet;
+    website: TLabel;
+    Panel1: TPanel;
+    Image1: TImage;
+    rtAbout: TRichEdit;
+    rtForms: TRichEdit;
+    rtDisc: TRichEdit;
+    rtContact: TRichEdit;
+    mcsLogo: TImage;
+    fbLogo: TImage;
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormShow(Sender: TObject);
+    procedure mcsLogoClick(Sender: TObject);
+    procedure fbLogoClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  abtFrm: TabtFrm;
+
+implementation
+
+{$R *.dfm}
+
+uses KpPrj, splash;
+
+
+procedure TabtFrm.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+     if (Key=27)then
+        begin
+            close;
+        end;
+end;
+
+procedure TabtFrm.FormShow(Sender: TObject);
+begin
+     abtFrm.rtAbout.lines.loadfromfile('./docs/about.rtf');
+     abtFrm.rtForms.lines.loadfromfile('./docs/forms.rtf');
+     abtFrm.rtDisc.lines.loadfromfile('./docs/disclaimer.rtf');
+     abtFrm.rtContact.lines.loadfromfile('./docs/contact.rtf');
+end;
+
+procedure TabtFrm.mcsLogoClick(Sender: TObject);
+begin
+     ShellExecute(Handle,'open',PCHAR('http://www.mindconceptsolutions.com'), PChar(''), PChar(''), SW_SHOWNORMAL);
+end;
+
+procedure TabtFrm.fbLogoClick(Sender: TObject);
+begin
+    ShellExecute(Handle,'open',PCHAR('https://www.facebook.com/mindconceptsolutions'), PChar(''), PChar(''), SW_SHOWNORMAL);
+end;
+
+end.

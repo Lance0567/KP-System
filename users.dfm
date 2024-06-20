@@ -1,0 +1,310 @@
+object frmUsers: TfrmUsers
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Users Credentials'
+  ClientHeight = 420
+  ClientWidth = 550
+  Color = clBtnFace
+  DoubleBuffered = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  KeyPreview = True
+  Position = poScreenCenter
+  OnKeyUp = FormKeyUp
+  TextHeight = 15
+  object GroupBox2: TGroupBox
+    Left = 0
+    Top = 0
+    Width = 205
+    Height = 395
+    Align = alLeft
+    Caption = 'Users List'
+    DefaultHeaderFont = False
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold]
+    HeaderFont.Charset = ANSI_CHARSET
+    HeaderFont.Color = clWindowText
+    HeaderFont.Height = -13
+    HeaderFont.Name = 'Segoe UI'
+    HeaderFont.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    ExplicitHeight = 535
+    DesignSize = (
+      205
+      395)
+    object DBGrid1: TDBGrid
+      Left = 8
+      Top = 16
+      Width = 190
+      Height = 368
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+      TabOrder = 0
+      TitleFont.Charset = ANSI_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -12
+      TitleFont.Name = 'Segoe UI Semibold'
+      TitleFont.Style = [fsBold]
+    end
+  end
+  object GroupBox1: TGroupBox
+    Left = 205
+    Top = 0
+    Width = 345
+    Height = 395
+    Align = alClient
+    Caption = 'Users Details'
+    DefaultHeaderFont = False
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold]
+    HeaderFont.Charset = ANSI_CHARSET
+    HeaderFont.Color = clWindowText
+    HeaderFont.Height = -13
+    HeaderFont.Name = 'Segoe UI'
+    HeaderFont.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+    ExplicitLeft = 204
+    ExplicitHeight = 539
+    DesignSize = (
+      345
+      395)
+    object GroupBox3: TGroupBox
+      Left = 12
+      Top = 28
+      Width = 321
+      Height = 49
+      Anchors = [akLeft, akTop, akRight]
+      Caption = 'User Name'
+      TabOrder = 0
+      ExplicitWidth = 319
+      DesignSize = (
+        321
+        49)
+      object DBEdit1: TDBEdit
+        Left = 12
+        Top = 17
+        Width = 297
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        ExplicitWidth = 295
+      end
+    end
+    object GroupBox4: TGroupBox
+      Left = 12
+      Top = 76
+      Width = 321
+      Height = 49
+      Anchors = [akLeft, akTop, akRight]
+      Caption = 'Password'
+      TabOrder = 1
+      ExplicitWidth = 319
+      DesignSize = (
+        321
+        49)
+      object DBEdit2: TDBEdit
+        Left = 12
+        Top = 16
+        Width = 297
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Style = [fsBold]
+        ParentFont = False
+        PasswordChar = '*'
+        TabOrder = 0
+        ExplicitWidth = 295
+      end
+    end
+    object GroupBox5: TGroupBox
+      Left = 12
+      Top = 131
+      Width = 321
+      Height = 49
+      Anchors = [akLeft, akTop, akRight]
+      Caption = 'Email Address'
+      TabOrder = 2
+      ExplicitWidth = 319
+      DesignSize = (
+        321
+        49)
+      object DBEdit3: TDBEdit
+        Left = 12
+        Top = 16
+        Width = 297
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        ExplicitWidth = 295
+      end
+    end
+    object GroupBox6: TGroupBox
+      Left = 12
+      Top = 186
+      Width = 321
+      Height = 49
+      Anchors = [akLeft, akTop, akRight]
+      Caption = 'First Name'
+      TabOrder = 3
+      ExplicitWidth = 319
+      DesignSize = (
+        321
+        49)
+      object DBEdit4: TDBEdit
+        Left = 12
+        Top = 16
+        Width = 297
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        ExplicitWidth = 295
+      end
+    end
+    object GroupBox7: TGroupBox
+      Left = 12
+      Top = 241
+      Width = 321
+      Height = 49
+      Anchors = [akLeft, akTop, akRight]
+      Caption = 'Last Name'
+      TabOrder = 4
+      ExplicitWidth = 319
+      DesignSize = (
+        321
+        49)
+      object DBEdit5: TDBEdit
+        Left = 12
+        Top = 16
+        Width = 297
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        ExplicitWidth = 295
+      end
+    end
+    object GroupBox8: TGroupBox
+      Left = 12
+      Top = 296
+      Width = 151
+      Height = 50
+      Anchors = [akLeft, akTop, akRight]
+      Caption = 'Last Login:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 5
+      DesignSize = (
+        151
+        50)
+      object DateTimePicker1: TDateTimePicker
+        Left = 12
+        Top = 16
+        Width = 131
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Date = 45452.000000000000000000
+        Time = 0.333221643515571500
+        Enabled = False
+        TabOrder = 0
+      end
+    end
+    object GroupBox9: TGroupBox
+      Left = 184
+      Top = 296
+      Width = 151
+      Height = 50
+      Anchors = [akLeft, akTop, akRight]
+      Caption = 'Date Joined:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 6
+      DesignSize = (
+        151
+        50)
+      object DateTimePicker2: TDateTimePicker
+        Left = 12
+        Top = 16
+        Width = 131
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Date = 45452.000000000000000000
+        Time = 0.333221643515571500
+        Enabled = False
+        TabOrder = 0
+      end
+    end
+    object DBCheckBox1: TDBCheckBox
+      Left = 24
+      Top = 360
+      Width = 85
+      Height = 17
+      Caption = 'is Admin?'
+      TabOrder = 7
+    end
+    object DBCheckBox2: TDBCheckBox
+      Left = 196
+      Top = 360
+      Width = 85
+      Height = 17
+      Caption = 'is Active?'
+      TabOrder = 8
+    end
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Top = 395
+    Width = 550
+    Height = 25
+    Align = alBottom
+    TabOrder = 2
+    ExplicitTop = 535
+    ExplicitWidth = 548
+  end
+end

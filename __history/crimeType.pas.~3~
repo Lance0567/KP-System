@@ -1,0 +1,42 @@
+unit crimeType;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.DBCtrls,
+  AdvScrollControl, AdvRichEditorBase, AdvRichEditor, AdvToolBar, AdvToolBarExt,
+  AdvRichEditorToolBar;
+
+type
+  TfrmCaseType = class(TForm)
+    GroupBox1: TGroupBox;
+    DBMemo1: TDBMemo;
+    GroupBox2: TGroupBox;
+    AdvRichEditorFormatToolBar1: TAdvRichEditorFormatToolBar;
+    AdvRichEditor1: TAdvRichEditor;
+    Button1: TButton;
+    procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCaseType: TfrmCaseType;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmCaseType.FormKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+     if (Key=27)then
+        begin
+            close;
+        end;
+end;
+
+end.

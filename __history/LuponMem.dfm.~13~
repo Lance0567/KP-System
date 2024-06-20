@@ -1,0 +1,501 @@
+object frmLuponMem: TfrmLuponMem
+  Left = 0
+  Top = 0
+  Cursor = crHandPoint
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Lupon Member Information'
+  ClientHeight = 664
+  ClientWidth = 516
+  Color = clBtnFace
+  DoubleBuffered = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  KeyPreview = True
+  Position = poScreenCenter
+  OnKeyUp = FormKeyUp
+  DesignSize = (
+    516
+    664)
+  TextHeight = 15
+  object GroupBox1: TGroupBox
+    Left = 0
+    Top = 0
+    Width = 516
+    Height = 333
+    Align = alTop
+    Caption = 'Information'
+    DefaultHeaderFont = False
+    HeaderFont.Charset = ANSI_CHARSET
+    HeaderFont.Color = clWindowText
+    HeaderFont.Height = -13
+    HeaderFont.Name = 'Segoe UI Semibold'
+    HeaderFont.Style = [fsBold]
+    TabOrder = 0
+    ExplicitLeft = 8
+    ExplicitTop = 8
+    ExplicitWidth = 444
+    DesignSize = (
+      516
+      333)
+    object DBCheckBox1: TDBCheckBox
+      Left = 12
+      Top = 29
+      Width = 153
+      Height = 17
+      Caption = 'Is Active in the System?'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+    end
+    object DBCheckBox2: TDBCheckBox
+      Left = 12
+      Top = 52
+      Width = 153
+      Height = 17
+      Caption = 'Is Appointed?'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+    end
+    object GroupBox2: TGroupBox
+      Left = 12
+      Top = 74
+      Width = 356
+      Height = 47
+      Anchors = [akLeft, akTop, akRight]
+      Caption = 'Lupon Fullname:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      ExplicitWidth = 284
+      DesignSize = (
+        356
+        47)
+      object DBEdit1: TDBEdit
+        Left = 8
+        Top = 16
+        Width = 340
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        ExplicitWidth = 268
+      end
+    end
+    object GroupBox3: TGroupBox
+      Left = 12
+      Top = 140
+      Width = 491
+      Height = 47
+      Anchors = [akLeft, akTop, akRight]
+      Caption = 'Full Address:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      ExplicitWidth = 419
+      DesignSize = (
+        491
+        47)
+      object DBEdit2: TDBEdit
+        Left = 8
+        Top = 16
+        Width = 475
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        ExplicitWidth = 403
+      end
+    end
+    object GroupBox4: TGroupBox
+      Left = 374
+      Top = 12
+      Width = 129
+      Height = 133
+      Anchors = [akLeft, akTop, akRight]
+      Caption = 'Picture'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 4
+      DesignSize = (
+        129
+        133)
+      object DBImage1: TDBImage
+        Left = 12
+        Top = 18
+        Width = 105
+        Height = 105
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        TabOrder = 0
+      end
+    end
+    object GroupBox5: TGroupBox
+      Left = 12
+      Top = 193
+      Width = 491
+      Height = 132
+      Anchors = [akLeft, akTop, akRight]
+      Caption = 'Basic Personal Information: (Profession and Education)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 5
+      ExplicitWidth = 419
+      DesignSize = (
+        491
+        132)
+      object DBMemo1: TDBMemo
+        Left = 8
+        Top = 20
+        Width = 475
+        Height = 101
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        ScrollBars = ssVertical
+        TabOrder = 0
+        ExplicitWidth = 403
+      end
+    end
+  end
+  object btSave: TButton
+    Left = 8
+    Top = 631
+    Width = 75
+    Height = 25
+    Cursor = crHandPoint
+    Anchors = [akLeft, akBottom]
+    Caption = 'Save'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 3
+    ExplicitTop = 625
+  end
+  object GroupBox12: TGroupBox
+    Left = 0
+    Top = 469
+    Width = 516
+    Height = 155
+    Align = alTop
+    Caption = 'Report'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+    ExplicitLeft = 1
+    ExplicitTop = 468
+    ExplicitWidth = 494
+    DesignSize = (
+      516
+      155)
+    object btF6: TButton
+      Left = 108
+      Top = 112
+      Width = 300
+      Height = 30
+      Cursor = crHandPoint
+      Hint = 'Print complaint'
+      Anchors = [akTop, akRight]
+      Caption = 'F6-Withdrawal of Appointment'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+    end
+    object btF5: TButton
+      Left = 108
+      Top = 80
+      Width = 300
+      Height = 30
+      Cursor = crHandPoint
+      Hint = 'Print complaint'
+      Anchors = [akTop, akRight]
+      Caption = 'F5-Oath of Office'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+    end
+    object btF3: TButton
+      Left = 108
+      Top = 48
+      Width = 300
+      Height = 30
+      Cursor = crHandPoint
+      Hint = 'Print complaint'
+      Anchors = [akTop, akRight]
+      Caption = 'F3-Notice Appointment'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+    end
+    object btF2: TButton
+      Left = 108
+      Top = 16
+      Width = 300
+      Height = 30
+      Cursor = crHandPoint
+      Hint = 'Print complaint'
+      Anchors = [akTop, akRight]
+      Caption = 'F2-Appointment'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+    end
+  end
+  object GroupBox13: TGroupBox
+    Left = 0
+    Top = 333
+    Width = 516
+    Height = 136
+    Align = alTop
+    Caption = 'Other Information:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+    object GroupBox6: TGroupBox
+      Left = 12
+      Top = 23
+      Width = 169
+      Height = 50
+      Caption = 'Date of Appointment:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      DesignSize = (
+        169
+        50)
+      object DateTimePicker1: TDateTimePicker
+        Left = 12
+        Top = 16
+        Width = 149
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Date = 45452.000000000000000000
+        Time = 0.333221643515571500
+        TabOrder = 0
+        ExplicitWidth = 125
+      end
+    end
+    object GroupBox7: TGroupBox
+      Left = 187
+      Top = 23
+      Width = 129
+      Height = 50
+      Caption = 'CTC Date Info.:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      DesignSize = (
+        129
+        50)
+      object DateTimePicker2: TDateTimePicker
+        Left = 12
+        Top = 16
+        Width = 108
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Date = 45452.000000000000000000
+        Time = 0.333221643515571500
+        TabOrder = 0
+        ExplicitWidth = 118
+      end
+    end
+    object GroupBox8: TGroupBox
+      Left = 322
+      Top = 23
+      Width = 182
+      Height = 50
+      Caption = 'CTC Number:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      DesignSize = (
+        182
+        50)
+      object DBEdit3: TDBEdit
+        Left = 8
+        Top = 16
+        Width = 166
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        ExplicitWidth = 118
+      end
+    end
+    object GroupBox9: TGroupBox
+      Left = 12
+      Top = 79
+      Width = 169
+      Height = 50
+      Caption = 'Date of Oath of Office:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      DesignSize = (
+        169
+        50)
+      object DateTimePicker3: TDateTimePicker
+        Left = 12
+        Top = 16
+        Width = 149
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Date = 45452.000000000000000000
+        Time = 0.333221643515571500
+        TabOrder = 0
+        ExplicitWidth = 125
+      end
+    end
+    object GroupBox10: TGroupBox
+      Left = 187
+      Top = 79
+      Width = 129
+      Height = 50
+      Caption = 'Time of Oath:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 4
+      DesignSize = (
+        129
+        50)
+      object DBEdit4: TDBEdit
+        Left = 8
+        Top = 18
+        Width = 113
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        ExplicitWidth = 118
+      end
+    end
+    object GroupBox11: TGroupBox
+      Left = 322
+      Top = 79
+      Width = 182
+      Height = 50
+      Caption = 'Subscribe and Sworn Date:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 5
+      DesignSize = (
+        182
+        50)
+      object DateTimePicker4: TDateTimePicker
+        Left = 12
+        Top = 16
+        Width = 162
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Date = 45452.000000000000000000
+        Time = 0.333221643515571500
+        TabOrder = 0
+        ExplicitWidth = 176
+      end
+    end
+  end
+end

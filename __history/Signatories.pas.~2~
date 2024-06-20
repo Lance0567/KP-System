@@ -1,0 +1,40 @@
+unit Signatories;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.StdCtrls;
+
+type
+  TfrmSignatories = class(TForm)
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmSignatories: TfrmSignatories;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmSignatories.FormKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+     keypreview := true;
+    if (Key=27)then
+        begin
+            close;
+        end;
+end;
+
+end.

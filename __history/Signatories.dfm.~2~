@@ -1,0 +1,77 @@
+object frmSignatories: TfrmSignatories
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = 'Barangay Signatories'
+  ClientHeight = 380
+  ClientWidth = 637
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  KeyPreview = True
+  Position = poScreenCenter
+  OnKeyUp = FormKeyUp
+  DesignSize = (
+    637
+    380)
+  TextHeight = 15
+  object GroupBox1: TGroupBox
+    Left = 271
+    Top = 8
+    Width = 358
+    Height = 364
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Caption = 'Personal Details'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    ExplicitWidth = 468
+  end
+  object GroupBox2: TGroupBox
+    Left = 8
+    Top = 8
+    Width = 257
+    Height = 364
+    Caption = 'List of Barangay Signatories'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+    DesignSize = (
+      257
+      364)
+    object DBGrid1: TDBGrid
+      Left = 8
+      Top = 16
+      Width = 242
+      Height = 308
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+      TabOrder = 0
+      TitleFont.Charset = ANSI_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -12
+      TitleFont.Name = 'Segoe UI Semibold'
+      TitleFont.Style = [fsBold]
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 8
+      Top = 326
+      Width = 240
+      Height = 25
+      Anchors = [akLeft, akRight, akBottom]
+      TabOrder = 1
+      ExplicitTop = 292
+    end
+  end
+end

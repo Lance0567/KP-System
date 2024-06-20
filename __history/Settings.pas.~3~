@@ -1,0 +1,60 @@
+unit Settings;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ToolWin, Vcl.ComCtrls, Vcl.StdCtrls,
+  Vcl.DBCtrls, Vcl.Mask, Vcl.ExtCtrls;
+
+type
+  TfrmSettings = class(TForm)
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    TabSheet3: TTabSheet;
+    ToolBar1: TToolBar;
+    GroupBox1: TGroupBox;
+    DBEdit1: TDBEdit;
+    GroupBox2: TGroupBox;
+    DBEdit2: TDBEdit;
+    GroupBox3: TGroupBox;
+    DBEdit3: TDBEdit;
+    GroupBox5: TGroupBox;
+    DBEdit5: TDBEdit;
+    GroupBox6: TGroupBox;
+    DBImage1: TDBImage;
+    DBImage2: TDBImage;
+    DBImage3: TDBImage;
+    Button1: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Button2: TButton;
+    GroupBox4: TGroupBox;
+    DBEdit4: TDBEdit;
+    procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmSettings: TfrmSettings;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmSettings.FormKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+      keypreview := true;
+    if (Key=27)then
+        begin
+            close;
+        end;
+end;
+
+end.

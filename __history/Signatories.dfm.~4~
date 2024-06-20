@@ -1,0 +1,178 @@
+object frmSignatories: TfrmSignatories
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = 'Barangay Signatories'
+  ClientHeight = 380
+  ClientWidth = 637
+  Color = clBtnFace
+  DoubleBuffered = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  KeyPreview = True
+  Position = poScreenCenter
+  OnKeyUp = FormKeyUp
+  DesignSize = (
+    637
+    380)
+  TextHeight = 15
+  object GroupBox1: TGroupBox
+    Left = 271
+    Top = 8
+    Width = 354
+    Height = 364
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Caption = 'Personal Details'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+    ExplicitWidth = 352
+    ExplicitHeight = 360
+    object GroupBox3: TGroupBox
+      Left = 12
+      Top = 28
+      Width = 333
+      Height = 49
+      Caption = 'Punong Barang Fullname'
+      TabOrder = 0
+      DesignSize = (
+        333
+        49)
+      object DBEdit1: TDBEdit
+        Left = 12
+        Top = 17
+        Width = 309
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+      end
+    end
+    object GroupBox4: TGroupBox
+      Left = 12
+      Top = 91
+      Width = 333
+      Height = 49
+      Caption = 'Lupon Chairman'
+      TabOrder = 1
+      DesignSize = (
+        333
+        49)
+      object DBEdit2: TDBEdit
+        Left = 12
+        Top = 16
+        Width = 309
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+      end
+    end
+    object GroupBox5: TGroupBox
+      Left = 12
+      Top = 154
+      Width = 333
+      Height = 49
+      Caption = 'Barangay Secretary Name'
+      TabOrder = 2
+      DesignSize = (
+        333
+        49)
+      object DBEdit3: TDBEdit
+        Left = 12
+        Top = 16
+        Width = 309
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+      end
+    end
+    object GroupBox6: TGroupBox
+      Left = 12
+      Top = 217
+      Width = 333
+      Height = 49
+      Caption = 'Lupon Secretary Name'
+      TabOrder = 3
+      DesignSize = (
+        333
+        49)
+      object DBEdit4: TDBEdit
+        Left = 12
+        Top = 16
+        Width = 309
+        Height = 25
+        Anchors = [akLeft, akTop, akRight]
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI Semibold'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+      end
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 8
+    Top = 8
+    Width = 257
+    Height = 364
+    Caption = 'List of Barangay Signatories'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    DesignSize = (
+      257
+      364)
+    object DBGrid1: TDBGrid
+      Left = 8
+      Top = 16
+      Width = 242
+      Height = 308
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+      TabOrder = 0
+      TitleFont.Charset = ANSI_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -12
+      TitleFont.Name = 'Segoe UI Semibold'
+      TitleFont.Style = [fsBold]
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 8
+      Top = 326
+      Width = 240
+      Height = 25
+      Anchors = [akLeft, akRight, akBottom]
+      TabOrder = 1
+    end
+  end
+end

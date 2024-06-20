@@ -1,0 +1,57 @@
+unit abtPas;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls,
+  Vcl.Imaging.pngimage, Vcl.ExtCtrls;
+
+type
+  TabtFrm = class(TForm)
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    TabSheet3: TTabSheet;
+    TabSheet4: TTabSheet;
+    TabSheet5: TTabSheet;
+    website: TLabel;
+    Panel1: TPanel;
+    Image1: TImage;
+    rtAbout: TRichEdit;
+    rtForms: TRichEdit;
+    rtDisc: TRichEdit;
+    rtContact: TRichEdit;
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  abtFrm: TabtFrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TabtFrm.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+     if (Key=27)then
+        begin
+            close;
+        end;
+end;
+
+procedure TabtFrm.FormShow(Sender: TObject);
+begin
+     abtFrm.rtAbout.lines.loadfromfile('./docs/about.rtf');
+     abtFrm.rtForms.lines.loadfromfile('./docs/forms.rtf');
+     abtFrm.rtDisc.lines.loadfromfile('./docs/disclaimer.rtf');
+     abtFrm.rtContact.lines.loadfromfile('./docs/contact.rtf');
+end;
+
+end.

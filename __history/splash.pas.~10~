@@ -1,0 +1,46 @@
+unit splash;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.StdCtrls;
+
+type
+  TSplashFrm = class(TForm)
+    Image1: TImage;
+    GroupBox1: TGroupBox;
+    username: TEdit;
+    password: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    btLogin: TButton;
+    Image2: TImage;
+    Button1: TButton;
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  SplashFrm: TSplashFrm;
+
+implementation
+
+{$R *.dfm}
+
+uses abtPas, KpPrj;
+
+procedure TSplashFrm.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+     if (Key=13) or (Key=27)then
+        begin
+            close;
+        end;
+end;
+
+end.
