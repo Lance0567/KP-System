@@ -70,7 +70,7 @@ object frmLuponMem: TfrmLuponMem
     object GroupBox2: TGroupBox
       Left = 12
       Top = 74
-      Width = 367
+      Width = 365
       Height = 47
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Lupon Fullname:'
@@ -81,14 +81,14 @@ object frmLuponMem: TfrmLuponMem
       Font.Style = []
       ParentFont = False
       TabOrder = 2
-      ExplicitWidth = 365
+      ExplicitWidth = 363
       DesignSize = (
-        367
+        365
         47)
       object DBEdit1: TDBEdit
         Left = 8
         Top = 16
-        Width = 351
+        Width = 349
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         Font.Charset = DEFAULT_CHARSET
@@ -98,13 +98,13 @@ object frmLuponMem: TfrmLuponMem
         Font.Style = []
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 349
+        ExplicitWidth = 347
       end
     end
     object GroupBox3: TGroupBox
       Left = 12
       Top = 121
-      Width = 367
+      Width = 365
       Height = 47
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Full Address:'
@@ -115,14 +115,14 @@ object frmLuponMem: TfrmLuponMem
       Font.Style = []
       ParentFont = False
       TabOrder = 3
-      ExplicitWidth = 365
+      ExplicitWidth = 363
       DesignSize = (
-        367
+        365
         47)
       object DBEdit2: TDBEdit
         Left = 8
         Top = 16
-        Width = 351
+        Width = 349
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         Font.Charset = DEFAULT_CHARSET
@@ -132,13 +132,13 @@ object frmLuponMem: TfrmLuponMem
         Font.Style = []
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 349
+        ExplicitWidth = 347
       end
     end
     object GroupBox4: TGroupBox
       Left = 387
       Top = 16
-      Width = 115
+      Width = 113
       Height = 123
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Picture'
@@ -149,24 +149,24 @@ object frmLuponMem: TfrmLuponMem
       Font.Style = []
       ParentFont = False
       TabOrder = 4
-      ExplicitWidth = 113
+      ExplicitWidth = 111
       DesignSize = (
-        115
+        113
         123)
       object DBImage1: TDBImage
         Left = 8
         Top = 14
-        Width = 99
+        Width = 97
         Height = 103
         Anchors = [akLeft, akTop, akRight, akBottom]
         TabOrder = 0
-        ExplicitWidth = 97
+        ExplicitWidth = 95
       end
     end
     object GroupBox5: TGroupBox
       Left = 12
       Top = 168
-      Width = 490
+      Width = 488
       Height = 159
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Basic Personal Information: (Profession and Education)'
@@ -177,19 +177,19 @@ object frmLuponMem: TfrmLuponMem
       Font.Style = []
       ParentFont = False
       TabOrder = 5
-      ExplicitWidth = 488
+      ExplicitWidth = 486
       DesignSize = (
-        490
+        488
         159)
       object DBMemo1: TDBMemo
         Left = 8
         Top = 20
-        Width = 474
+        Width = 472
         Height = 128
         Anchors = [akLeft, akTop, akRight, akBottom]
         ScrollBars = ssVertical
         TabOrder = 0
-        ExplicitWidth = 472
+        ExplicitWidth = 470
       end
     end
     object btUpload: TButton
@@ -261,7 +261,7 @@ object frmLuponMem: TfrmLuponMem
       516
       148)
     object btF6: TButton
-      Left = 102
+      Left = 100
       Top = 112
       Width = 300
       Height = 30
@@ -278,10 +278,10 @@ object frmLuponMem: TfrmLuponMem
       ParentShowHint = False
       ShowHint = True
       TabOrder = 3
-      ExplicitLeft = 100
+      ExplicitLeft = 98
     end
     object btF5: TButton
-      Left = 102
+      Left = 100
       Top = 80
       Width = 300
       Height = 30
@@ -298,10 +298,10 @@ object frmLuponMem: TfrmLuponMem
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
-      ExplicitLeft = 100
+      ExplicitLeft = 98
     end
     object btF3: TButton
-      Left = 102
+      Left = 100
       Top = 48
       Width = 300
       Height = 30
@@ -318,10 +318,10 @@ object frmLuponMem: TfrmLuponMem
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
-      ExplicitLeft = 100
+      ExplicitLeft = 98
     end
     object btF2: TButton
-      Left = 102
+      Left = 100
       Top = 16
       Width = 300
       Height = 30
@@ -338,7 +338,7 @@ object frmLuponMem: TfrmLuponMem
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
-      ExplicitLeft = 100
+      ExplicitLeft = 98
     end
   end
   object GroupBox13: TGroupBox

@@ -44,7 +44,7 @@ object frmSettings: TfrmSettings
       object GroupBox1: TGroupBox
         Left = 3
         Top = 0
-        Width = 444
+        Width = 440
         Height = 50
         Anchors = [akLeft, akTop, akRight]
         Caption = 'Republic of the Philippines | Republika ng Pilipinas'
@@ -55,14 +55,14 @@ object frmSettings: TfrmSettings
         Font.Style = []
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 442
+        ExplicitWidth = 438
         DesignSize = (
-          444
+          440
           50)
         object DBEdit1: TDBEdit
           Left = 12
           Top = 16
-          Width = 420
+          Width = 416
           Height = 28
           Anchors = [akLeft, akTop, akRight]
           Font.Charset = ANSI_CHARSET
@@ -72,13 +72,13 @@ object frmSettings: TfrmSettings
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 0
-          ExplicitWidth = 418
+          ExplicitWidth = 414
         end
       end
       object GroupBox2: TGroupBox
         Left = 3
         Top = 53
-        Width = 444
+        Width = 440
         Height = 50
         Anchors = [akLeft, akTop, akRight]
         Caption = 'Province or Probinsya'
@@ -89,14 +89,14 @@ object frmSettings: TfrmSettings
         Font.Style = []
         ParentFont = False
         TabOrder = 1
-        ExplicitWidth = 442
+        ExplicitWidth = 438
         DesignSize = (
-          444
+          440
           50)
         object DBEdit2: TDBEdit
           Left = 12
           Top = 16
-          Width = 420
+          Width = 416
           Height = 28
           Anchors = [akLeft, akTop, akRight]
           Font.Charset = ANSI_CHARSET
@@ -106,13 +106,13 @@ object frmSettings: TfrmSettings
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 0
-          ExplicitWidth = 418
+          ExplicitWidth = 414
         end
       end
       object GroupBox3: TGroupBox
         Left = 3
         Top = 103
-        Width = 444
+        Width = 440
         Height = 50
         Anchors = [akLeft, akTop, akRight]
         Caption = 'City/Lungsod | Municipality/Bayan'
@@ -123,14 +123,14 @@ object frmSettings: TfrmSettings
         Font.Style = []
         ParentFont = False
         TabOrder = 2
-        ExplicitWidth = 442
+        ExplicitWidth = 438
         DesignSize = (
-          444
+          440
           50)
         object DBEdit3: TDBEdit
           Left = 12
           Top = 16
-          Width = 420
+          Width = 416
           Height = 28
           Anchors = [akLeft, akTop, akRight]
           Font.Charset = ANSI_CHARSET
@@ -140,13 +140,13 @@ object frmSettings: TfrmSettings
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 0
-          ExplicitWidth = 418
+          ExplicitWidth = 414
         end
       end
       object GroupBox5: TGroupBox
         Left = 3
         Top = 203
-        Width = 444
+        Width = 440
         Height = 50
         Anchors = [akLeft, akTop, akRight]
         Caption = 'SERIAL NUMBER'
@@ -157,14 +157,14 @@ object frmSettings: TfrmSettings
         Font.Style = []
         ParentFont = False
         TabOrder = 4
-        ExplicitWidth = 442
+        ExplicitWidth = 438
         DesignSize = (
-          444
+          440
           50)
         object DBEdit5: TDBEdit
           Left = 12
           Top = 16
-          Width = 420
+          Width = 416
           Height = 28
           Anchors = [akLeft, akTop, akRight]
           Font.Charset = ANSI_CHARSET
@@ -174,13 +174,13 @@ object frmSettings: TfrmSettings
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 0
-          ExplicitWidth = 418
+          ExplicitWidth = 414
         end
       end
       object GroupBox6: TGroupBox
         Left = 3
         Top = 253
-        Width = 444
+        Width = 440
         Height = 222
         Anchors = [akLeft, akTop, akRight]
         Caption = 'LOGO UPLOAD SETUP'
@@ -191,9 +191,9 @@ object frmSettings: TfrmSettings
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 5
-        ExplicitWidth = 442
+        ExplicitWidth = 438
         DesignSize = (
-          444
+          440
           222)
         object Label1: TLabel
           Left = 15
@@ -238,7 +238,7 @@ object frmSettings: TfrmSettings
           TabOrder = 2
         end
         object btSaveLogo: TButton
-          Left = 166
+          Left = 164
           Top = 186
           Width = 105
           Height = 25
@@ -251,7 +251,7 @@ object frmSettings: TfrmSettings
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 3
-          ExplicitLeft = 165
+          ExplicitLeft = 163
         end
         object btUpload1: TButton
           Left = 15
@@ -353,7 +353,7 @@ object frmSettings: TfrmSettings
       object GroupBox4: TGroupBox
         Left = 3
         Top = 153
-        Width = 444
+        Width = 440
         Height = 50
         Anchors = [akLeft, akTop, akRight]
         Caption = 'Barangay Name'
@@ -364,14 +364,14 @@ object frmSettings: TfrmSettings
         Font.Style = []
         ParentFont = False
         TabOrder = 3
-        ExplicitWidth = 442
+        ExplicitWidth = 438
         DesignSize = (
-          444
+          440
           50)
         object DBEdit4: TDBEdit
           Left = 12
           Top = 16
-          Width = 420
+          Width = 416
           Height = 28
           Anchors = [akLeft, akTop, akRight]
           Font.Charset = ANSI_CHARSET
@@ -381,7 +381,7 @@ object frmSettings: TfrmSettings
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 0
-          ExplicitWidth = 418
+          ExplicitWidth = 414
         end
       end
       object Panel1: TPanel
@@ -416,7 +416,7 @@ object frmSettings: TfrmSettings
       object Memo1: TMemo
         Left = 12
         Top = 88
-        Width = 425
+        Width = 421
         Height = 109
         Anchors = [akLeft, akTop, akRight]
         Font.Charset = ANSI_CHARSET

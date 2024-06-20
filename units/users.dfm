@@ -37,7 +37,7 @@ object frmUsers: TfrmUsers
     HeaderFont.Style = [fsBold]
     ParentFont = False
     TabOrder = 0
-    ExplicitHeight = 535
+    ExplicitHeight = 391
     DesignSize = (
       205
       395)
@@ -76,27 +76,27 @@ object frmUsers: TfrmUsers
     HeaderFont.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
-    ExplicitLeft = 204
-    ExplicitHeight = 539
+    ExplicitWidth = 343
+    ExplicitHeight = 391
     DesignSize = (
       345
       395)
     object GroupBox3: TGroupBox
       Left = 12
       Top = 28
-      Width = 321
+      Width = 319
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       Caption = 'User Name'
       TabOrder = 0
-      ExplicitWidth = 319
+      ExplicitWidth = 317
       DesignSize = (
-        321
+        319
         49)
       object DBEdit1: TDBEdit
         Left = 12
         Top = 17
-        Width = 297
+        Width = 295
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         Font.Charset = ANSI_CHARSET
@@ -106,25 +106,25 @@ object frmUsers: TfrmUsers
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 295
+        ExplicitWidth = 293
       end
     end
     object GroupBox4: TGroupBox
       Left = 12
       Top = 76
-      Width = 321
+      Width = 319
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Password'
       TabOrder = 1
-      ExplicitWidth = 319
+      ExplicitWidth = 317
       DesignSize = (
-        321
+        319
         49)
       object DBEdit2: TDBEdit
         Left = 12
         Top = 16
-        Width = 297
+        Width = 295
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         Font.Charset = ANSI_CHARSET
@@ -135,25 +135,25 @@ object frmUsers: TfrmUsers
         ParentFont = False
         PasswordChar = '*'
         TabOrder = 0
-        ExplicitWidth = 295
+        ExplicitWidth = 293
       end
     end
     object GroupBox5: TGroupBox
       Left = 12
       Top = 131
-      Width = 321
+      Width = 319
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Email Address'
       TabOrder = 2
-      ExplicitWidth = 319
+      ExplicitWidth = 317
       DesignSize = (
-        321
+        319
         49)
       object DBEdit3: TDBEdit
         Left = 12
         Top = 16
-        Width = 297
+        Width = 295
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         Font.Charset = ANSI_CHARSET
@@ -163,25 +163,25 @@ object frmUsers: TfrmUsers
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 295
+        ExplicitWidth = 293
       end
     end
     object GroupBox6: TGroupBox
       Left = 12
       Top = 186
-      Width = 321
+      Width = 319
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       Caption = 'First Name'
       TabOrder = 3
-      ExplicitWidth = 319
+      ExplicitWidth = 317
       DesignSize = (
-        321
+        319
         49)
       object DBEdit4: TDBEdit
         Left = 12
         Top = 16
-        Width = 297
+        Width = 295
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         Font.Charset = ANSI_CHARSET
@@ -191,25 +191,25 @@ object frmUsers: TfrmUsers
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 295
+        ExplicitWidth = 293
       end
     end
     object GroupBox7: TGroupBox
       Left = 12
       Top = 241
-      Width = 321
+      Width = 319
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Last Name'
       TabOrder = 4
-      ExplicitWidth = 319
+      ExplicitWidth = 317
       DesignSize = (
-        321
+        319
         49)
       object DBEdit5: TDBEdit
         Left = 12
         Top = 16
-        Width = 297
+        Width = 295
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         Font.Charset = ANSI_CHARSET
@@ -219,13 +219,13 @@ object frmUsers: TfrmUsers
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 295
+        ExplicitWidth = 293
       end
     end
     object GroupBox8: TGroupBox
       Left = 12
       Top = 296
-      Width = 151
+      Width = 149
       Height = 50
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Last Login:'
@@ -236,25 +236,27 @@ object frmUsers: TfrmUsers
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 5
+      ExplicitWidth = 147
       DesignSize = (
-        151
+        149
         50)
       object DateTimePicker1: TDateTimePicker
         Left = 12
         Top = 16
-        Width = 131
+        Width = 129
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         Date = 45452.000000000000000000
         Time = 0.333221643515571500
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 127
       end
     end
     object GroupBox9: TGroupBox
       Left = 184
       Top = 296
-      Width = 151
+      Width = 149
       Height = 50
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Date Joined:'
@@ -265,19 +267,21 @@ object frmUsers: TfrmUsers
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 6
+      ExplicitWidth = 147
       DesignSize = (
-        151
+        149
         50)
       object DateTimePicker2: TDateTimePicker
         Left = 12
         Top = 16
-        Width = 131
+        Width = 129
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         Date = 45452.000000000000000000
         Time = 0.333221643515571500
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 127
       end
     end
     object DBCheckBox1: TDBCheckBox
@@ -304,7 +308,7 @@ object frmUsers: TfrmUsers
     Height = 25
     Align = alBottom
     TabOrder = 2
-    ExplicitTop = 535
+    ExplicitTop = 391
     ExplicitWidth = 548
   end
 end

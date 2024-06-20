@@ -30,27 +30,27 @@ object frmSignatories: TfrmSignatories
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
-    ExplicitWidth = 355
-    ExplicitHeight = 285
+    ExplicitWidth = 405
+    ExplicitHeight = 282
     DesignSize = (
       407
       286)
     object GroupBox3: TGroupBox
       Left = 12
       Top = 28
-      Width = 382
+      Width = 380
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Fullname: Punong Barangay'
       TabOrder = 0
-      ExplicitWidth = 330
+      ExplicitWidth = 378
       DesignSize = (
-        382
+        380
         49)
       object DBEdit1: TDBEdit
         Left = 12
         Top = 17
-        Width = 358
+        Width = 356
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         Font.Charset = ANSI_CHARSET
@@ -60,25 +60,25 @@ object frmSignatories: TfrmSignatories
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 306
+        ExplicitWidth = 354
       end
     end
     object GroupBox4: TGroupBox
       Left = 12
       Top = 91
-      Width = 382
+      Width = 380
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Fullname: Lupon Chairman'
       TabOrder = 1
-      ExplicitWidth = 330
+      ExplicitWidth = 378
       DesignSize = (
-        382
+        380
         49)
       object DBEdit2: TDBEdit
         Left = 12
         Top = 16
-        Width = 358
+        Width = 356
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         Font.Charset = ANSI_CHARSET
@@ -88,25 +88,25 @@ object frmSignatories: TfrmSignatories
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 306
+        ExplicitWidth = 354
       end
     end
     object GroupBox5: TGroupBox
       Left = 12
       Top = 154
-      Width = 382
+      Width = 380
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Fullname: Barangay Secretary'
       TabOrder = 2
-      ExplicitWidth = 330
+      ExplicitWidth = 378
       DesignSize = (
-        382
+        380
         49)
       object DBEdit3: TDBEdit
         Left = 12
         Top = 16
-        Width = 358
+        Width = 356
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         Font.Charset = ANSI_CHARSET
@@ -116,25 +116,25 @@ object frmSignatories: TfrmSignatories
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 306
+        ExplicitWidth = 354
       end
     end
     object GroupBox6: TGroupBox
       Left = 12
       Top = 217
-      Width = 382
+      Width = 380
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Fullname: Lupon Secretary'
       TabOrder = 3
-      ExplicitWidth = 330
+      ExplicitWidth = 378
       DesignSize = (
-        382
+        380
         49)
       object DBEdit4: TDBEdit
         Left = 12
         Top = 16
-        Width = 358
+        Width = 356
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         Font.Charset = ANSI_CHARSET
@@ -144,7 +144,7 @@ object frmSignatories: TfrmSignatories
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 306
+        ExplicitWidth = 354
       end
     end
   end
@@ -162,7 +162,7 @@ object frmSignatories: TfrmSignatories
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 0
-    ExplicitHeight = 285
+    ExplicitHeight = 282
     DesignSize = (
       193
       286)
@@ -188,7 +188,7 @@ object frmSignatories: TfrmSignatories
     Height = 25
     Align = alBottom
     TabOrder = 2
-    ExplicitTop = 285
-    ExplicitWidth = 548
+    ExplicitTop = 282
+    ExplicitWidth = 598
   end
 end

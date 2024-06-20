@@ -104,48 +104,48 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="uMainFrm.pas">
+        <DCCReference Include="units\uMainFrm.pas">
             <Form>MainFrm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="abtPas.pas">
+        <DCCReference Include="units\abtPas.pas">
             <Form>abtFrm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="uLoginFrm.pas">
+        <DCCReference Include="units\uLoginFrm.pas">
             <Form>LoginFrm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="KPdataentry.pas">
+        <DCCReference Include="units\KPdataentry.pas">
             <Form>KPdataentryFrm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Signatories.pas">
+        <DCCReference Include="units\Signatories.pas">
             <Form>frmSignatories</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Settings.pas">
+        <DCCReference Include="units\Settings.pas">
             <Form>frmSettings</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="users.pas">
+        <DCCReference Include="units\users.pas">
             <Form>frmUsers</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="LuponMem.pas">
+        <DCCReference Include="units\LuponMem.pas">
             <Form>frmLuponMem</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="crimeType.pas">
+        <DCCReference Include="units\crimeType.pas">
             <Form>frmCaseType</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="dbMod.pas">
+        <DCCReference Include="data module\dbMod.pas">
             <Form>dbModFrm</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="msgPas.pas">
+        <DCCReference Include="units\msgPas.pas">
             <Form>frmMsg</Form>
             <FormType>dfm</FormType>
         </DCCReference>

@@ -2,19 +2,19 @@ program KPsys;
 
 uses
   Vcl.Forms,
-  uMainFrm in 'uMainFrm.pas' {MainFrm},
+  uMainFrm in 'units\uMainFrm.pas' {MainFrm},
   Vcl.Themes,
   Vcl.Styles,
-  abtPas in 'abtPas.pas' {abtFrm},
-  uLoginFrm in 'uLoginFrm.pas' {LoginFrm},
-  KPdataentry in 'KPdataentry.pas' {KPdataentryFrm},
-  Signatories in 'Signatories.pas' {frmSignatories},
-  Settings in 'Settings.pas' {frmSettings},
-  users in 'users.pas' {frmUsers},
-  LuponMem in 'LuponMem.pas' {frmLuponMem},
-  crimeType in 'crimeType.pas' {frmCaseType},
-  dbMod in 'dbMod.pas' {dbModFrm: TDataModule},
-  msgPas in 'msgPas.pas' {frmMsg};
+  abtPas in 'units\abtPas.pas' {abtFrm},
+  uLoginFrm in 'units\uLoginFrm.pas' {LoginFrm},
+  KPdataentry in 'units\KPdataentry.pas' {KPdataentryFrm},
+  Signatories in 'units\Signatories.pas' {frmSignatories},
+  Settings in 'units\Settings.pas' {frmSettings},
+  users in 'units\users.pas' {frmUsers},
+  LuponMem in 'units\LuponMem.pas' {frmLuponMem},
+  crimeType in 'units\crimeType.pas' {frmCaseType},
+  dbMod in 'data module\dbMod.pas' {dbModFrm: TDataModule},
+  msgPas in 'units\msgPas.pas' {frmMsg};
 
 {$R *.res}
 

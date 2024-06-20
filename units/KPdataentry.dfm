@@ -214,7 +214,7 @@ object KPdataentryFrm: TKPdataentryFrm
               AlignWithMargins = True
               Left = 4
               Top = 32
-              Width = 986
+              Width = 984
               Height = 285
               Cursor = crIBeam
               Margins.Left = 8
@@ -238,8 +238,8 @@ object KPdataentryFrm: TKPdataentryFrm
               SelectionTextColor = clHighlightText
               Color = clWindow
               ParentFont = False
-              Version = '1.8.9.12'
-              ExplicitWidth = 984
+              Version = '1.8.9.17'
+              ExplicitWidth = 982
               ExplicitHeight = 281
             end
           end
@@ -253,7 +253,7 @@ object KPdataentryFrm: TKPdataentryFrm
               AlignWithMargins = True
               Left = 4
               Top = 32
-              Width = 986
+              Width = 984
               Height = 285
               Cursor = crIBeam
               Margins.Left = 8
@@ -277,7 +277,8 @@ object KPdataentryFrm: TKPdataentryFrm
               SelectionTextColor = clHighlightText
               Color = clWindow
               ParentFont = False
-              Version = '1.8.9.12'
+              Version = '1.8.9.17'
+              ExplicitWidth = 986
             end
             object AdvRichEditorFormatToolBar2: TAdvRichEditorFormatToolBar
               Left = 3
@@ -353,7 +354,7 @@ object KPdataentryFrm: TKPdataentryFrm
               AlignWithMargins = True
               Left = 4
               Top = 32
-              Width = 986
+              Width = 984
               Height = 285
               Cursor = crIBeam
               Margins.Left = 8
@@ -377,7 +378,8 @@ object KPdataentryFrm: TKPdataentryFrm
               SelectionTextColor = clHighlightText
               Color = clWindow
               ParentFont = False
-              Version = '1.8.9.12'
+              Version = '1.8.9.17'
+              ExplicitWidth = 986
             end
             object AdvRichEditorFormatToolBar3: TAdvRichEditorFormatToolBar
               Left = 3
@@ -516,7 +518,7 @@ object KPdataentryFrm: TKPdataentryFrm
               AlignWithMargins = True
               Left = 4
               Top = 32
-              Width = 986
+              Width = 984
               Height = 285
               Cursor = crIBeam
               Margins.Left = 8
@@ -540,7 +542,8 @@ object KPdataentryFrm: TKPdataentryFrm
               SelectionTextColor = clHighlightText
               Color = clWindow
               ParentFont = False
-              Version = '1.8.9.12'
+              Version = '1.8.9.17'
+              ExplicitWidth = 986
             end
           end
         end
@@ -2906,7 +2909,7 @@ object KPdataentryFrm: TKPdataentryFrm
               AlignWithMargins = True
               Left = 10
               Top = 32
-              Width = 979
+              Width = 977
               Height = 303
               Cursor = crIBeam
               Margins.Left = 8
@@ -2929,7 +2932,8 @@ object KPdataentryFrm: TKPdataentryFrm
               SelectionTextColor = clHighlightText
               Color = clWindow
               ParentFont = False
-              Version = '1.8.9.12'
+              Version = '1.8.9.17'
+              ExplicitWidth = 979
             end
             object AdvRichEditorFormatToolBar5: TAdvRichEditorFormatToolBar
               Left = 10
@@ -3086,7 +3090,7 @@ object KPdataentryFrm: TKPdataentryFrm
               AlignWithMargins = True
               Left = 10
               Top = 32
-              Width = 979
+              Width = 977
               Height = 303
               Cursor = crIBeam
               Margins.Left = 8
@@ -3109,7 +3113,8 @@ object KPdataentryFrm: TKPdataentryFrm
               SelectionTextColor = clHighlightText
               Color = clWindow
               ParentFont = False
-              Version = '1.8.9.12'
+              Version = '1.8.9.17'
+              ExplicitWidth = 979
             end
             object btF15: TButton
               Left = 10
@@ -3167,7 +3172,7 @@ object KPdataentryFrm: TKPdataentryFrm
           object DBMemo2: TDBMemo
             Left = 10
             Top = 51
-            Width = 985
+            Width = 983
             Height = 105
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
@@ -3178,6 +3183,7 @@ object KPdataentryFrm: TKPdataentryFrm
             ParentFont = False
             ScrollBars = ssVertical
             TabOrder = 1
+            ExplicitWidth = 985
           end
           object btF20: TButton
             Left = 233
@@ -3221,6 +3227,7 @@ object KPdataentryFrm: TKPdataentryFrm
           Height = 59
           Align = alBottom
           TabOrder = 1
+          ExplicitWidth = 1020
           object GroupBox36: TGroupBox
             Left = 4
             Top = 2
@@ -3369,7 +3376,7 @@ object KPdataentryFrm: TKPdataentryFrm
             AlignWithMargins = True
             Left = 8
             Top = 52
-            Width = 988
+            Width = 986
             Height = 421
             Cursor = crIBeam
             Margins.Left = 8
@@ -3392,7 +3399,8 @@ object KPdataentryFrm: TKPdataentryFrm
             SelectionTextColor = clHighlightText
             Color = clWindow
             ParentFont = False
-            Version = '1.8.9.12'
+            Version = '1.8.9.17'
+            ExplicitWidth = 988
           end
           object AdvRichEditorFormatToolBar7: TAdvRichEditorFormatToolBar
             Left = 8

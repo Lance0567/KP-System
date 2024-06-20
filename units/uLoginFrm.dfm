@@ -6800,7 +6800,7 @@ object LoginFrm: TLoginFrm
         12985E410000000049454E44AE426082}
     end
     object imgLock: TImage
-      Left = 517
+      Left = 515
       Top = 32
       Width = 77
       Height = 85

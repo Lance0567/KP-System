@@ -32,16 +32,14 @@ object frmCaseType: TfrmCaseType
     HeaderFont.Name = 'Segoe UI Semibold'
     HeaderFont.Style = [fsBold]
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = 8
-    ExplicitWidth = 774
+    ExplicitWidth = 798
     DesignSize = (
       800
       133)
     object DBMemo1: TDBMemo
       Left = 12
       Top = 20
-      Width = 777
+      Width = 775
       Height = 105
       Anchors = [akLeft, akTop, akRight, akBottom]
       Font.Charset = DEFAULT_CHARSET
@@ -52,7 +50,7 @@ object frmCaseType: TfrmCaseType
       ParentFont = False
       ScrollBars = ssVertical
       TabOrder = 0
-      ExplicitWidth = 751
+      ExplicitWidth = 773
     end
   end
   object GroupBox2: TGroupBox
@@ -69,10 +67,8 @@ object frmCaseType: TfrmCaseType
     HeaderFont.Name = 'Segoe UI'
     HeaderFont.Style = [fsBold]
     TabOrder = 1
-    ExplicitLeft = 8
-    ExplicitTop = 147
-    ExplicitWidth = 774
-    ExplicitHeight = 463
+    ExplicitWidth = 798
+    ExplicitHeight = 479
     DesignSize = (
       800
       483)
@@ -80,7 +76,7 @@ object frmCaseType: TfrmCaseType
       AlignWithMargins = True
       Left = 12
       Top = 52
-      Width = 777
+      Width = 775
       Height = 423
       Cursor = crIBeam
       Margins.Left = 8
@@ -103,9 +99,9 @@ object frmCaseType: TfrmCaseType
       SelectionTextColor = clHighlightText
       Color = clWindow
       ParentFont = False
-      Version = '1.8.9.12'
-      ExplicitWidth = 751
-      ExplicitHeight = 403
+      Version = '1.8.9.17'
+      ExplicitWidth = 773
+      ExplicitHeight = 419
     end
     object AdvRichEditorFormatToolBar1: TAdvRichEditorFormatToolBar
       Left = 12
@@ -178,6 +174,8 @@ object frmCaseType: TfrmCaseType
     Height = 34
     Align = alBottom
     TabOrder = 2
+    ExplicitTop = 612
+    ExplicitWidth = 798
     DesignSize = (
       800
       34)
