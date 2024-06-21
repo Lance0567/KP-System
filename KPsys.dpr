@@ -14,7 +14,8 @@ uses
   LuponMem in 'units\LuponMem.pas' {frmLuponMem},
   crimeType in 'units\crimeType.pas' {frmCaseType},
   dbMod in 'data module\dbMod.pas' {dbModFrm: TDataModule},
-  msgPas in 'units\msgPas.pas' {frmMsg};
+  msgPas in 'units\msgPas.pas' {frmMsg},
+  uAdmin in 'roles\uAdmin.pas';
 
 {$R *.res}
 

@@ -1,0 +1,16 @@
+unit uAdmin;
+
+interface
+
+uses dbMod;
+
+procedure AdminKPList;
+
+implementation
+
+procedure AdminKPList();
+begin
+  
+end;
+
+end.

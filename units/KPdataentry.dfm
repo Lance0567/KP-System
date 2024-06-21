@@ -214,7 +214,7 @@ object KPdataentryFrm: TKPdataentryFrm
               AlignWithMargins = True
               Left = 4
               Top = 32
-              Width = 984
+              Width = 982
               Height = 285
               Cursor = crIBeam
               Margins.Left = 8
@@ -239,7 +239,7 @@ object KPdataentryFrm: TKPdataentryFrm
               Color = clWindow
               ParentFont = False
               Version = '1.8.9.17'
-              ExplicitWidth = 982
+              ExplicitWidth = 980
               ExplicitHeight = 281
             end
           end
@@ -253,7 +253,7 @@ object KPdataentryFrm: TKPdataentryFrm
               AlignWithMargins = True
               Left = 4
               Top = 32
-              Width = 984
+              Width = 982
               Height = 285
               Cursor = crIBeam
               Margins.Left = 8
@@ -354,7 +354,7 @@ object KPdataentryFrm: TKPdataentryFrm
               AlignWithMargins = True
               Left = 4
               Top = 32
-              Width = 984
+              Width = 982
               Height = 285
               Cursor = crIBeam
               Margins.Left = 8
@@ -518,7 +518,7 @@ object KPdataentryFrm: TKPdataentryFrm
               AlignWithMargins = True
               Left = 4
               Top = 32
-              Width = 984
+              Width = 982
               Height = 285
               Cursor = crIBeam
               Margins.Left = 8
@@ -2909,7 +2909,7 @@ object KPdataentryFrm: TKPdataentryFrm
               AlignWithMargins = True
               Left = 10
               Top = 32
-              Width = 977
+              Width = 975
               Height = 303
               Cursor = crIBeam
               Margins.Left = 8
@@ -3090,7 +3090,7 @@ object KPdataentryFrm: TKPdataentryFrm
               AlignWithMargins = True
               Left = 10
               Top = 32
-              Width = 977
+              Width = 975
               Height = 303
               Cursor = crIBeam
               Margins.Left = 8
@@ -3172,7 +3172,7 @@ object KPdataentryFrm: TKPdataentryFrm
           object DBMemo2: TDBMemo
             Left = 10
             Top = 51
-            Width = 983
+            Width = 981
             Height = 105
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
@@ -3376,7 +3376,7 @@ object KPdataentryFrm: TKPdataentryFrm
             AlignWithMargins = True
             Left = 8
             Top = 52
-            Width = 986
+            Width = 984
             Height = 421
             Cursor = crIBeam
             Margins.Left = 8

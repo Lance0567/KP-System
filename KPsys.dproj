@@ -149,6 +149,7 @@
             <Form>frmMsg</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="roles\uAdmin.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

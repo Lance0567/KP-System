@@ -1,0 +1,77 @@
+object dbModFrm: TdbModFrm
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  Height = 797
+  Width = 823
+  object KPcon: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\Users\pc\Documents\Delphi\MCS Project\___KPsys\Win32' +
+        '\Debug\database\Kp.db'
+      'LockingMode=Normal'
+      'DriverID=SQLite')
+    Connected = True
+    LoginPrompt = False
+    Left = 120
+    Top = 32
+  end
+  object qTemp: TFDQuery
+    Connection = KPcon
+    Left = 64
+    Top = 112
+  end
+  object qUsers: TFDQuery
+    Connection = KPcon
+    SQL.Strings = (
+      'SELECT * FROM Users')
+    Left = 136
+    Top = 112
+  end
+  object qKP: TFDQuery
+    Connection = KPcon
+    SQL.Strings = (
+      'SELECT * FROM KP')
+    Left = 216
+    Top = 112
+    object qKPid: TIntegerField
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object qKPcase_num: TWideMemoField
+      FieldName = 'case_num'
+      Origin = 'case_num'
+      BlobType = ftWideMemo
+    end
+    object qKPdate_case_fil: TDateTimeField
+      FieldName = 'date_case_fil'
+      Origin = 'date_case_fil'
+    end
+    object qKPdate_offi_rec: TWideStringField
+      FieldName = 'date_offi_rec'
+      Origin = 'date_offi_rec'
+      Size = 32767
+    end
+    object qKPfiling_fee: TWideStringField
+      FieldName = 'filing_fee'
+      Origin = 'filing_fee'
+      Size = 32767
+    end
+    object qKPtype_of_comp_or_case: TStringField
+      FieldName = 'type_of_comp_or_case'
+      Origin = 'type_of_comp_or_case'
+      Size = 32767
+    end
+  end
+  object dsUsers: TDataSource
+    DataSet = qUsers
+    Left = 136
+    Top = 208
+  end
+  object dsKP: TDataSource
+    DataSet = qKP
+    Left = 216
+    Top = 208
+  end
+end

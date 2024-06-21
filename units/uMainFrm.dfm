@@ -70,8 +70,6 @@ object MainFrm: TMainFrm
       ColorTo = clNone
       TabColor = clBtnFace
       TabColorTo = clNone
-      ExplicitWidth = 1067
-      ExplicitHeight = 673
       DesignSize = (
         1069
         677)
@@ -181,7 +179,6 @@ object MainFrm: TMainFrm
         Height = 650
         Align = alLeft
         TabOrder = 0
-        ExplicitHeight = 646
         DesignSize = (
           250
           650)
@@ -18612,6 +18609,8 @@ object MainFrm: TMainFrm
       ColorTo = clNone
       TabColor = clBtnFace
       TabColorTo = clNone
+      ExplicitWidth = 1067
+      ExplicitHeight = 673
       DesignSize = (
         1069
         677)
@@ -18623,6 +18622,7 @@ object MainFrm: TMainFrm
         ButtonHeight = 40
         Caption = 'ToolBar1'
         TabOrder = 0
+        ExplicitWidth = 1067
         object btAdd1: TButton
           Left = 0
           Top = 0
@@ -18684,10 +18684,12 @@ object MainFrm: TMainFrm
       object Panel3: TPanel
         Left = 0
         Top = 42
-        Width = 1064
+        Width = 1062
         Height = 634
         Anchors = [akLeft, akTop, akRight, akBottom]
         TabOrder = 1
+        ExplicitWidth = 1060
+        ExplicitHeight = 630
         object Splitter1: TSplitter
           Left = 251
           Top = 1
@@ -18701,15 +18703,52 @@ object MainFrm: TMainFrm
         object DBGrid1: TDBGrid
           Left = 260
           Top = 1
-          Width = 803
+          Width = 801
           Height = 632
           Align = alClient
+          DataSource = dbModFrm.dsKP
           TabOrder = 0
           TitleFont.Charset = ANSI_CHARSET
           TitleFont.Color = clWindowText
           TitleFont.Height = -15
           TitleFont.Name = 'Segoe UI'
           TitleFont.Style = []
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'id'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'date_case_fil'
+              Width = 180
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'date_offi_rec'
+              Width = 150
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'filing_fee'
+              Width = 150
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'nature_of_case'
+              Width = 150
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'overall_remarks'
+              Width = 200
+              Visible = True
+            end>
         end
         object Panel1: TPanel
           Left = 1
@@ -18727,6 +18766,7 @@ object MainFrm: TMainFrm
           ParentFont = False
           TabOrder = 1
           VerticalAlignment = taAlignTop
+          ExplicitHeight = 628
           DesignSize = (
             250
             632)
@@ -19006,7 +19046,7 @@ object MainFrm: TMainFrm
       object DBGrid2: TDBGrid
         Left = 0
         Top = 43
-        Width = 1064
+        Width = 1062
         Height = 634
         Anchors = [akLeft, akTop, akRight, akBottom]
         TabOrder = 1
@@ -19095,7 +19135,7 @@ object MainFrm: TMainFrm
       object DBGrid3: TDBGrid
         Left = 0
         Top = 43
-        Width = 1064
+        Width = 1062
         Height = 634
         Anchors = [akLeft, akTop, akRight, akBottom]
         TabOrder = 1

@@ -1,8 +1,8 @@
 ﻿[qTemp]
-Coordinates=10,10,48,51
+Coordinates=156,10,48,51
 
 [qUsers]
-Coordinates=118,10,59,231
+Coordinates=97,10,49,51
 
 [KPcon]
 Coordinates=48,70,46,33
@@ -11,5 +11,11 @@ Coordinates=48,70,46,33
 Coordinates=154,71,54,33
 
 [qKP]
-Coordinates=68,10,40,51
+Coordinates=10,10,77,159
+
+[dsKP]
+Coordinates=69,122,40,33
+
+[]
+Coordinates=246,105,110,33
 

@@ -1,0 +1,77 @@
+unit users;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ExtCtrls, Vcl.DBCtrls,
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Mask, Vcl.ComCtrls, dbMod,
+  System.Rtti, System.Bindings.Outputs, Vcl.Bind.Editors, Data.Bind.EngExt,
+  Vcl.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, AdvSmoothEdit,
+  AdvSmoothEditButton, AdvSmoothDatePicker, DBAdvSmoothDatePicker;
+
+type
+  TfrmUsers = class(TForm)
+    GroupBox2: TGroupBox;
+    DBGrid1: TDBGrid;
+    GroupBox1: TGroupBox;
+    GroupBox3: TGroupBox;
+    dbUserName: TDBEdit;
+    GroupBox4: TGroupBox;
+    dbPassword: TDBEdit;
+    GroupBox5: TGroupBox;
+    dbEmailAddress: TDBEdit;
+    GroupBox6: TGroupBox;
+    dbFirstName: TDBEdit;
+    DBNavigator1: TDBNavigator;
+    GroupBox7: TGroupBox;
+    dbLastName: TDBEdit;
+    GroupBox8: TGroupBox;
+    GroupBox9: TGroupBox;
+    cbIsAdmin: TDBCheckBox;
+    cbIsActive: TDBCheckBox;
+    dpLastLogin: TDBAdvSmoothDatePicker;
+    dpDateJoined: TDBAdvSmoothDatePicker;
+    procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmUsers: TfrmUsers;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmUsers.FormShow(Sender: TObject);
+begin
+  with dbModFrm do
+  begin
+    if User.is_admin then
+    begin
+      qUsers.Open;
+    end
+    else
+    begin
+      qUsers.SQL.Clear;
+      qUsers.SQL.Text := 'SELECT * FROM Users WHERE username=' + QuotedStr(User.username);
+      qUsers.Open;
+    end;
+  end;
+end;
+
+procedure TfrmUsers.FormKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+    keypreview := true;
+    if (Key=27)then
+        begin
+            close;
+        end;
+end;
+
+end.

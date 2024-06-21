@@ -16,12 +16,16 @@ type
   TUser = class(Tobject)
     id: Integer;
     username: String;
+    is_admin: boolean;
+    is_active: boolean;
   end;
 
   TdbModFrm = class(TDataModule)
     KPcon: TFDConnection;
     qTemp: TFDQuery;
     qUsers: TFDQuery;
+    qKP: TFDQuery;
+    dsUsers: TDataSource;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private

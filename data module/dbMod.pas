@@ -16,6 +16,8 @@ type
   TUser = class(Tobject)
     id: Integer;
     username: String;
+    isAdmin: boolean;
+    isActive: boolean;
   end;
 
   TdbModFrm = class(TDataModule)
@@ -24,6 +26,14 @@ type
     qUsers: TFDQuery;
     qKP: TFDQuery;
     dsUsers: TDataSource;
+    dsKP: TDataSource;
+    qKPid: TIntegerField;
+    qKPcase_num: TWideStringField;
+    qKPdate_case_fil: TDateTimeField;
+    qKPdate_offi_rec: TWideStringField;
+    qKPfiling_fee: TWideStringField;
+    qKPnature_of_case: TStringField;
+    qKPoverall_remarks: TStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private

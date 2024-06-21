@@ -100,6 +100,9 @@ begin
             LoginFrm.Tag := 1; // logged
             dbModFrm.User.id := qTemp.FieldByName('id').asInteger;
             dbModFrm.User.username := qTemp.FieldByName('username').AsString;
+            dbModFrm.User.isAdmin := ((qTemp.FieldByName('is_admin').AsString = '1') or (LowerCase(qTemp.FieldByName('is_admin').AsString) = 'true'));
+            dbModFrm.User.isActive := ((qTemp.FieldByName('is_active').AsString = '1') or (LowerCase(qTemp.FieldByName('is_active').AsString) = 'true'));
+
             LoginFrm.close;
           end
           else

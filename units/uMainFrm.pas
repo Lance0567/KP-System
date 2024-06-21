@@ -7,7 +7,11 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ComCtrls,
   Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.ToolWin, AdvPageControl,
   AdvOfficePager, AdvOfficePagerStylers, Data.DB, Vcl.Grids, Vcl.DBGrids,
-  System.ImageList, Vcl.ImgList, dbMod;
+  System.ImageList, Vcl.ImgList, dbMod, VCL.TMSFNCTypes, VCL.TMSFNCUtils,
+  VCL.TMSFNCGraphics, VCL.TMSFNCGraphicsTypes, VCL.TMSFNCGridCell,
+  VCL.TMSFNCGridOptions, VCL.TMSFNCCustomControl, VCL.TMSFNCCustomScrollControl,
+  VCL.TMSFNCGridData, VCL.TMSFNCCustomGrid, VCL.TMSFNCGrid,
+  VCL.TMSFNCCustomComponent, VCL.TMSFNCGridDatabaseAdapter;
 
 type
   TMainFrm = class(TForm)
@@ -152,32 +156,44 @@ end;
 
 procedure TMainFrm.FormShow(Sender: TObject);
 begin
-     Image1.Picture.LoadFromFile('./docs/bgForm.png');
-     bpLogo.Picture.LoadFromFile('./docs/bpLogo.png');
-     imageFree.Picture.LoadFromFile('./docs/freeware.png');
-     AdvPageControl1.ActivePage := AdvTabSheet1;
-     ClientHeight := 753;
-     ClientWidth  := 1085;
+  Image1.Picture.LoadFromFile('./docs/bgForm.png');
+  bpLogo.Picture.LoadFromFile('./docs/bpLogo.png');
+  imageFree.Picture.LoadFromFile('./docs/freeware.png');
+  AdvPageControl1.ActivePage := AdvTabSheet1;
+  ClientHeight := 753;
+  ClientWidth := 1085;
 
-     LoginFrm.Tag := 0;
+  LoginFrm.Tag := 0;
 
-     LoginFrm.showModal;
+  LoginFrm.ShowModal;
 
-     // if not logged in
-     if LoginFrm.Tag = 0 then
-     begin
-        Showmessage('not logged in');
-       Application.Terminate;
-     end;
+  // if not logged in
+  if LoginFrm.Tag = 0 then
+  begin
+    ShowMessage('not logged in');
+    Application.Terminate;
+  end;
 
-     // logged in na dito
-     MainFrm.Caption := 'KPSystem | Katarungang Pambarangay | 2024 | ' +  dbModFrm.User.username;
+  // logged in na dito
+  MainFrm.Caption := 'KPSystem | Katarungang Pambarangay | 2024 | ' + dbModFrm.User.username;
+  dbModFrm.qKP.Open;
 
-     //Panel3.Alignment := taLeftJustify;
-     //Panel1.Alignment := taLeftJustify;
+  if dbModFrm.User.isAdmin = False then
+  begin
+    with dbModFrm do
+    begin
+      qKP.SQL.Clear;
+      qKP.SQL.Text := 'SELECT * FROM "KP" WHERE "KP".id_user =' + User.id.ToString;
+      qKP.Open;
+    end;
+  end;
 
-     //Image1.Picture.LoadFromFile('C:\Path\To\Your\Image.jpg');
-     //Form3.rtContact.lines.loadfromfile('./docs/bgForm.png');
+
+  // Panel3.Alignment := taLeftJustify;
+  // Panel1.Alignment := taLeftJustify;
+
+  // Image1.Picture.LoadFromFile('C:\Path\To\Your\Image.jpg');
+  // Form3.rtContact.lines.loadfromfile('./docs/bgForm.png');
 end;
 
 procedure TMainFrm.Refresh1Click(Sender: TObject);

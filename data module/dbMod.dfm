@@ -21,7 +21,6 @@ object dbModFrm: TdbModFrm
     Top = 112
   end
   object qUsers: TFDQuery
-    Active = True
     Connection = KPcon
     SQL.Strings = (
       'SELECT * FROM Users')
@@ -29,15 +28,63 @@ object dbModFrm: TdbModFrm
     Top = 112
   end
   object qKP: TFDQuery
+    AggregatesActive = True
     Connection = KPcon
     SQL.Strings = (
       'SELECT * FROM KP')
     Left = 216
     Top = 112
+    object qKPid: TIntegerField
+      DisplayLabel = 'ID'
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object qKPcase_num: TWideStringField
+      DisplayLabel = 'Case Number'
+      FieldName = 'case_num'
+      Origin = 'case_num'
+      Size = 55
+    end
+    object qKPdate_case_fil: TDateTimeField
+      DisplayLabel = 'Date: Case Filed'
+      FieldName = 'date_case_fil'
+      Origin = 'date_case_fil'
+    end
+    object qKPdate_offi_rec: TWideStringField
+      DisplayLabel = 'Date: Official Receipt'
+      FieldName = 'date_offi_rec'
+      Origin = 'date_offi_rec'
+      Size = 32767
+    end
+    object qKPfiling_fee: TWideStringField
+      DisplayLabel = 'Filing Fee'
+      FieldName = 'filing_fee'
+      Origin = 'filing_fee'
+      Size = 32767
+    end
+    object qKPnature_of_case: TStringField
+      DisplayLabel = 'Nature of case'
+      FieldName = 'nature_of_case'
+      Origin = 'nature_of_case'
+      Size = 150
+    end
+    object qKPoverall_remarks: TStringField
+      DisplayLabel = 'Overall Remarks'
+      FieldName = 'overall_remarks'
+      Origin = 'overall_remarks'
+      Size = 100
+    end
   end
   object dsUsers: TDataSource
     DataSet = qUsers
     Left = 136
+    Top = 208
+  end
+  object dsKP: TDataSource
+    DataSet = qKP
+    Left = 216
     Top = 208
   end
 end
