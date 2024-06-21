@@ -94,6 +94,8 @@ type
       var AllowChange: Boolean);
     procedure btAdd2Click(Sender: TObject);
     procedure btAdd3Click(Sender: TObject);
+    procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
 
   private
     { Private declarations }
@@ -139,6 +141,28 @@ begin
      frmCaseType.ShowModal;
 end;
 
+procedure TMainFrm.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+  DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+  with Sender as TDBGrid do
+  begin
+    // Check if the current row is selected
+    if gdSelected in State then
+    begin
+      Canvas.Brush.Color := clGray; // Set your desired color
+      Canvas.FillRect(Rect); // Fill the background with the color
+
+      // Draw the cell text with the specified color
+      Canvas.TextRect(Rect, Rect.Left + 2, Rect.Top + 2, Column.Field.AsString);
+    end
+    else
+    begin
+      // Default drawing for non-selected rows
+      DefaultDrawColumnCell(Rect, DataCol, Column, State);
+    end;
+  end;
+end;
+
 procedure TMainFrm.btAdd1Click(Sender: TObject);
 begin
      KPdataentryFrm.showModal;
@@ -178,6 +202,7 @@ begin
   MainFrm.Caption := 'KPSystem | Katarungang Pambarangay | 2024 | ' + dbModFrm.User.username;
   dbModFrm.qKP.Open;
 
+  // if not admin
   if dbModFrm.User.isAdmin = False then
   begin
     with dbModFrm do
@@ -187,7 +212,6 @@ begin
       qKP.Open;
     end;
   end;
-
 
   // Panel3.Alignment := taLeftJustify;
   // Panel1.Alignment := taLeftJustify;

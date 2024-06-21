@@ -3,14 +3,15 @@ unit KPdataentry;
 interface
 
 uses
-  ShellApi, Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  ShellApi, Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ExtCtrls,
   Vcl.Imaging.pngimage, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask, PlannerCal,
-  Vcl.Menus, VCL.TMSFNCTypes, VCL.TMSFNCUtils, VCL.TMSFNCGraphics,
-  VCL.TMSFNCGraphicsTypes, VCL.TMSFNCCustomControl, VCL.TMSFNCCalendar,
-  VCL.TMSFNCPageControl, VCL.TMSFNCTabSet, AdvPageControl, AdvRichEditorToolBar,
-  AdvToolBar, AdvToolBarExt, AdvScrollControl, AdvRichEditorBase, AdvRichEditor, richedit;
-
+  Vcl.Menus, Vcl.TMSFNCTypes, Vcl.TMSFNCUtils, Vcl.TMSFNCGraphics,
+  Vcl.TMSFNCGraphicsTypes, Vcl.TMSFNCCustomControl, Vcl.TMSFNCCalendar,
+  Vcl.TMSFNCPageControl, Vcl.TMSFNCTabSet, AdvPageControl, AdvRichEditorToolBar,
+  AdvToolBar, AdvToolBarExt, AdvScrollControl, AdvRichEditorBase, AdvRichEditor,
+  richedit, dbMod;
 
 type
   TKPdataentryFrm = class(TForm)
@@ -76,7 +77,7 @@ type
     Panel5: TPanel;
     dpOfficialReceipt: TDateTimePicker;
     Panel6: TPanel;
-    editFillingFee: TDBEdit;
+    edFillingFee: TDBEdit;
     Panel7: TPanel;
     edOrNumber: TDBEdit;
     Panel8: TPanel;
@@ -220,6 +221,8 @@ type
     procedure Label11Click(Sender: TObject);
     procedure Label12Click(Sender: TObject);
     procedure Refresh1Click(Sender: TObject);
+    procedure btSaveClick(Sender: TObject);
+    procedure SubmitProcess;
 
   private
     { Private declarations }
@@ -236,78 +239,108 @@ implementation
 
 uses abtPas, msgPas;
 
-
-procedure TKPdataentryFrm.btCloseClick(Sender: TObject);
-begin
-     close;
-end;
-
 procedure TKPdataentryFrm.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
-    keypreview := true;
-    if (Key=27)then
-        begin
-            btClose.SetFocus;
-            btClose.Click;
-            close;
-        end;
+  keypreview := true;
+  if (Key = 27) then
+  begin
+    btClose.SetFocus;
+    btClose.Click;
+    close;
+  end;
 end;
 
 procedure TKPdataentryFrm.FormKeyUp(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
-     keypreview := true;
-    if (Key=27)then
-        begin
-            btClose.SetFocus;
-            btClose.Click;
-            close;
-        end;
+  keypreview := true;
+  if (Key = 27) then
+  begin
+    btClose.SetFocus;
+    btClose.Click;
+    close;
+  end;
 end;
 
 procedure TKPdataentryFrm.FormShow(Sender: TObject);
 begin
+  Clientheight := 750;
+  width := 1048;
+  // AdvPageControl1.ActivePageIndex := 0;
+  PageControl1.TabIndex := 0;
+  PageControl3.TabIndex := 0;
+  rtForms.lines.loadfromfile('./docs/forms.rtf');
+  rtReminders.lines.loadfromfile('./docs/reminder.rtf');
+  f52.Clear;
+  f52.lines.loadfromfile('./docs/noticeofexecution.rtf');
 
-     Clientheight := 750;
-     width := 1048;
-     //AdvPageControl1.ActivePageIndex := 0;
-     Pagecontrol1.TabIndex := 0;
-     PageControl3.TabIndex := 0;
-     rtForms.lines.loadfromfile('./docs/forms.rtf');
-     rtReminders.lines.loadfromfile('./docs/reminder.rtf');
-     f52.Clear;
-     f52.lines.loadfromfile('./docs/noticeofexecution.rtf');
-
-
+  // set date to now
+  dpCaseFiled.DateTime := date;
+  dpOfficialReceipt.DateTime := date;
 end;
 
+{------------------------------Save Record-------------------------------------}
+procedure TKPdataentryFrm.SubmitProcess();
+var
+  bidToSave: Integer;
+begin
+  with dbModFrm do
+  begin
+    qKP.Append;
 
+    qKP.FieldByName('id').Clear;
+    qKP.FieldByName('id').AsInteger :=  User.id;
+    qKP.FieldByName('case_num').AsString := edCaseNumber.Text;
+    qKP.FieldByName('date_case-fil').AsDateTime := dpCaseFiled.DateTime;
+    qKp.FieldByName('date_offi_rec').AsDateTime := dpOfficialReceipt.DateTime;
+    if (TryStrToInt(edFillingFee.Text, bidToSave)) then
+    begin
+      qKP.FieldByName('filing_fee').AsInteger := bidToSave;
+    end;
 
+    qKP.FieldByName('or_number').AsString := edOrNumber.Text;
+    qKP.FieldByName('nature_of_case').AsString := cbNatureCase.Text;
+  end;
+end;
+
+{--------------------------------Buttons---------------------------------------}
+procedure TKPdataentryFrm.btCloseClick(Sender: TObject);
+begin
+  close;
+end;
+
+procedure TKPdataentryFrm.btSaveClick(Sender: TObject);
+begin
+  SubmitProcess
+end;
 
 procedure TKPdataentryFrm.Label11Click(Sender: TObject);
-var AppDir: String;
+var
+  AppDir: String;
 begin
-    AppDir := ExtractFilePath(ParamStr(0));
-    ShellExecute(Handle, 'open', PCHar(AppDir + 'docs/KPhandbook.pdf'), nil, nil, SW_SHOWNORMAL);
-    {
-     //rtReminders.lines.loadfromfile('./docs/reminder.rtf');
-     //openfile(ExtractFilePath(Application.ExeName)+'.\docs\KPhandbook.pdf');
-     openfile(ExtractFilePath(Application.ExeName)+'./docs/KPhandbook.pdf');
-     //openfile(ExtractFilePath(Application.ExeName)+'./docs/KPhandbook.pdf');
-    }
+  AppDir := ExtractFilePath(ParamStr(0));
+  ShellExecute(Handle, 'open', PCHar(AppDir + 'docs/KPhandbook.pdf'), nil, nil, SW_SHOWNORMAL);
+  {
+    //rtReminders.lines.loadfromfile('./docs/reminder.rtf');
+    //openfile(ExtractFilePath(Application.ExeName)+'.\docs\KPhandbook.pdf');
+    openfile(ExtractFilePath(Application.ExeName)+'./docs/KPhandbook.pdf');
+    //openfile(ExtractFilePath(Application.ExeName)+'./docs/KPhandbook.pdf');
+  }
 end;
 
 procedure TKPdataentryFrm.Label12Click(Sender: TObject);
-var AppDir: String;
+var
+  AppDir: String;
 begin
-    AppDir := ExtractFilePath(ParamStr(0));
-    ShellExecute(Handle, 'open', PCHar(AppDir + 'docs/kpPrimer.pdf'), nil, nil, SW_SHOWNORMAL);
+  AppDir := ExtractFilePath(ParamStr(0));
+  ShellExecute(Handle, 'open', PCHar(AppDir + 'docs/kpPrimer.pdf'), nil, nil,
+    SW_SHOWNORMAL);
 end;
 
 procedure TKPdataentryFrm.Refresh1Click(Sender: TObject);
 begin
-     frmMsg.showmodal;
+  frmMsg.showmodal;
 end;
 
 end.

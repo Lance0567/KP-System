@@ -34,6 +34,7 @@ type
     dpDateJoined: TDBAdvSmoothDatePicker;
     procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormShow(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -61,6 +62,14 @@ begin
       qUsers.SQL.Text := 'SELECT * FROM Users WHERE username=' + QuotedStr(User.username);
       qUsers.Open;
     end;
+  end;
+end;
+
+procedure TfrmUsers.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  with dbModFrm do
+  begin
+    qUsers.Close;
   end;
 end;
 

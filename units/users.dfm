@@ -15,6 +15,7 @@ object frmUsers: TfrmUsers
   Font.Style = []
   KeyPreview = True
   Position = poScreenCenter
+  OnClose = FormClose
   OnKeyUp = FormKeyUp
   OnShow = FormShow
   TextHeight = 15
@@ -86,19 +87,19 @@ object frmUsers: TfrmUsers
     object GroupBox3: TGroupBox
       Left = 12
       Top = 28
-      Width = 315
+      Width = 313
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       Caption = 'User Name'
       TabOrder = 0
-      ExplicitWidth = 313
+      ExplicitWidth = 311
       DesignSize = (
-        315
+        313
         49)
       object dbUserName: TDBEdit
         Left = 12
         Top = 17
-        Width = 291
+        Width = 289
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         DataField = 'username'
@@ -110,25 +111,25 @@ object frmUsers: TfrmUsers
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 289
+        ExplicitWidth = 287
       end
     end
     object GroupBox4: TGroupBox
       Left = 12
       Top = 76
-      Width = 315
+      Width = 313
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Password'
       TabOrder = 1
-      ExplicitWidth = 313
+      ExplicitWidth = 311
       DesignSize = (
-        315
+        313
         49)
       object dbPassword: TDBEdit
         Left = 12
         Top = 16
-        Width = 291
+        Width = 289
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         DataField = 'password'
@@ -141,25 +142,25 @@ object frmUsers: TfrmUsers
         ParentFont = False
         PasswordChar = '*'
         TabOrder = 0
-        ExplicitWidth = 289
+        ExplicitWidth = 287
       end
     end
     object GroupBox5: TGroupBox
       Left = 12
       Top = 131
-      Width = 315
+      Width = 313
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Email Address'
       TabOrder = 2
-      ExplicitWidth = 313
+      ExplicitWidth = 311
       DesignSize = (
-        315
+        313
         49)
       object dbEmailAddress: TDBEdit
         Left = 12
         Top = 21
-        Width = 291
+        Width = 289
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         DataField = 'email_add'
@@ -171,25 +172,25 @@ object frmUsers: TfrmUsers
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 289
+        ExplicitWidth = 287
       end
     end
     object GroupBox6: TGroupBox
       Left = 12
       Top = 186
-      Width = 315
+      Width = 313
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       Caption = 'First Name'
       TabOrder = 3
-      ExplicitWidth = 313
+      ExplicitWidth = 311
       DesignSize = (
-        315
+        313
         49)
       object dbFirstName: TDBEdit
         Left = 12
         Top = 16
-        Width = 291
+        Width = 289
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         DataField = 'first_name'
@@ -201,25 +202,25 @@ object frmUsers: TfrmUsers
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 289
+        ExplicitWidth = 287
       end
     end
     object GroupBox7: TGroupBox
       Left = 12
       Top = 241
-      Width = 315
+      Width = 313
       Height = 49
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Last Name'
       TabOrder = 4
-      ExplicitWidth = 313
+      ExplicitWidth = 311
       DesignSize = (
-        315
+        313
         49)
       object dbLastName: TDBEdit
         Left = 12
         Top = 16
-        Width = 291
+        Width = 289
         Height = 25
         Anchors = [akLeft, akTop, akRight]
         DataField = 'last_name'
@@ -231,13 +232,13 @@ object frmUsers: TfrmUsers
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 289
+        ExplicitWidth = 287
       end
     end
     object GroupBox8: TGroupBox
       Left = 12
       Top = 296
-      Width = 145
+      Width = 143
       Height = 50
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Last Login:'
@@ -248,12 +249,12 @@ object frmUsers: TfrmUsers
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 5
-      ExplicitWidth = 143
+      ExplicitWidth = 141
       object dpLastLogin: TDBAdvSmoothDatePicker
         AlignWithMargins = True
         Left = 15
         Top = 19
-        Width = 120
+        Width = 118
         Height = 24
         Margins.Left = 13
         Margins.Top = 0
@@ -537,14 +538,14 @@ object frmUsers: TfrmUsers
         Date = 45463.935907951390000000
         DataField = 'last_login'
         DataSource = dbModFrm.dsUsers
-        ExplicitWidth = 119
+        ExplicitWidth = 117
         TMSStyle = 8
       end
     end
     object GroupBox9: TGroupBox
       Left = 184
       Top = 296
-      Width = 145
+      Width = 143
       Height = 50
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Date Joined:'
@@ -555,12 +556,12 @@ object frmUsers: TfrmUsers
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 6
-      ExplicitWidth = 143
+      ExplicitWidth = 141
       object dpDateJoined: TDBAdvSmoothDatePicker
         AlignWithMargins = True
         Left = 15
         Top = 19
-        Width = 120
+        Width = 118
         Height = 24
         Margins.Left = 13
         Margins.Top = 0
@@ -843,7 +844,7 @@ object frmUsers: TfrmUsers
         Date = 45464.238217592600000000
         DataField = 'date_joined'
         DataSource = dbModFrm.dsUsers
-        ExplicitWidth = 119
+        ExplicitWidth = 117
         TMSStyle = 8
       end
     end

@@ -15,7 +15,8 @@ uses
   crimeType in 'units\crimeType.pas' {frmCaseType},
   dbMod in 'data module\dbMod.pas' {dbModFrm: TDataModule},
   msgPas in 'units\msgPas.pas' {frmMsg},
-  uAdmin in 'roles\uAdmin.pas';
+  uAdmin in 'roles\uAdmin.pas',
+  funcKPDataEntry in 'functions\funcKPDataEntry.pas';
 
 {$R *.res}
 

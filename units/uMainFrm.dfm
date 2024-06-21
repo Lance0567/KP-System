@@ -64,6 +64,8 @@ object MainFrm: TMainFrm
     PersistPagesState.Enabled = False
     TabOrder = 1
     OnChanging = AdvPageControl1Changing
+    ExplicitWidth = 1075
+    ExplicitHeight = 708
     object AdvTabSheet1: TAdvTabSheet
       Caption = 'Home'
       Color = clBtnFace
@@ -18713,6 +18715,7 @@ object MainFrm: TMainFrm
           TitleFont.Height = -15
           TitleFont.Name = 'Segoe UI'
           TitleFont.Style = []
+          OnDrawColumnCell = DBGrid1DrawColumnCell
           Columns = <
             item
               Expanded = False

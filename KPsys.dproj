@@ -150,6 +150,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="roles\uAdmin.pas"/>
+        <DCCReference Include="functions\funcKPDataEntry.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
