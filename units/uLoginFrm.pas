@@ -103,6 +103,7 @@ begin
             dbModFrm.User.isAdmin := ((qTemp.FieldByName('is_admin').AsString = '1') or (LowerCase(qTemp.FieldByName('is_admin').AsString) = 'true'));
             dbModFrm.User.isActive := ((qTemp.FieldByName('is_active').AsString = '1') or (LowerCase(qTemp.FieldByName('is_active').AsString) = 'true'));
 
+            qTemp.Close;
             LoginFrm.close;
           end
           else

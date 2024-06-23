@@ -1,0 +1,28 @@
+unit funcKPDataEntry;
+
+interface
+
+uses
+  dbMod;
+
+function GetLatestId: Integer;
+
+implementation
+
+function GetLatestId: Integer;
+begin
+  with dbModFrm.qTemp do
+  begin
+    // Get Max id
+    SQL.Clear;
+    SQL.Text := 'SELECT MAX(id) AS latest_id FROM "Users"';
+    Open;
+    try
+      Result := FieldByName('latest_id').AsInteger + 1;
+    finally
+      Close;
+    end;
+  end;
+end;
+
+end.

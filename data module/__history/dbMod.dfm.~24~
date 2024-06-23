@@ -1,0 +1,329 @@
+object dbModFrm: TdbModFrm
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  Height = 797
+  Width = 823
+  object KPcon: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\Users\pc\Documents\Delphi\MCS Project\___KPsys\Win32' +
+        '\Debug\database\Kp.db'
+      'LockingMode=Normal'
+      'DriverID=SQLite')
+    Connected = True
+    LoginPrompt = False
+    Left = 120
+    Top = 32
+  end
+  object qTemp: TFDQuery
+    Connection = KPcon
+    Left = 64
+    Top = 112
+  end
+  object qUsers: TFDQuery
+    Connection = KPcon
+    SQL.Strings = (
+      'SELECT * FROM Users')
+    Left = 136
+    Top = 112
+  end
+  object qKP: TFDQuery
+    AggregatesActive = True
+    Connection = KPcon
+    SQL.Strings = (
+      'SELECT * FROM KP')
+    Left = 216
+    Top = 112
+    object qKPid: TIntegerField
+      DisplayLabel = 'ID'
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object qKPcase_num: TWideStringField
+      DisplayLabel = 'Case Number'
+      FieldName = 'case_num'
+      Origin = 'case_num'
+      Size = 55
+    end
+    object qKPdate_case_fil: TDateTimeField
+      DisplayLabel = 'Date: Case Filed'
+      FieldName = 'date_case_fil'
+      Origin = 'date_case_fil'
+    end
+    object qKPdate_offi_rec: TDateTimeField
+      FieldName = 'date_offi_rec'
+    end
+    object qKPfiling_fee: TWideStringField
+      DisplayLabel = 'Filing Fee'
+      FieldName = 'filing_fee'
+      Origin = 'filing_fee'
+      Size = 32767
+    end
+    object qKPnature_of_case: TStringField
+      DisplayLabel = 'Nature of case'
+      FieldName = 'nature_of_case'
+      Origin = 'nature_of_case'
+      Size = 150
+    end
+    object qKPoverall_remarks: TStringField
+      DisplayLabel = 'Overall Remarks'
+      FieldName = 'overall_remarks'
+      Origin = 'overall_remarks'
+      Size = 100
+    end
+    object qKPid_user: TIntegerField
+      FieldName = 'id_user'
+      Origin = 'id_user'
+      Required = True
+    end
+    object qKPor_number: TWideStringField
+      FieldName = 'or_number'
+      Origin = 'or_number'
+      Size = 55
+    end
+    object qKPtype_of_comp_or_case: TStringField
+      FieldName = 'type_of_comp_or_case'
+      Origin = 'type_of_comp_or_case'
+      Size = 80
+    end
+    object qKPlist_of_comp: TStringField
+      FieldName = 'list_of_comp'
+      Origin = 'list_of_comp'
+      Size = 255
+    end
+    object qKPlist_of_resp: TStringField
+      FieldName = 'list_of_resp'
+      Origin = 'list_of_resp'
+      Size = 255
+    end
+    object qKPcomplaints_form: TStringField
+      FieldName = 'complaints_form'
+      Origin = 'complaints_form'
+      Size = 255
+    end
+    object qKPmain_point_of_agre: TStringField
+      FieldName = 'main_point_of_agre'
+      Origin = 'main_point_of_agre'
+      Size = 255
+    end
+    object qKPpurpose: TStringField
+      FieldName = 'purpose'
+      Origin = 'purpose'
+      Size = 255
+    end
+    object qKPmediation_chec: TStringField
+      FieldName = 'mediation_chec'
+      Origin = 'mediation_chec'
+      Size = 100
+    end
+    object qKPmediation_date: TDateTimeField
+      FieldName = 'mediation_date'
+      Origin = 'mediation_date'
+    end
+    object qKPmediation_time: TStringField
+      FieldName = 'mediation_time'
+      Origin = 'mediation_time'
+      Size = 50
+    end
+    object qKPsummons_date: TDateTimeField
+      FieldName = 'summons_date'
+      Origin = 'summons_date'
+    end
+    object qKPsummons_time: TStringField
+      FieldName = 'summons_time'
+      Origin = 'summons_time'
+      Size = 50
+    end
+    object qKPconciliation_chec: TStringField
+      FieldName = 'conciliation_chec'
+      Origin = 'conciliation_chec'
+      Size = 100
+    end
+    object qKPn_o_h_appear_date: TDateTimeField
+      FieldName = 'n_o_h_appear_date'
+      Origin = 'n_o_h_appear_date'
+    end
+    object qKPn_o_h_appear_time: TStringField
+      FieldName = 'n_o_h_appear_time'
+      Origin = 'n_o_h_appear_time'
+      Size = 50
+    end
+    object qKPn_o_h_made_this_date: TDateTimeField
+      FieldName = 'n_o_h_made_this_date'
+      Origin = 'n_o_h_made_this_date'
+    end
+    object qKPn_f_c_f_p_appear_date: TDateTimeField
+      FieldName = 'n_f_c_f_p_appear_date'
+      Origin = 'n_f_c_f_p_appear_date'
+    end
+    object qKPn_f_c_f_p_appear_time: TStringField
+      FieldName = 'n_f_c_f_p_appear_time'
+      Origin = 'n_f_c_f_p_appear_time'
+      Size = 50
+    end
+    object qKPn_f_c_f_p_made_this_date: TDateTimeField
+      FieldName = 'n_f_c_f_p_made_this_date'
+      Origin = 'n_f_c_f_p_made_this_date'
+    end
+    object qKPn_t_c_p_m_pangkat_cha_name: TStringField
+      FieldName = 'n_t_c_p_m_pangkat_cha_name'
+      Origin = 'n_t_c_p_m_pangkat_cha_name'
+      Size = 100
+    end
+    object qKPn_t_c_p_m_pangkat_sec: TStringField
+      FieldName = 'n_t_c_p_m_pangkat_sec'
+      Origin = 'n_t_c_p_m_pangkat_sec'
+      Size = 100
+    end
+    object qKPn_t_c_p_m_pangkat_memb: TStringField
+      FieldName = 'n_t_c_p_m_pangkat_memb'
+      Origin = 'n_t_c_p_m_pangkat_memb'
+      Size = 100
+    end
+    object qKPs_appear_date: TDateTimeField
+      FieldName = 's_appear_date'
+      Origin = 's_appear_date'
+    end
+    object qKPs_appear_time: TStringField
+      FieldName = 's_appear_time'
+      Origin = 's_appear_time'
+      Size = 50
+    end
+    object qKPs_made_this_date: TDateTimeField
+      FieldName = 's_made_this_date'
+      Origin = 's_made_this_date'
+    end
+    object qKPs_witnesses_name: TStringField
+      FieldName = 's_witnesses_name'
+      Origin = 's_witnesses_name'
+      Size = 100
+    end
+    object qKPn_o_h_re_c_appear_date: TDateTimeField
+      FieldName = 'n_o_h_re_c_appear_date'
+      Origin = 'n_o_h_re_c_appear_date'
+    end
+    object qKPn_o_h_re_c_appear_time: TStringField
+      FieldName = 'n_o_h_re_c_appear_time'
+      Origin = 'n_o_h_re_c_appear_time'
+      Size = 50
+    end
+    object qKPn_o_h_re_c_made_this_date: TDateTimeField
+      FieldName = 'n_o_h_re_c_made_this_date'
+      Origin = 'n_o_h_re_c_made_this_date'
+    end
+    object qKPn_o_h_re_r_appear_date: TDateTimeField
+      FieldName = 'n_o_h_re_r_appear_date'
+      Origin = 'n_o_h_re_r_appear_date'
+    end
+    object qKPn_o_h_re_r_appear_time: TStringField
+      FieldName = 'n_o_h_re_r_appear_time'
+      Origin = 'n_o_h_re_r_appear_time'
+      Size = 50
+    end
+    object qKPn_o_h_re_r_made_this_date: TDateTimeField
+      FieldName = 'n_o_h_re_r_made_this_date'
+      Origin = 'n_o_h_re_r_made_this_date'
+    end
+    object qKPrefusal_to_appe_befo_the_pang: TDateTimeField
+      FieldName = 'refusal_to_appe_befo_the_pang'
+      Origin = 'refusal_to_appe_befo_the_pang'
+    end
+    object qKPfailure_of_sett: TDateTimeField
+      FieldName = 'failure_of_sett'
+      Origin = 'failure_of_sett'
+    end
+    object qKPnotify_date: TDateTimeField
+      FieldName = 'notify_date'
+      Origin = 'notify_date'
+    end
+    object qKPorder_date: TDateTimeField
+      FieldName = 'order_date'
+      Origin = 'order_date'
+    end
+    object qKPfailure_to_appe: TDateTimeField
+      FieldName = 'failure_to_appe'
+      Origin = 'failure_to_appe'
+    end
+    object qKPagreement_for_arbi_date: TDateTimeField
+      FieldName = 'agreement_for_arbi_date'
+      Origin = 'agreement_for_arbi_date'
+    end
+    object qKPmotion_for_exec_date: TDateTimeField
+      FieldName = 'motion_for_exec_date'
+      Origin = 'motion_for_exec_date'
+    end
+    object qKPnotice_of_hear: TDateTimeField
+      FieldName = 'notice_of_hear'
+      Origin = 'notice_of_hear'
+    end
+    object qKPnotice_of_exec: TStringField
+      FieldName = 'notice_of_exec'
+      Origin = 'notice_of_exec'
+      Size = 255
+    end
+    object qKPamicable_sett_stat: TStringField
+      FieldName = 'amicable_sett_stat'
+      Origin = 'amicable_sett_stat'
+      Size = 255
+    end
+    object qKParbitration_award_stat: TStringField
+      FieldName = 'arbitration_award_stat'
+      Origin = 'arbitration_award_stat'
+      Size = 255
+    end
+    object qKPdate_of_sett_or_award: TDateTimeField
+      FieldName = 'date_of_sett_or_award'
+      Origin = 'date_of_sett_or_award'
+    end
+    object qKPdate_of_execution_of_sett: TDateTimeField
+      FieldName = 'date_of_execution_of_sett'
+      Origin = 'date_of_execution_of_sett'
+    end
+    object qKPlast_proceeding_take: TStringField
+      FieldName = 'last_proceeding_take'
+      Origin = 'last_proceeding_take'
+      Size = 255
+    end
+    object qKPstatus_of_comp_on_the_sett_or_award: TStringField
+      FieldName = 'status_of_comp_on_the_sett_or_award'
+      Origin = 'status_of_comp_on_the_sett_or_award'
+      Size = 255
+    end
+    object qKPif_repu_pls_enter_grou_of_repu_and_date: TDateTimeField
+      FieldName = 'if_repu_pls_enter_grou_of_repu_and_date'
+      Origin = 'if_repu_pls_enter_grou_of_repu_and_date'
+    end
+    object qKPrepudiation: TStringField
+      FieldName = 'repudiation'
+      Origin = 'repudiation'
+      Size = 255
+    end
+    object qKPminutes_of_proce_repo_logs: TStringField
+      FieldName = 'minutes_of_proce_repo_logs'
+      Origin = 'minutes_of_proce_repo_logs'
+      Size = 255
+    end
+    object qKPsigned_minu_of_the_meet: TStringField
+      FieldName = 'signed_minu_of_the_meet'
+      Origin = 'signed_minu_of_the_meet'
+      Size = 80
+    end
+    object qKPsigned_repu_docs: TStringField
+      FieldName = 'signed_repu_docs'
+      Origin = 'signed_repu_docs'
+      Size = 80
+    end
+  end
+  object dsUsers: TDataSource
+    DataSet = qUsers
+    Left = 136
+    Top = 208
+  end
+  object dsKP: TDataSource
+    DataSet = qKP
+    Left = 216
+    Top = 208
+  end
+end

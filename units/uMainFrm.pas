@@ -96,8 +96,13 @@ type
     procedure btAdd3Click(Sender: TObject);
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure DBGrid1CellClick(Column: TColumn);
+    procedure btEdit1Click(Sender: TObject);
+    procedure btDele2Click(Sender: TObject);
 
   private
+    SelectedRow: Integer;
+    SelectedColumn: Integer;
     { Private declarations }
   public
     { Public declarations }
@@ -113,59 +118,35 @@ implementation
 uses abtPas, uLoginFrm, KPmasterlist, LuponMem, KPdataentry, Signatories, Settings,
   users, crimeType, msgPas;
 
-procedure TMainFrm.About1Click(Sender: TObject);
-begin
-     abtFrm.ShowModal;
-end;
-
-procedure TMainFrm.AboutUs1Click(Sender: TObject);
-begin
-     AbtFrm.ShowModal;
-end;
-
-procedure TMainFrm.AdvPageControl1Changing(Sender: TObject;
-  var AllowChange: Boolean);
-begin
-     AdvPageControl1.ActiveFont.Size := 12;
-     AdvPageControl1.ActiveFont.Style :=[fsBold, fsUnderline, fsItalic];
-     //AdvPageControl1.ActiveFont.Style :=[fsItalic];
-end;
-
-procedure TMainFrm.Backup1Click(Sender: TObject);
-begin
-     ShowMessage(' Backup Database... ');
-end;
-
-procedure TMainFrm.btAdd3Click(Sender: TObject);
-begin
-     frmCaseType.ShowModal;
-end;
-
-procedure TMainFrm.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
-  DataCol: Integer; Column: TColumn; State: TGridDrawState);
-begin
-  with Sender as TDBGrid do
-  begin
-    // Check if the current row is selected
-    if gdSelected in State then
-    begin
-      Canvas.Brush.Color := clGray; // Set your desired color
-      Canvas.FillRect(Rect); // Fill the background with the color
-
-      // Draw the cell text with the specified color
-      Canvas.TextRect(Rect, Rect.Left + 2, Rect.Top + 2, Column.Field.AsString);
-    end
-    else
-    begin
-      // Default drawing for non-selected rows
-      DefaultDrawColumnCell(Rect, DataCol, Column, State);
-    end;
-  end;
-end;
-
+{-----------------------Buttons-----------------------}
 procedure TMainFrm.btAdd1Click(Sender: TObject);
 begin
-     KPdataentryFrm.showModal;
+  // Add KP Record
+  with dbModFrm do
+  begin
+    dsKP.DataSet.Insert;
+  end;
+
+  // set date to now
+  KPdataentryFrm.dpCaseFiled.DateTime := date;
+  KPdataentryFrm.dpOfficialReceipt.DateTime := date;
+
+  KPdataentryFrm.btSave.Visible := True;
+  KPdataentryFrm.btSaveEdit.Visible := False;
+  KPdataentryFrm.showModal;
+end;
+
+procedure TMainFrm.btEdit1Click(Sender: TObject);
+begin
+  // Edit KP Record
+  KPdataentryFrm.btSave.Visible := False;
+  KPdataentryFrm.btSaveEdit.Visible := True;
+  KPdataentryFrm.showModal;
+end;
+
+procedure TMainFrm.btDele2Click(Sender: TObject);
+begin
+  // Delete KP Record
 end;
 
 procedure TMainFrm.btAdd2Click(Sender: TObject);
@@ -176,48 +157,6 @@ end;
 procedure TMainFrm.Exit1Click(Sender: TObject);
 begin
      Close;
-end;
-
-procedure TMainFrm.FormShow(Sender: TObject);
-begin
-  Image1.Picture.LoadFromFile('./docs/bgForm.png');
-  bpLogo.Picture.LoadFromFile('./docs/bpLogo.png');
-  imageFree.Picture.LoadFromFile('./docs/freeware.png');
-  AdvPageControl1.ActivePage := AdvTabSheet1;
-  ClientHeight := 753;
-  ClientWidth := 1085;
-
-  LoginFrm.Tag := 0;
-
-  LoginFrm.ShowModal;
-
-  // if not logged in
-  if LoginFrm.Tag = 0 then
-  begin
-    ShowMessage('not logged in');
-    Application.Terminate;
-  end;
-
-  // logged in na dito
-  MainFrm.Caption := 'KPSystem | Katarungang Pambarangay | 2024 | ' + dbModFrm.User.username;
-  dbModFrm.qKP.Open;
-
-  // if not admin
-  if dbModFrm.User.isAdmin = False then
-  begin
-    with dbModFrm do
-    begin
-      qKP.SQL.Clear;
-      qKP.SQL.Text := 'SELECT * FROM "KP" WHERE "KP".id_user =' + User.id.ToString;
-      qKP.Open;
-    end;
-  end;
-
-  // Panel3.Alignment := taLeftJustify;
-  // Panel1.Alignment := taLeftJustify;
-
-  // Image1.Picture.LoadFromFile('C:\Path\To\Your\Image.jpg');
-  // Form3.rtContact.lines.loadfromfile('./docs/bgForm.png');
 end;
 
 procedure TMainFrm.Refresh1Click(Sender: TObject);
@@ -239,6 +178,112 @@ end;
 procedure TMainFrm.UsersCredentials1Click(Sender: TObject);
 begin
      frmUsers.ShowModal;
+end;
+
+procedure TMainFrm.About1Click(Sender: TObject);
+begin
+     abtFrm.ShowModal;
+end;
+
+procedure TMainFrm.AboutUs1Click(Sender: TObject);
+begin
+     AbtFrm.ShowModal;
+end;
+
+procedure TMainFrm.Backup1Click(Sender: TObject);
+begin
+     ShowMessage(' Backup Database... ');
+end;
+
+procedure TMainFrm.btAdd3Click(Sender: TObject);
+begin
+     frmCaseType.ShowModal;
+end;
+
+{-----------------------Form-----------------------}
+procedure TMainFrm.FormShow(Sender: TObject);
+begin
+  { Sir Jojo's code }
+  Image1.Picture.LoadFromFile('./docs/bgForm.png');
+  bpLogo.Picture.LoadFromFile('./docs/bpLogo.png');
+  imageFree.Picture.LoadFromFile('./docs/freeware.png');
+  AdvPageControl1.ActivePage := AdvTabSheet1;
+  ClientHeight := 753;
+  ClientWidth := 1085;
+
+  LoginFrm.Tag := 0;
+
+  LoginFrm.ShowModal;
+  {-----------------}
+
+  // if not logged in
+  if LoginFrm.Tag = 0 then
+  begin
+    ShowMessage('not logged in');
+    Application.Terminate;
+  end;
+
+  // logged in
+  MainFrm.Caption := 'KPSystem | Katarungang Pambarangay | 2024 | ' + dbModFrm.User.username;
+  dbModFrm.qKP.Open;
+
+  // if not admin
+  if dbModFrm.User.isAdmin = False then
+  begin
+    with dbModFrm do
+    begin
+      qKP.SQL.Clear;
+      qKP.SQL.Text := 'SELECT * FROM "KP" WHERE "KP".id_user =' + User.id.ToString;
+      qKP.Open;
+    end;
+  end;
+
+  { Sir Jojo's code }
+  // Panel3.Alignment := taLeftJustify;
+  // Panel1.Alignment := taLeftJustify;
+
+  // Image1.Picture.LoadFromFile('C:\Path\To\Your\Image.jpg');
+  // Form3.rtContact.lines.loadfromfile('./docs/bgForm.png');
+  {-----------------}
+end;
+
+{-----------------------Grid-----------------------}
+procedure TMainFrm.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+  DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+  with Sender as TDBGrid do
+  begin
+    if (SelectedRow = dbModFrm.dsKP.DataSet.RecNo) and (SelectedColumn = Column.Index) then
+    begin
+      Canvas.Brush.Color := clWebKhaki; // Selected cell color
+    end
+    else if SelectedRow = dbModFrm.dsKP.DataSet.RecNo then
+    begin
+      Canvas.Brush.Color := clMoneyGreen; // Selected row color
+    end
+    else
+    begin
+      Canvas.Brush.Color := clWindow; // Default color
+    end;
+    Canvas.FillRect(Rect);
+    DefaultDrawColumnCell(Rect, DataCol, Column, State);
+  end;
+end;
+
+procedure TMainFrm.DBGrid1CellClick(Column: TColumn);
+begin
+  SelectedRow := dbModFrm.dsKP.DataSet.RecNo;
+  SelectedColumn := Column.Index;
+  DBGrid1.Invalidate; // Redraw the grid
+end;
+
+{-------------------Page Control------------------}
+procedure TMainFrm.AdvPageControl1Changing(Sender: TObject;
+  var AllowChange: Boolean);
+begin
+     AdvPageControl1.ActiveFont.Size := 12;
+     AdvPageControl1.ActiveFont.Style :=[fsBold, fsUnderline, fsItalic];
+     //AdvPageControl1.ActiveFont.Style :=[fsItalic];
 end;
 
 end.

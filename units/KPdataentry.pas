@@ -11,7 +11,7 @@ uses
   Vcl.TMSFNCGraphicsTypes, Vcl.TMSFNCCustomControl, Vcl.TMSFNCCalendar,
   Vcl.TMSFNCPageControl, Vcl.TMSFNCTabSet, AdvPageControl, AdvRichEditorToolBar,
   AdvToolBar, AdvToolBarExt, AdvScrollControl, AdvRichEditorBase, AdvRichEditor,
-  richedit, dbMod;
+  richedit, dbMod, funcKPDataEntry;
 
 type
   TKPdataentryFrm = class(TForm)
@@ -214,6 +214,7 @@ type
     Label11: TLabel;
     Label12: TLabel;
     Refresh1: TMenuItem;
+    btSaveEdit: TButton;
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormShow(Sender: TObject);
     procedure btCloseClick(Sender: TObject);
@@ -223,6 +224,7 @@ type
     procedure Refresh1Click(Sender: TObject);
     procedure btSaveClick(Sender: TObject);
     procedure SubmitProcess;
+    procedure btSaveEditClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -237,7 +239,7 @@ implementation
 
 {$R *.dfm}
 
-uses abtPas, msgPas;
+uses DB, abtPas, msgPas;
 
 procedure TKPdataentryFrm.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
@@ -274,10 +276,6 @@ begin
   rtReminders.lines.loadfromfile('./docs/reminder.rtf');
   f52.Clear;
   f52.lines.loadfromfile('./docs/noticeofexecution.rtf');
-
-  // set date to now
-  dpCaseFiled.DateTime := date;
-  dpOfficialReceipt.DateTime := date;
 end;
 
 {------------------------------Save Record-------------------------------------}
@@ -287,20 +285,20 @@ var
 begin
   with dbModFrm do
   begin
-    qKP.Append;
-
-    qKP.FieldByName('id').Clear;
-    qKP.FieldByName('id').AsInteger :=  User.id;
+    // Assign values to fields
+    qKP.FieldByName('id_user').AsInteger := User.id;
     qKP.FieldByName('case_num').AsString := edCaseNumber.Text;
-    qKP.FieldByName('date_case-fil').AsDateTime := dpCaseFiled.DateTime;
-    qKp.FieldByName('date_offi_rec').AsDateTime := dpOfficialReceipt.DateTime;
-    if (TryStrToInt(edFillingFee.Text, bidToSave)) then
+    qKP.FieldByName('or_number').AsString := edOrNumber.Text;
+    qKP.FieldByName('date_case_fil').AsDateTime := dpCaseFiled.Date;
+    qKP.FieldByName('date_offi_rec').AsDateTime := dpOfficialReceipt.Date;
+    if TryStrToInt(edFillingFee.Text, bidToSave) then
     begin
       qKP.FieldByName('filing_fee').AsInteger := bidToSave;
     end;
-
-    qKP.FieldByName('or_number').AsString := edOrNumber.Text;
-    qKP.FieldByName('nature_of_case').AsString := cbNatureCase.Text;
+    // Post the record to the database
+    qKP.Post;
+    qKP.Refresh;
+    self.Close;
   end;
 end;
 
@@ -312,7 +310,19 @@ end;
 
 procedure TKPdataentryFrm.btSaveClick(Sender: TObject);
 begin
-  SubmitProcess
+  // Add New Record
+  if not (dbModFrm.qKP.State in [dsEdit]) then
+  dbModFrm.qKp.Edit;
+  dbModFrm.qKP.FieldByName('id').AsInteger := GetLatestId;
+  SubmitProcess;
+end;
+
+procedure TKPdataentryFrm.btSaveEditClick(Sender: TObject);
+begin
+  // Edit Record
+  if not (dbModFrm.qKP.State in [dsEdit]) then
+  dbModFrm.qKp.Edit;
+  SubmitProcess;
 end;
 
 procedure TKPdataentryFrm.Label11Click(Sender: TObject);

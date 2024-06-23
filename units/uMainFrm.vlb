@@ -64,9 +64,6 @@ Coordinates=124,10,55,58
 [btFind3]
 Coordinates=575,210,58,58
 
-[btEdit1]
-Coordinates=366,278,55,58
-
 [btF1]
 Coordinates=447,10,49,58
 
@@ -211,4 +208,7 @@ Coordinates=421,346,99,36
 
 []
 Coordinates=825,221,91,36
+
+[btEdit1]
+Coordinates=366,278,55,58
 

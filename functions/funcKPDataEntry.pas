@@ -2,21 +2,26 @@ unit funcKPDataEntry;
 
 interface
 
-uses dbMod, KPdataentry;
+uses
+  dbMod;
 
-  procedure SubmitProcess;  
+function GetLatestId: Integer;
 
 implementation
 
-procedure SubmitProcess();
+function GetLatestId: Integer;
 begin
-  with dbModFrm do
+  with dbModFrm.qTemp do
   begin
-    qKP.Append;
-
-    qKP.FieldByName('id').Clear;
-    qKP.FieldByName('id').AsInteger :=  User.id;
-    qKP.FieldByName('case_num').AsString := KPdataentryFrm.edCaseNumber.Text;
+    // Get Max id
+    SQL.Clear;
+    SQL.Text := 'SELECT MAX(id) AS latest_id FROM "KP"';
+    Open;
+    try
+      Result := FieldByName('latest_id').AsInteger + 1;
+    finally
+      Close;
+    end;
   end;
 end;
 

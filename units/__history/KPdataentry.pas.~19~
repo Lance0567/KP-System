@@ -1,0 +1,360 @@
+unit KPdataentry;
+
+interface
+
+uses
+  ShellApi, Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ExtCtrls,
+  Vcl.Imaging.pngimage, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask, PlannerCal,
+  Vcl.Menus, Vcl.TMSFNCTypes, Vcl.TMSFNCUtils, Vcl.TMSFNCGraphics,
+  Vcl.TMSFNCGraphicsTypes, Vcl.TMSFNCCustomControl, Vcl.TMSFNCCalendar,
+  Vcl.TMSFNCPageControl, Vcl.TMSFNCTabSet, AdvPageControl, AdvRichEditorToolBar,
+  AdvToolBar, AdvToolBarExt, AdvScrollControl, AdvRichEditorBase, AdvRichEditor,
+  richedit, dbMod, funcKPDataEntry;
+
+type
+  TKPdataentryFrm = class(TForm)
+    Panel1: TPanel;
+    StatusBar1: TStatusBar;
+    PopUp: TPopupMenu;
+    Panel10: TPanel;
+    btSave: TButton;
+    btClose: TButton;
+    Panel2: TPanel;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    PageControl2: TPageControl;
+    TabSheet7: TTabSheet;
+    AdvRichEditorFormatToolBar1: TAdvRichEditorFormatToolBar;
+    AdvRichEditor1: TAdvRichEditor;
+    TabSheet8: TTabSheet;
+    AdvRichEditor2: TAdvRichEditor;
+    AdvRichEditorFormatToolBar2: TAdvRichEditorFormatToolBar;
+    TabSheet9: TTabSheet;
+    AdvRichEditor3: TAdvRichEditor;
+    AdvRichEditorFormatToolBar3: TAdvRichEditorFormatToolBar;
+    TabSheet11: TTabSheet;
+    AdvRichEditorFormatToolBar4: TAdvRichEditorFormatToolBar;
+    AdvRichEditor4: TAdvRichEditor;
+    TabSheet2: TTabSheet;
+    GroupBox10: TGroupBox;
+    rtReminders: TRichEdit;
+    DateTimePicker4: TDateTimePicker;
+    DateTimePicker3: TDateTimePicker;
+    DateTimePicker5: TDateTimePicker;
+    DateTimePicker6: TDateTimePicker;
+    TabSheet3: TTabSheet;
+    TabSheet4: TTabSheet;
+    GroupBox35: TGroupBox;
+    f52: TDBRichEdit;
+    TabSheet5: TTabSheet;
+    PageControl3: TPageControl;
+    TabSheet12: TTabSheet;
+    AdvRichEditor5: TAdvRichEditor;
+    AdvRichEditorFormatToolBar5: TAdvRichEditorFormatToolBar;
+    btF16: TButton;
+    TabSheet13: TTabSheet;
+    AdvRichEditorFormatToolBar6: TAdvRichEditorFormatToolBar;
+    AdvRichEditor6: TAdvRichEditor;
+    btF15: TButton;
+    GroupBox40: TGroupBox;
+    DateTimePicker27: TDateTimePicker;
+    DBMemo2: TDBMemo;
+    btF20: TButton;
+    btF17: TButton;
+    TabSheet6: TTabSheet;
+    GroupBox41: TGroupBox;
+    AdvRichEditor7: TAdvRichEditor;
+    AdvRichEditorFormatToolBar7: TAdvRichEditorFormatToolBar;
+    TabSheet10: TTabSheet;
+    rtForms: TRichEdit;
+    Panel12: TPanel;
+    Panel3: TPanel;
+    edCaseNumber: TDBEdit;
+    Panel4: TPanel;
+    dpCaseFiled: TDateTimePicker;
+    Panel5: TPanel;
+    dpOfficialReceipt: TDateTimePicker;
+    Panel6: TPanel;
+    edFillingFee: TDBEdit;
+    Panel7: TPanel;
+    edOrNumber: TDBEdit;
+    Panel8: TPanel;
+    cbNatureCase: TDBComboBox;
+    GroupBox1: TGroupBox;
+    cbComplainOrCase: TDBComboBox;
+    GroupBox2: TGroupBox;
+    Label2: TLabel;
+    edListComplains: TDBEdit;
+    GroupBox3: TGroupBox;
+    Label3: TLabel;
+    edListRespondent: TDBEdit;
+    Panel13: TPanel;
+    btF7: TButton;
+    Panel14: TPanel;
+    GroupBox36: TGroupBox;
+    DateTimePicker25: TDateTimePicker;
+    GroupBox37: TGroupBox;
+    DateTimePicker26: TDateTimePicker;
+    GroupBox38: TGroupBox;
+    DBComboBox6: TDBComboBox;
+    GroupBox39: TGroupBox;
+    DBComboBox7: TDBComboBox;
+    Panel15: TPanel;
+    btMinutes: TButton;
+    Panel16: TPanel;
+    Image3: TImage;
+    ckArbitration: TCheckBox;
+    Panel17: TPanel;
+    GroupBox32: TGroupBox;
+    DateTimePicker22: TDateTimePicker;
+    btF14: TButton;
+    GroupBox33: TGroupBox;
+    DateTimePicker23: TDateTimePicker;
+    btF25: TButton;
+    GroupBox34: TGroupBox;
+    DateTimePicker24: TDateTimePicker;
+    btF26: TButton;
+    Label8: TLabel;
+    Panel18: TPanel;
+    ckConciliation: TCheckBox;
+    Image2: TImage;
+    Panel19: TPanel;
+    GroupBox11: TGroupBox;
+    Label1: TLabel;
+    GroupBox12: TGroupBox;
+    DateTimePicker7: TDateTimePicker;
+    DBEdit8: TDBEdit;
+    DateTimePicker8: TDateTimePicker;
+    btF12: TButton;
+    GroupBox13: TGroupBox;
+    Label4: TLabel;
+    GroupBox14: TGroupBox;
+    DateTimePicker9: TDateTimePicker;
+    DBEdit9: TDBEdit;
+    DateTimePicker10: TDateTimePicker;
+    btF10: TButton;
+    GroupBox15: TGroupBox;
+    GroupBox16: TGroupBox;
+    DBComboBox3: TDBComboBox;
+    btF11: TButton;
+    GroupBox17: TGroupBox;
+    DBComboBox4: TDBComboBox;
+    btF12a: TButton;
+    GroupBox18: TGroupBox;
+    DBComboBox5: TDBComboBox;
+    btF12b: TButton;
+    DBEdit13: TDBEdit;
+    DBEdit14: TDBEdit;
+    DBEdit15: TDBEdit;
+    Panel20: TPanel;
+    GroupBox31: TGroupBox;
+    DateTimePicker21: TDateTimePicker;
+    btF24: TButton;
+    GroupBox28: TGroupBox;
+    btF23: TButton;
+    GroupBox29: TGroupBox;
+    DateTimePicker19: TDateTimePicker;
+    GroupBox30: TGroupBox;
+    DateTimePicker20: TDateTimePicker;
+    GroupBox27: TGroupBox;
+    DateTimePicker18: TDateTimePicker;
+    btF22: TButton;
+    GroupBox26: TGroupBox;
+    DateTimePicker17: TDateTimePicker;
+    btF21: TButton;
+    GroupBox24: TGroupBox;
+    Label7: TLabel;
+    GroupBox25: TGroupBox;
+    DateTimePicker15: TDateTimePicker;
+    DBEdit12: TDBEdit;
+    DateTimePicker16: TDateTimePicker;
+    btF19: TButton;
+    GroupBox22: TGroupBox;
+    Label6: TLabel;
+    GroupBox23: TGroupBox;
+    DateTimePicker13: TDateTimePicker;
+    DBEdit11: TDBEdit;
+    DateTimePicker14: TDateTimePicker;
+    btF18: TButton;
+    GroupBox19: TGroupBox;
+    Label5: TLabel;
+    GroupBox20: TGroupBox;
+    DateTimePicker11: TDateTimePicker;
+    DBEdit10: TDBEdit;
+    DateTimePicker12: TDateTimePicker;
+    btF13: TButton;
+    GroupBox21: TGroupBox;
+    DBMemo1: TDBMemo;
+    Panel21: TPanel;
+    ckMediation: TCheckBox;
+    Image1: TImage;
+    Panel22: TPanel;
+    GroupBox4: TGroupBox;
+    Panel9: TPanel;
+    DBEdit4: TDBEdit;
+    GroupBox5: TGroupBox;
+    TMSFNCCalendar1: TTMSFNCCalendar;
+    GroupBox6: TGroupBox;
+    TMSFNCCalendar2: TTMSFNCCalendar;
+    btF8: TButton;
+    GroupBox7: TGroupBox;
+    Panel11: TPanel;
+    DBEdit7: TDBEdit;
+    GroupBox8: TGroupBox;
+    TMSFNCCalendar3: TTMSFNCCalendar;
+    GroupBox9: TGroupBox;
+    TMSFNCCalendar4: TTMSFNCCalendar;
+    btF9: TButton;
+    btF9a: TButton;
+    GroupBox42: TGroupBox;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Refresh1: TMenuItem;
+    btSaveEdit: TButton;
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormShow(Sender: TObject);
+    procedure btCloseClick(Sender: TObject);
+    procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure Label11Click(Sender: TObject);
+    procedure Label12Click(Sender: TObject);
+    procedure Refresh1Click(Sender: TObject);
+    procedure btSaveClick(Sender: TObject);
+    procedure SubmitProcess;
+    procedure btSaveEditClick(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  KPdataentryFrm: TKPdataentryFrm;
+
+implementation
+
+{$R *.dfm}
+
+uses DB, abtPas, msgPas;
+
+procedure TKPdataentryFrm.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  keypreview := true;
+  if (Key = 27) then
+  begin
+    btClose.SetFocus;
+    btClose.Click;
+    close;
+  end;
+end;
+
+procedure TKPdataentryFrm.FormKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  keypreview := true;
+  if (Key = 27) then
+  begin
+    btClose.SetFocus;
+    btClose.Click;
+    close;
+  end;
+end;
+
+procedure TKPdataentryFrm.FormShow(Sender: TObject);
+begin
+  Clientheight := 750;
+  width := 1048;
+  // AdvPageControl1.ActivePageIndex := 0;
+  PageControl1.TabIndex := 0;
+  PageControl3.TabIndex := 0;
+  rtForms.lines.loadfromfile('./docs/forms.rtf');
+  rtReminders.lines.loadfromfile('./docs/reminder.rtf');
+  f52.Clear;
+  f52.lines.loadfromfile('./docs/noticeofexecution.rtf');
+
+  // set date to now
+  dpCaseFiled.DateTime := date;
+  dpOfficialReceipt.DateTime := date;
+end;
+
+{------------------------------Save Record-------------------------------------}
+procedure TKPdataentryFrm.SubmitProcess();
+var
+  bidToSave: Integer;
+begin
+  with dbModFrm do
+  begin
+    // Assign values to fields
+    qKP.FieldByName('id_user').AsInteger := User.id;
+    qKP.FieldByName('case_num').AsString := edCaseNumber.Text;
+    qKP.FieldByName('or_number').AsString := edOrNumber.Text;
+    qKP.FieldByName('date_case_fil').AsDateTime := dpCaseFiled.Date;
+    qKP.FieldByName('date_offi_rec').AsDateTime := dpOfficialReceipt.Date;
+    if TryStrToInt(edFillingFee.Text, bidToSave) then
+    begin
+      qKP.FieldByName('filing_fee').AsInteger := bidToSave;
+    end;
+    // Post the record to the database
+    qKP.Post;
+    qKP.Refresh;
+    self.Close;
+  end;
+end;
+
+{--------------------------------Buttons---------------------------------------}
+procedure TKPdataentryFrm.btCloseClick(Sender: TObject);
+begin
+  close;
+end;
+
+procedure TKPdataentryFrm.btSaveClick(Sender: TObject);
+begin
+  // Add New Record
+  if not (dbModFrm.qKP.State in [dsEdit]) then
+  dbModFrm.qKp.Edit;
+  dbModFrm.qKP.FieldByName('id').AsInteger := GetLatestId;
+  SubmitProcess;
+end;
+
+procedure TKPdataentryFrm.btSaveEditClick(Sender: TObject);
+begin
+  // Edit Record
+  if not (dbModFrm.qKP.State in [dsEdit]) then
+  dbModFrm.qKp.Edit;
+  SubmitProcess;
+end;
+
+procedure TKPdataentryFrm.Label11Click(Sender: TObject);
+var
+  AppDir: String;
+begin
+  AppDir := ExtractFilePath(ParamStr(0));
+  ShellExecute(Handle, 'open', PCHar(AppDir + 'docs/KPhandbook.pdf'), nil, nil, SW_SHOWNORMAL);
+  {
+    //rtReminders.lines.loadfromfile('./docs/reminder.rtf');
+    //openfile(ExtractFilePath(Application.ExeName)+'.\docs\KPhandbook.pdf');
+    openfile(ExtractFilePath(Application.ExeName)+'./docs/KPhandbook.pdf');
+    //openfile(ExtractFilePath(Application.ExeName)+'./docs/KPhandbook.pdf');
+  }
+end;
+
+procedure TKPdataentryFrm.Label12Click(Sender: TObject);
+var
+  AppDir: String;
+begin
+  AppDir := ExtractFilePath(ParamStr(0));
+  ShellExecute(Handle, 'open', PCHar(AppDir + 'docs/kpPrimer.pdf'), nil, nil,
+    SW_SHOWNORMAL);
+end;
+
+procedure TKPdataentryFrm.Refresh1Click(Sender: TObject);
+begin
+  frmMsg.showmodal;
+end;
+
+end.
