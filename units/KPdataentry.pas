@@ -27,16 +27,16 @@ type
     PageControl2: TPageControl;
     TabSheet7: TTabSheet;
     AdvRichEditorFormatToolBar1: TAdvRichEditorFormatToolBar;
-    AdvRichEditor1: TAdvRichEditor;
+    reComplaints: TAdvRichEditor;
     TabSheet8: TTabSheet;
-    AdvRichEditor2: TAdvRichEditor;
+    reMainPoint: TAdvRichEditor;
     AdvRichEditorFormatToolBar2: TAdvRichEditorFormatToolBar;
     TabSheet9: TTabSheet;
-    AdvRichEditor3: TAdvRichEditor;
+    rePurpose: TAdvRichEditor;
     AdvRichEditorFormatToolBar3: TAdvRichEditorFormatToolBar;
     TabSheet11: TTabSheet;
     AdvRichEditorFormatToolBar4: TAdvRichEditorFormatToolBar;
-    AdvRichEditor4: TAdvRichEditor;
+    reOverallRemarks: TAdvRichEditor;
     TabSheet2: TTabSheet;
     GroupBox10: TGroupBox;
     rtReminders: TRichEdit;
@@ -193,7 +193,7 @@ type
     Panel22: TPanel;
     GroupBox4: TGroupBox;
     Panel9: TPanel;
-    DBEdit4: TDBEdit;
+    edMediationTime: TDBEdit;
     GroupBox5: TGroupBox;
     TMSFNCCalendar1: TTMSFNCCalendar;
     GroupBox6: TGroupBox;
@@ -215,6 +215,7 @@ type
     Label12: TLabel;
     Refresh1: TMenuItem;
     btSaveEdit: TButton;
+    AdvToolBarButton1: TAdvToolBarButton;
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormShow(Sender: TObject);
     procedure btCloseClick(Sender: TObject);
@@ -282,19 +283,42 @@ end;
 procedure TKPdataentryFrm.SubmitProcess();
 var
   bidToSave: Integer;
+  mediationValue: Integer;
 begin
   with dbModFrm do
   begin
     // Assign values to fields
+    // Complaints
     qKP.FieldByName('id_user').AsInteger := User.id;
     qKP.FieldByName('case_num').AsString := edCaseNumber.Text;
     qKP.FieldByName('or_number').AsString := edOrNumber.Text;
     qKP.FieldByName('date_case_fil').AsDateTime := dpCaseFiled.Date;
     qKP.FieldByName('date_offi_rec').AsDateTime := dpOfficialReceipt.Date;
+
     if TryStrToInt(edFillingFee.Text, bidToSave) then
     begin
       qKP.FieldByName('filing_fee').AsInteger := bidToSave;
     end;
+
+    qKp.FieldByName('or_number').AsString := edOrNumber.Text;
+    qKp.FieldByName('nature_of_case').AsString := cbNatureCase.Text;
+    qKp.FieldByName('type_of_comp_or_case').AsString := cbNatureCase.Text;
+    qKP.FieldByName('list_of_comp').AsString := edListComplains.Text;
+    qKP.FieldByName('list_of_resp').AsString := edListRespondent.Text;
+    qKP.FieldByName('complaints_form').AsString := reComplaints.Text;
+    qKp.FieldByName('main_point_of_agre').AsString := reMainPoint.Text;
+    qKP.FieldByName('purpose').AsString := rePurpose.Text;
+    qKP.FieldByName('overall_remarks').AsString := reOverallRemarks.Text;
+
+    // Mediation
+    if ckMediation.Checked then
+      mediationValue := 1
+    else
+      mediationValue := 2;
+    qKP.FieldByName('mediation_chec').asInteger := mediationValue;
+
+    qKP.FieldByName('mediation_time').AsString :=edMediationTime.Text;
+
     // Post the record to the database
     qKP.Post;
     qKP.Refresh;

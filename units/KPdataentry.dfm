@@ -119,8 +119,6 @@ object KPdataentryFrm: TKPdataentryFrm
       TabOrder = 2
       Visible = False
       OnClick = btSaveEditClick
-      ExplicitLeft = 259
-      ExplicitTop = -1
     end
   end
   object Panel2: TPanel
@@ -139,7 +137,7 @@ object KPdataentryFrm: TKPdataentryFrm
       Width = 1026
       Height = 657
       Cursor = crHandPoint
-      ActivePage = TabSheet1
+      ActivePage = TabSheet2
       Align = alClient
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
@@ -178,7 +176,7 @@ object KPdataentryFrm: TKPdataentryFrm
             object AdvRichEditorFormatToolBar1: TAdvRichEditorFormatToolBar
               Left = 3
               Top = 0
-              Width = 709
+              Width = 732
               Height = 28
               UIStyle = tsOffice2007Luna
               AllowFloating = True
@@ -195,7 +193,7 @@ object KPdataentryFrm: TKPdataentryFrm
               ParentStyler = False
               ParentOptionPicture = True
               ToolBarIndex = -1
-              RichEditor = AdvRichEditor1
+              RichEditor = reComplaints
               Hints.BoldTitle = 'Bold (Ctrl+B)'
               Hints.BoldContent = 'Select bold font style'
               Hints.ItalicTitle = 'Italic (Ctrl+I)'
@@ -237,12 +235,31 @@ object KPdataentryFrm: TKPdataentryFrm
               Hints.FontSizeDownTitle = 'Decrease font size'
               Hints.FontSizeDownContent = 'Make your text a bit smaller'
               Options = [btBold, btItalic, btUnderline, btStrikeThrough, btSubscript, btSuperScript, btInsertPicture, btInsertspecialChar, btBullet, btNumberedBullet, btTextColor, btBackgroundColor, btAlignLeft, btAlignCenter, btAlignRight, btInsertHyperlink, btIndent, btUnindent, btFontSizeDown, btFontSizeUp]
+              object AdvToolBarButton1: TAdvToolBarButton
+                Left = 405
+                Top = 2
+                Width = 23
+                Height = 22
+                Appearance.CaptionFont.Charset = DEFAULT_CHARSET
+                Appearance.CaptionFont.Color = clWindowText
+                Appearance.CaptionFont.Height = -12
+                Appearance.CaptionFont.Name = 'Segoe UI'
+                Appearance.CaptionFont.Style = []
+                Font.Charset = DEFAULT_CHARSET
+                Font.Color = clWindowText
+                Font.Height = -12
+                Font.Name = 'Tahoma'
+                Font.Style = []
+                ParentFont = False
+                Position = daTop
+                Version = '6.8.3.11'
+              end
             end
-            object AdvRichEditor1: TAdvRichEditor
+            object reComplaints: TAdvRichEditor
               AlignWithMargins = True
               Left = 4
               Top = 32
-              Width = 974
+              Width = 972
               Height = 285
               Cursor = crIBeam
               Margins.Left = 8
@@ -267,7 +284,7 @@ object KPdataentryFrm: TKPdataentryFrm
               Color = clWindow
               ParentFont = False
               Version = '1.8.9.17'
-              ExplicitWidth = 972
+              ExplicitWidth = 970
               ExplicitHeight = 281
             end
           end
@@ -277,11 +294,11 @@ object KPdataentryFrm: TKPdataentryFrm
             DesignSize = (
               1010
               323)
-            object AdvRichEditor2: TAdvRichEditor
+            object reMainPoint: TAdvRichEditor
               AlignWithMargins = True
               Left = 4
               Top = 32
-              Width = 974
+              Width = 972
               Height = 285
               Cursor = crIBeam
               Margins.Left = 8
@@ -327,7 +344,7 @@ object KPdataentryFrm: TKPdataentryFrm
               ParentStyler = False
               ParentOptionPicture = True
               ToolBarIndex = -1
-              RichEditor = AdvRichEditor2
+              RichEditor = reMainPoint
               Hints.BoldTitle = 'Bold (Ctrl+B)'
               Hints.BoldContent = 'Select bold font style'
               Hints.ItalicTitle = 'Italic (Ctrl+I)'
@@ -377,11 +394,11 @@ object KPdataentryFrm: TKPdataentryFrm
             DesignSize = (
               1010
               323)
-            object AdvRichEditor3: TAdvRichEditor
+            object rePurpose: TAdvRichEditor
               AlignWithMargins = True
               Left = 4
               Top = 32
-              Width = 974
+              Width = 972
               Height = 285
               Cursor = crIBeam
               Margins.Left = 8
@@ -427,7 +444,7 @@ object KPdataentryFrm: TKPdataentryFrm
               ParentStyler = False
               ParentOptionPicture = True
               ToolBarIndex = -1
-              RichEditor = AdvRichEditor3
+              RichEditor = rePurpose
               Hints.BoldTitle = 'Bold (Ctrl+B)'
               Hints.BoldContent = 'Select bold font style'
               Hints.ItalicTitle = 'Italic (Ctrl+I)'
@@ -497,7 +514,7 @@ object KPdataentryFrm: TKPdataentryFrm
               ParentStyler = False
               ParentOptionPicture = True
               ToolBarIndex = -1
-              RichEditor = AdvRichEditor1
+              RichEditor = reComplaints
               Hints.BoldTitle = 'Bold (Ctrl+B)'
               Hints.BoldContent = 'Select bold font style'
               Hints.ItalicTitle = 'Italic (Ctrl+I)'
@@ -540,11 +557,11 @@ object KPdataentryFrm: TKPdataentryFrm
               Hints.FontSizeDownContent = 'Make your text a bit smaller'
               Options = [btBold, btItalic, btUnderline, btStrikeThrough, btSubscript, btSuperScript, btInsertPicture, btInsertspecialChar, btBullet, btNumberedBullet, btTextColor, btBackgroundColor, btAlignLeft, btAlignCenter, btAlignRight, btInsertHyperlink, btIndent, btUnindent]
             end
-            object AdvRichEditor4: TAdvRichEditor
+            object reOverallRemarks: TAdvRichEditor
               AlignWithMargins = True
               Left = 4
               Top = 32
-              Width = 974
+              Width = 972
               Height = 285
               Cursor = crIBeam
               Margins.Left = 8
@@ -1113,7 +1130,7 @@ object KPdataentryFrm: TKPdataentryFrm
               DesignSize = (
                 201
                 54)
-              object DBEdit4: TDBEdit
+              object edMediationTime: TDBEdit
                 Left = 7
                 Top = 24
                 Width = 185
@@ -2938,7 +2955,7 @@ object KPdataentryFrm: TKPdataentryFrm
               AlignWithMargins = True
               Left = 10
               Top = 32
-              Width = 967
+              Width = 965
               Height = 303
               Cursor = crIBeam
               Margins.Left = 8
@@ -3118,7 +3135,7 @@ object KPdataentryFrm: TKPdataentryFrm
               AlignWithMargins = True
               Left = 10
               Top = 32
-              Width = 967
+              Width = 965
               Height = 303
               Cursor = crIBeam
               Margins.Left = 8
@@ -3199,7 +3216,7 @@ object KPdataentryFrm: TKPdataentryFrm
           object DBMemo2: TDBMemo
             Left = 10
             Top = 51
-            Width = 973
+            Width = 971
             Height = 105
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
@@ -3401,7 +3418,7 @@ object KPdataentryFrm: TKPdataentryFrm
             AlignWithMargins = True
             Left = 8
             Top = 52
-            Width = 976
+            Width = 974
             Height = 421
             Cursor = crIBeam
             Margins.Left = 8

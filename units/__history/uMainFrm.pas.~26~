@@ -97,9 +97,12 @@ type
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
     procedure DBGrid1CellClick(Column: TColumn);
+    procedure btEdit1Click(Sender: TObject);
+    procedure btDele2Click(Sender: TObject);
 
   private
     SelectedRow: Integer;
+    SelectedColumn: Integer;
     { Private declarations }
   public
     { Public declarations }
@@ -115,61 +118,35 @@ implementation
 uses abtPas, uLoginFrm, KPmasterlist, LuponMem, KPdataentry, Signatories, Settings,
   users, crimeType, msgPas;
 
-procedure TMainFrm.About1Click(Sender: TObject);
-begin
-     abtFrm.ShowModal;
-end;
-
-procedure TMainFrm.AboutUs1Click(Sender: TObject);
-begin
-     AbtFrm.ShowModal;
-end;
-
-procedure TMainFrm.AdvPageControl1Changing(Sender: TObject;
-  var AllowChange: Boolean);
-begin
-     AdvPageControl1.ActiveFont.Size := 12;
-     AdvPageControl1.ActiveFont.Style :=[fsBold, fsUnderline, fsItalic];
-     //AdvPageControl1.ActiveFont.Style :=[fsItalic];
-end;
-
-procedure TMainFrm.Backup1Click(Sender: TObject);
-begin
-     ShowMessage(' Backup Database... ');
-end;
-
-procedure TMainFrm.btAdd3Click(Sender: TObject);
-begin
-     frmCaseType.ShowModal;
-end;
-
-procedure TMainFrm.DBGrid1CellClick(Column: TColumn);
-begin
-  SelectedRow := dbModFrm.dsKP.DataSet.RecNo;
-  DBGrid1.Invalidate; // Redraw the grid
-end;
-
-procedure TMainFrm.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
-  DataCol: Integer; Column: TColumn; State: TGridDrawState);
-begin
-  with Sender as TDBGrid do
-  begin
-    if SelectedRow = dbModFrm.dsKP.DataSet.RecNo then
-    begin
-      Canvas.Brush.Color := clMoneyGreen; // Selected row color
-    end
-    else
-    begin
-      Canvas.Brush.Color := clWebLemonChiffon; // Default color
-    end;
-    Canvas.FillRect(Rect);
-    DefaultDrawColumnCell(Rect, DataCol, Column, State);
-  end;
-end;
-
+{-----------------------Buttons-----------------------}
 procedure TMainFrm.btAdd1Click(Sender: TObject);
 begin
-     KPdataentryFrm.showModal;
+  // Add KP Record
+  with dbModFrm do
+  begin
+    dsKP.DataSet.Insert;
+  end;
+
+  // set date to now
+  KPdataentryFrm.dpCaseFiled.DateTime := date;
+  KPdataentryFrm.dpOfficialReceipt.DateTime := date;
+
+  KPdataentryFrm.btSave.Visible := True;
+  KPdataentryFrm.btSaveEdit.Visible := False;
+  KPdataentryFrm.showModal;
+end;
+
+procedure TMainFrm.btEdit1Click(Sender: TObject);
+begin
+  // Edit KP Record
+  KPdataentryFrm.btSave.Visible := False;
+  KPdataentryFrm.btSaveEdit.Visible := True;
+  KPdataentryFrm.showModal;
+end;
+
+procedure TMainFrm.btDele2Click(Sender: TObject);
+begin
+  // Delete KP Record
 end;
 
 procedure TMainFrm.btAdd2Click(Sender: TObject);
@@ -182,8 +159,51 @@ begin
      Close;
 end;
 
+procedure TMainFrm.Refresh1Click(Sender: TObject);
+begin
+     //ShowMessage(' System Refresh ');
+     frmMsg.ShowModal;
+end;
+
+procedure TMainFrm.Signatories1Click(Sender: TObject);
+begin
+     frmSignatories.ShowModal;
+end;
+
+procedure TMainFrm.SystemPatch1Click(Sender: TObject);
+begin
+    frmSettings.ShowModal;
+end;
+
+procedure TMainFrm.UsersCredentials1Click(Sender: TObject);
+begin
+     frmUsers.ShowModal;
+end;
+
+procedure TMainFrm.About1Click(Sender: TObject);
+begin
+     abtFrm.ShowModal;
+end;
+
+procedure TMainFrm.AboutUs1Click(Sender: TObject);
+begin
+     AbtFrm.ShowModal;
+end;
+
+procedure TMainFrm.Backup1Click(Sender: TObject);
+begin
+     ShowMessage(' Backup Database... ');
+end;
+
+procedure TMainFrm.btAdd3Click(Sender: TObject);
+begin
+     frmCaseType.ShowModal;
+end;
+
+{-----------------------Form-----------------------}
 procedure TMainFrm.FormShow(Sender: TObject);
 begin
+  { Sir Jojo's code }
   Image1.Picture.LoadFromFile('./docs/bgForm.png');
   bpLogo.Picture.LoadFromFile('./docs/bpLogo.png');
   imageFree.Picture.LoadFromFile('./docs/freeware.png');
@@ -194,6 +214,7 @@ begin
   LoginFrm.Tag := 0;
 
   LoginFrm.ShowModal;
+  {-----------------}
 
   // if not logged in
   if LoginFrm.Tag = 0 then
@@ -202,7 +223,7 @@ begin
     Application.Terminate;
   end;
 
-  // logged in na dito
+  // logged in
   MainFrm.Caption := 'KPSystem | Katarungang Pambarangay | 2024 | ' + dbModFrm.User.username;
   dbModFrm.qKP.Open;
 
@@ -226,25 +247,43 @@ begin
   {-----------------}
 end;
 
-procedure TMainFrm.Refresh1Click(Sender: TObject);
+{-----------------------Grid-----------------------}
+procedure TMainFrm.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+  DataCol: Integer; Column: TColumn; State: TGridDrawState);
 begin
-     //ShowMessage(' System Refresh ');
-     frmMsg.ShowModal;
+  with Sender as TDBGrid do
+  begin
+    if (SelectedRow = dbModFrm.dsKP.DataSet.RecNo) and (SelectedColumn = Column.Index) then
+    begin
+      Canvas.Brush.Color := clWebKhaki; // Selected cell color
+    end
+    else if SelectedRow = dbModFrm.dsKP.DataSet.RecNo then
+    begin
+      Canvas.Brush.Color := clMoneyGreen; // Selected row color
+    end
+    else
+    begin
+      Canvas.Brush.Color := clWindow; // Default color
+    end;
+    Canvas.FillRect(Rect);
+    DefaultDrawColumnCell(Rect, DataCol, Column, State);
+  end;
 end;
 
-procedure TMainFrm.Signatories1Click(Sender: TObject);
+procedure TMainFrm.DBGrid1CellClick(Column: TColumn);
 begin
-     frmSignatories.ShowModal;
+  SelectedRow := dbModFrm.dsKP.DataSet.RecNo;
+  SelectedColumn := Column.Index;
+  DBGrid1.Invalidate; // Redraw the grid
 end;
 
-procedure TMainFrm.SystemPatch1Click(Sender: TObject);
+{-------------------Page Control------------------}
+procedure TMainFrm.AdvPageControl1Changing(Sender: TObject;
+  var AllowChange: Boolean);
 begin
-    frmSettings.ShowModal;
-end;
-
-procedure TMainFrm.UsersCredentials1Click(Sender: TObject);
-begin
-     frmUsers.ShowModal;
+     AdvPageControl1.ActiveFont.Size := 12;
+     AdvPageControl1.ActiveFont.Style :=[fsBold, fsUnderline, fsItalic];
+     //AdvPageControl1.ActiveFont.Style :=[fsItalic];
 end;
 
 end.

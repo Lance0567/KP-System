@@ -99,6 +99,7 @@ type
     procedure DBGrid1CellClick(Column: TColumn);
     procedure btEdit1Click(Sender: TObject);
     procedure btDele2Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
 
   private
     SelectedRow: Integer;
@@ -201,6 +202,11 @@ begin
 end;
 
 {-----------------------Form-----------------------}
+procedure TMainFrm.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Application.Terminate;
+end;
+
 procedure TMainFrm.FormShow(Sender: TObject);
 begin
   { Sir Jojo's code }

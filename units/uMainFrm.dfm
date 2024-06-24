@@ -16,6 +16,7 @@ object MainFrm: TMainFrm
   Menu = MainMenu1
   PopupMenu = PopupMenu1
   Position = poScreenCenter
+  OnClose = FormClose
   OnShow = FormShow
   TextHeight = 15
   object StatusBar1: TStatusBar
@@ -64,6 +65,8 @@ object MainFrm: TMainFrm
     PersistPagesState.Enabled = False
     TabOrder = 1
     OnChanging = AdvPageControl1Changing
+    ExplicitWidth = 1075
+    ExplicitHeight = 708
     object AdvTabSheet1: TAdvTabSheet
       Caption = 'Home'
       Color = clBtnFace
@@ -18609,6 +18612,8 @@ object MainFrm: TMainFrm
       ColorTo = clNone
       TabColor = clBtnFace
       TabColorTo = clNone
+      ExplicitWidth = 1067
+      ExplicitHeight = 673
       DesignSize = (
         1069
         677)
@@ -18620,6 +18625,7 @@ object MainFrm: TMainFrm
         ButtonHeight = 40
         Caption = 'ToolBar1'
         TabOrder = 0
+        ExplicitWidth = 1067
         object btAdd1: TButton
           Left = 0
           Top = 0
@@ -18686,6 +18692,8 @@ object MainFrm: TMainFrm
         Height = 634
         Anchors = [akLeft, akTop, akRight, akBottom]
         TabOrder = 1
+        ExplicitWidth = 1060
+        ExplicitHeight = 630
         object Splitter1: TSplitter
           Left = 251
           Top = 1
@@ -18772,6 +18780,7 @@ object MainFrm: TMainFrm
           ParentFont = False
           TabOrder = 1
           VerticalAlignment = taAlignTop
+          ExplicitHeight = 628
           DesignSize = (
             250
             632)
@@ -18936,8 +18945,6 @@ object MainFrm: TMainFrm
       ColorTo = clNone
       TabColor = clBtnFace
       TabColorTo = clNone
-      ExplicitWidth = 1067
-      ExplicitHeight = 673
       DesignSize = (
         1069
         677)
@@ -18949,7 +18956,6 @@ object MainFrm: TMainFrm
         ButtonHeight = 40
         Caption = 'ToolBar1'
         TabOrder = 0
-        ExplicitWidth = 1067
         object btAdd2: TButton
           Left = 0
           Top = 0
