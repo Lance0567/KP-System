@@ -4,7 +4,7 @@ object KPdataentryFrm: TKPdataentryFrm
   BorderIcons = [biSystemMenu, biMaximize]
   Caption = 'Katarungang Pambarangay Proceedings'
   ClientHeight = 750
-  ClientWidth = 1034
+  ClientWidth = 1104
   Color = clBtnFace
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
@@ -15,6 +15,7 @@ object KPdataentryFrm: TKPdataentryFrm
   KeyPreview = True
   PopupMenu = PopUp
   Position = poScreenCenter
+  OnClose = FormClose
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
   OnShow = FormShow
@@ -22,7 +23,7 @@ object KPdataentryFrm: TKPdataentryFrm
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1034
+    Width = 1104
     Height = 29
     Align = alTop
     Caption = 'Katarungang Pambarangay Proceedings'
@@ -33,12 +34,12 @@ object KPdataentryFrm: TKPdataentryFrm
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 1032
+    ExplicitWidth = 1102
   end
   object StatusBar1: TStatusBar
     Left = 0
     Top = 731
-    Width = 1034
+    Width = 1104
     Height = 19
     Panels = <
       item
@@ -46,17 +47,18 @@ object KPdataentryFrm: TKPdataentryFrm
         Width = 50
       end>
     ExplicitTop = 727
-    ExplicitWidth = 1032
+    ExplicitWidth = 1102
   end
   object Panel10: TPanel
     Left = 0
     Top = 694
-    Width = 1034
+    Width = 1104
     Height = 37
     Align = alBottom
     TabOrder = 3
+    OnClick = pHeaderClick
     ExplicitTop = 690
-    ExplicitWidth = 1032
+    ExplicitWidth = 1102
     object btSave: TButton
       AlignWithMargins = True
       Left = 99
@@ -124,20 +126,20 @@ object KPdataentryFrm: TKPdataentryFrm
   object Panel2: TPanel
     Left = 0
     Top = 29
-    Width = 1034
+    Width = 1104
     Height = 665
     Align = alClient
     TabOrder = 2
-    ExplicitWidth = 1032
+    ExplicitWidth = 1102
     ExplicitHeight = 661
     object PageControl1: TPageControl
       AlignWithMargins = True
       Left = 4
       Top = 4
-      Width = 1026
+      Width = 1096
       Height = 657
       Cursor = crHandPoint
-      ActivePage = TabSheet2
+      ActivePage = TabSheet1
       Align = alClient
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
@@ -147,14 +149,14 @@ object KPdataentryFrm: TKPdataentryFrm
       MultiLine = True
       ParentFont = False
       TabOrder = 0
-      ExplicitWidth = 1024
+      ExplicitWidth = 1094
       ExplicitHeight = 653
       object TabSheet1: TTabSheet
         Caption = #9632' (1) Complaints  '
         object PageControl2: TPageControl
           Left = 0
           Top = 270
-          Width = 1018
+          Width = 1088
           Height = 355
           Cursor = crHandPoint
           ActivePage = TabSheet7
@@ -166,18 +168,17 @@ object KPdataentryFrm: TKPdataentryFrm
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 2
-          ExplicitWidth = 1016
-          ExplicitHeight = 351
           object TabSheet7: TTabSheet
             Caption = #9632' Complaint(s) FORM 7 '
-            DesignSize = (
-              1010
-              323)
             object AdvRichEditorFormatToolBar1: TAdvRichEditorFormatToolBar
-              Left = 3
-              Top = 0
-              Width = 732
-              Height = 28
+              AlignWithMargins = True
+              Left = 8
+              Top = 8
+              Width = 734
+              Height = 29
+              Margins.Left = 8
+              Margins.Top = 8
+              Margins.Bottom = 0
               UIStyle = tsOffice2007Luna
               AllowFloating = True
               Caption = ''
@@ -191,8 +192,10 @@ object KPdataentryFrm: TKPdataentryFrm
               TextAutoOptionMenu = 'Add or Remove Buttons'
               TextOptionMenu = 'Options'
               ParentStyler = False
+              Images = ImageList1
               ParentOptionPicture = True
               ToolBarIndex = -1
+              Align = alTop
               RichEditor = reComplaints
               Hints.BoldTitle = 'Bold (Ctrl+B)'
               Hints.BoldContent = 'Select bold font style'
@@ -238,8 +241,8 @@ object KPdataentryFrm: TKPdataentryFrm
               object AdvToolBarButton1: TAdvToolBarButton
                 Left = 405
                 Top = 2
-                Width = 23
-                Height = 22
+                Width = 25
+                Height = 25
                 Appearance.CaptionFont.Charset = DEFAULT_CHARSET
                 Appearance.CaptionFont.Color = clWindowText
                 Appearance.CaptionFont.Height = -12
@@ -250,6 +253,7 @@ object KPdataentryFrm: TKPdataentryFrm
                 Font.Height = -12
                 Font.Name = 'Tahoma'
                 Font.Style = []
+                ImageIndex = 0
                 ParentFont = False
                 Position = daTop
                 Version = '6.8.3.11'
@@ -257,10 +261,10 @@ object KPdataentryFrm: TKPdataentryFrm
             end
             object reComplaints: TAdvRichEditor
               AlignWithMargins = True
-              Left = 4
-              Top = 32
-              Width = 972
-              Height = 285
+              Left = 8
+              Top = 45
+              Width = 1064
+              Height = 270
               Cursor = crIBeam
               Margins.Left = 8
               Margins.Top = 8
@@ -271,7 +275,7 @@ object KPdataentryFrm: TKPdataentryFrm
               VertScrollBar.Range = 6
               VertScrollBar.Smooth = True
               VertScrollBar.Tracking = True
-              Anchors = [akLeft, akTop, akRight, akBottom]
+              Align = alClient
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clBlack
               Font.Height = -13
@@ -284,21 +288,20 @@ object KPdataentryFrm: TKPdataentryFrm
               Color = clWindow
               ParentFont = False
               Version = '1.8.9.17'
-              ExplicitWidth = 970
-              ExplicitHeight = 281
+              ExplicitTop = 46
             end
           end
           object TabSheet8: TTabSheet
             Caption = #9632' Main Point of Agreement FORM 7 '
             ImageIndex = 1
             DesignSize = (
-              1010
+              1080
               323)
             object reMainPoint: TAdvRichEditor
               AlignWithMargins = True
               Left = 4
               Top = 32
-              Width = 972
+              Width = 1038
               Height = 285
               Cursor = crIBeam
               Margins.Left = 8
@@ -392,13 +395,13 @@ object KPdataentryFrm: TKPdataentryFrm
             Caption = #9632' Purpose '
             ImageIndex = 2
             DesignSize = (
-              1010
+              1080
               323)
             object rePurpose: TAdvRichEditor
               AlignWithMargins = True
               Left = 4
               Top = 32
-              Width = 972
+              Width = 1038
               Height = 285
               Cursor = crIBeam
               Margins.Left = 8
@@ -492,7 +495,7 @@ object KPdataentryFrm: TKPdataentryFrm
             Caption = #9632' Overall Remarks'
             ImageIndex = 3
             DesignSize = (
-              1010
+              1080
               323)
             object AdvRichEditorFormatToolBar4: TAdvRichEditorFormatToolBar
               Left = 3
@@ -561,7 +564,7 @@ object KPdataentryFrm: TKPdataentryFrm
               AlignWithMargins = True
               Left = 4
               Top = 32
-              Width = 972
+              Width = 1038
               Height = 285
               Cursor = crIBeam
               Margins.Left = 8
@@ -592,11 +595,10 @@ object KPdataentryFrm: TKPdataentryFrm
         object Panel12: TPanel
           Left = 0
           Top = 0
-          Width = 1018
+          Width = 1088
           Height = 237
           Align = alTop
           TabOrder = 0
-          ExplicitWidth = 1016
           object Panel3: TPanel
             Left = 7
             Top = 7
@@ -619,6 +621,7 @@ object KPdataentryFrm: TKPdataentryFrm
               Top = 16
               Width = 125
               Height = 25
+              Hint = 'Hello'
               Anchors = [akLeft, akTop, akRight]
               DataField = 'case_num'
               DataSource = dbModFrm.dsKP
@@ -882,11 +885,10 @@ object KPdataentryFrm: TKPdataentryFrm
         object Panel13: TPanel
           Left = 0
           Top = 237
-          Width = 1018
+          Width = 1088
           Height = 33
           Align = alTop
           TabOrder = 1
-          ExplicitWidth = 1016
           object btF7: TButton
             Left = 8
             Top = 1
@@ -910,83 +912,43 @@ object KPdataentryFrm: TKPdataentryFrm
       object TabSheet2: TTabSheet
         Caption = #9632' (2) Mediation  '
         ImageIndex = 1
-        object GroupBox10: TGroupBox
+        object gbReminders: TGroupBox
           Left = 0
           Top = 55
-          Width = 533
+          Width = 528
           Height = 570
           Align = alLeft
           Caption = 'Reminders'
           Enabled = False
           TabOrder = 1
-          DesignSize = (
-            533
-            570)
+          OnClick = pHeaderClick
+          ExplicitHeight = 566
           object rtReminders: TRichEdit
-            Left = 8
-            Top = 16
-            Width = 517
-            Height = 546
-            Anchors = [akLeft, akTop, akRight, akBottom]
+            AlignWithMargins = True
+            Left = 5
+            Top = 22
+            Width = 518
+            Height = 543
+            Align = alClient
             HideScrollBars = False
             Lines.Strings = (
               'rtReminders')
             ReadOnly = True
             ScrollBars = ssVertical
             TabOrder = 0
+            OnClick = pHeaderClick
+            ExplicitHeight = 539
           end
         end
-        object DateTimePicker4: TDateTimePicker
-          Left = 71
-          Top = 546
-          Width = 186
-          Height = 25
-          Date = 45452.000000000000000000
-          Time = 0.733176562498556500
-          TabOrder = 3
-          TabStop = False
-          Visible = False
-        end
-        object DateTimePicker3: TDateTimePicker
-          Left = 71
-          Top = 522
-          Width = 186
-          Height = 25
-          Date = 45452.000000000000000000
-          Time = 0.733176562498556500
-          TabOrder = 4
-          TabStop = False
-          Visible = False
-        end
-        object DateTimePicker5: TDateTimePicker
-          Left = 299
-          Top = 522
-          Width = 186
-          Height = 25
-          Date = 45452.000000000000000000
-          Time = 0.733176562498556500
-          TabOrder = 5
-          TabStop = False
-          Visible = False
-        end
-        object DateTimePicker6: TDateTimePicker
-          Left = 299
-          Top = 546
-          Width = 186
-          Height = 25
-          Date = 45452.000000000000000000
-          Time = 0.733176562498556500
-          TabOrder = 6
-          TabStop = False
-          Visible = False
-        end
-        object Panel21: TPanel
+        object pHeader: TPanel
           Left = 0
           Top = 0
-          Width = 1018
+          Width = 1088
           Height = 55
           Align = alTop
           TabOrder = 0
+          OnClick = pHeaderClick
+          ExplicitWidth = 1086
           object Image1: TImage
             Left = 10
             Top = 3
@@ -1089,22 +1051,24 @@ object KPdataentryFrm: TKPdataentryFrm
             TabOrder = 0
           end
         end
-        object Panel22: TPanel
-          Left = 533
+        object pInformation: TPanel
+          Left = 528
           Top = 55
-          Width = 485
+          Width = 560
           Height = 570
           Align = alClient
           TabOrder = 2
-          DesignSize = (
-            485
-            570)
-          object GroupBox4: TGroupBox
-            Left = 18
-            Top = 6
-            Width = 222
-            Height = 563
-            Anchors = [akLeft, akTop, akBottom]
+          ExplicitWidth = 558
+          ExplicitHeight = 566
+          object gbMediationInfo: TGroupBox
+            AlignWithMargins = True
+            Left = 11
+            Top = 4
+            Width = 265
+            Height = 562
+            Margins.Left = 10
+            Margins.Right = 10
+            Align = alLeft
             Caption = 'Issuance of Notice of Hearing'
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -1113,10 +1077,12 @@ object KPdataentryFrm: TKPdataentryFrm
             Font.Style = [fsBold]
             ParentFont = False
             TabOrder = 0
-            object Panel9: TPanel
+            OnClick = mcMediationClick
+            ExplicitHeight = 558
+            object pMediation: TPanel
               Left = 12
-              Top = 235
-              Width = 201
+              Top = 240
+              Width = 245
               Height = 54
               Caption = 'Hearing/Mediation Time:'
               Font.Charset = ANSI_CHARSET
@@ -1127,206 +1093,66 @@ object KPdataentryFrm: TKPdataentryFrm
               ParentFont = False
               TabOrder = 1
               VerticalAlignment = taAlignTop
+              OnClick = mcMediationClick
               DesignSize = (
-                201
+                245
                 54)
               object edMediationTime: TDBEdit
                 Left = 7
                 Top = 24
-                Width = 185
+                Width = 229
                 Height = 25
                 Anchors = [akLeft, akTop, akRight]
                 TabOrder = 0
+                OnClick = mcMediationClick
               end
             end
-            object GroupBox5: TGroupBox
-              Left = 12
-              Top = 16
-              Width = 201
+            object gbMediation1: TGroupBox
+              Left = 2
+              Top = 19
+              Width = 261
               Height = 213
               Caption = 'Hearing/Mediation Date:'
               TabOrder = 0
-              DesignSize = (
-                201
-                213)
-              object TMSFNCCalendar1: TTMSFNCCalendar
-                Left = 8
-                Top = 20
-                Width = 185
-                Height = 185
-                ParentDoubleBuffered = False
-                Anchors = [akLeft, akTop, akRight, akBottom]
-                DoubleBuffered = True
+              OnClick = mcMediationClick
+              object mcMediation: TMonthCalendar
+                AlignWithMargins = True
+                Left = 5
+                Top = 19
+                Width = 251
+                Height = 187
+                Margins.Top = 0
+                Margins.Bottom = 5
+                Align = alClient
+                MultiSelect = True
+                Date = 45468.000000000000000000
+                EndDate = 45468.000000000000000000
                 TabOrder = 0
-                Header.Arrow.ArrowLeftBitmap = <>
-                Header.Arrow.ArrowRightBitmap = <>
-                Header.Fill.Kind = gfkGradient
-                Header.Fill.Color = 16578806
-                Header.Fill.ColorTo = 16380654
-                Header.Font.Charset = DEFAULT_CHARSET
-                Header.Font.Color = 4539717
-                Header.Font.Height = -13
-                Header.Font.Name = 'Segoe UI'
-                Header.Font.Style = [fsBold]
-                Footer.Fill.Kind = gfkGradient
-                Footer.Fill.Color = 16578806
-                Footer.Fill.ColorTo = 16380654
-                Footer.Font.Charset = DEFAULT_CHARSET
-                Footer.Font.Color = 4539717
-                Footer.Font.Height = -13
-                Footer.Font.Name = 'Segoe UI'
-                Footer.Font.Style = []
-                Day = 9
-                Month = 6
-                Year = 2024
-                Date = 45452.000000000000000000
-                Events = <>
-                WeekNumberAppearance.Font.Charset = DEFAULT_CHARSET
-                WeekNumberAppearance.Font.Color = 8026746
-                WeekNumberAppearance.Font.Height = -11
-                WeekNumberAppearance.Font.Name = 'Segoe UI'
-                WeekNumberAppearance.Font.Style = []
-                DayNameAppearance.Font.Charset = DEFAULT_CHARSET
-                DayNameAppearance.Font.Color = 8026746
-                DayNameAppearance.Font.Height = -11
-                DayNameAppearance.Font.Name = 'Segoe UI'
-                DayNameAppearance.Font.Style = []
-                DateAppearance.Font.Charset = DEFAULT_CHARSET
-                DateAppearance.Font.Color = 8026746
-                DateAppearance.Font.Height = -11
-                DateAppearance.Font.Name = 'Segoe UI'
-                DateAppearance.Font.Style = []
-                DateAppearance.SelectedFill.Color = 16380654
-                DateAppearance.SelectedFont.Charset = DEFAULT_CHARSET
-                DateAppearance.SelectedFont.Color = 4539717
-                DateAppearance.SelectedFont.Height = -13
-                DateAppearance.SelectedFont.Name = 'Segoe UI'
-                DateAppearance.SelectedFont.Style = [fsBold]
-                DateAppearance.SelectedStroke.Color = 15702829
-                DateAppearance.DisabledFont.Charset = DEFAULT_CHARSET
-                DateAppearance.DisabledFont.Color = 13882323
-                DateAppearance.DisabledFont.Height = -11
-                DateAppearance.DisabledFont.Name = 'Segoe UI'
-                DateAppearance.DisabledFont.Style = []
-                DateAppearance.DateBeforeFont.Charset = DEFAULT_CHARSET
-                DateAppearance.DateBeforeFont.Color = 12303291
-                DateAppearance.DateBeforeFont.Height = -11
-                DateAppearance.DateBeforeFont.Name = 'Segoe UI'
-                DateAppearance.DateBeforeFont.Style = []
-                DateAppearance.DateAfterFont.Charset = DEFAULT_CHARSET
-                DateAppearance.DateAfterFont.Color = 12303291
-                DateAppearance.DateAfterFont.Height = -11
-                DateAppearance.DateAfterFont.Name = 'Segoe UI'
-                DateAppearance.DateAfterFont.Style = []
-                DateAppearance.TodayFont.Charset = DEFAULT_CHARSET
-                DateAppearance.TodayFont.Color = 15702829
-                DateAppearance.TodayFont.Height = -11
-                DateAppearance.TodayFont.Name = 'Segoe UI'
-                DateAppearance.TodayFont.Style = [fsBold]
-                DateAppearance.BadgeFont.Charset = DEFAULT_CHARSET
-                DateAppearance.BadgeFont.Color = clWhite
-                DateAppearance.BadgeFont.Height = -9
-                DateAppearance.BadgeFont.Name = 'Segoe UI'
-                DateAppearance.BadgeFont.Style = []
-                DateAppearance.ShowFocus = False
-                LineAppearance.Stroke.Color = 11119017
-                GlobalFont.Scale = 1.000000000000000000
-                GlobalFont.Style = []
+                OnClick = mcMediationClick
               end
             end
-            object GroupBox6: TGroupBox
+            object gbMediation2: TGroupBox
+              AlignWithMargins = True
               Left = 12
               Top = 310
-              Width = 201
+              Width = 245
               Height = 213
               Caption = 'Made this Date:'
               TabOrder = 2
-              DesignSize = (
-                201
-                213)
-              object TMSFNCCalendar2: TTMSFNCCalendar
-                Left = 8
-                Top = 20
-                Width = 185
-                Height = 185
-                ParentDoubleBuffered = False
-                Anchors = [akLeft, akTop, akRight, akBottom]
-                DoubleBuffered = True
+              object mcMediationMade: TMonthCalendar
+                AlignWithMargins = True
+                Left = 5
+                Top = 19
+                Width = 235
+                Height = 187
+                Margins.Top = 0
+                Margins.Bottom = 5
+                Align = alClient
+                MultiSelect = True
+                Date = 45444.000000000000000000
+                EndDate = 45444.000000000000000000
                 TabOrder = 0
-                Header.Arrow.ArrowLeftBitmap = <>
-                Header.Arrow.ArrowRightBitmap = <>
-                Header.Fill.Kind = gfkGradient
-                Header.Fill.Color = 16578806
-                Header.Fill.ColorTo = 16380654
-                Header.Font.Charset = DEFAULT_CHARSET
-                Header.Font.Color = 4539717
-                Header.Font.Height = -13
-                Header.Font.Name = 'Segoe UI'
-                Header.Font.Style = [fsBold]
-                Footer.Fill.Kind = gfkGradient
-                Footer.Fill.Color = 16578806
-                Footer.Fill.ColorTo = 16380654
-                Footer.Font.Charset = DEFAULT_CHARSET
-                Footer.Font.Color = 4539717
-                Footer.Font.Height = -13
-                Footer.Font.Name = 'Segoe UI'
-                Footer.Font.Style = []
-                Day = 9
-                Month = 6
-                Year = 2024
-                Date = 45452.000000000000000000
-                Events = <>
-                WeekNumberAppearance.Font.Charset = DEFAULT_CHARSET
-                WeekNumberAppearance.Font.Color = 8026746
-                WeekNumberAppearance.Font.Height = -11
-                WeekNumberAppearance.Font.Name = 'Segoe UI'
-                WeekNumberAppearance.Font.Style = []
-                DayNameAppearance.Font.Charset = DEFAULT_CHARSET
-                DayNameAppearance.Font.Color = 8026746
-                DayNameAppearance.Font.Height = -11
-                DayNameAppearance.Font.Name = 'Segoe UI'
-                DayNameAppearance.Font.Style = []
-                DateAppearance.Font.Charset = DEFAULT_CHARSET
-                DateAppearance.Font.Color = 8026746
-                DateAppearance.Font.Height = -11
-                DateAppearance.Font.Name = 'Segoe UI'
-                DateAppearance.Font.Style = []
-                DateAppearance.SelectedFill.Color = 16380654
-                DateAppearance.SelectedFont.Charset = DEFAULT_CHARSET
-                DateAppearance.SelectedFont.Color = 4539717
-                DateAppearance.SelectedFont.Height = -13
-                DateAppearance.SelectedFont.Name = 'Segoe UI'
-                DateAppearance.SelectedFont.Style = [fsBold]
-                DateAppearance.SelectedStroke.Color = 15702829
-                DateAppearance.DisabledFont.Charset = DEFAULT_CHARSET
-                DateAppearance.DisabledFont.Color = 13882323
-                DateAppearance.DisabledFont.Height = -11
-                DateAppearance.DisabledFont.Name = 'Segoe UI'
-                DateAppearance.DisabledFont.Style = []
-                DateAppearance.DateBeforeFont.Charset = DEFAULT_CHARSET
-                DateAppearance.DateBeforeFont.Color = 12303291
-                DateAppearance.DateBeforeFont.Height = -11
-                DateAppearance.DateBeforeFont.Name = 'Segoe UI'
-                DateAppearance.DateBeforeFont.Style = []
-                DateAppearance.DateAfterFont.Charset = DEFAULT_CHARSET
-                DateAppearance.DateAfterFont.Color = 12303291
-                DateAppearance.DateAfterFont.Height = -11
-                DateAppearance.DateAfterFont.Name = 'Segoe UI'
-                DateAppearance.DateAfterFont.Style = []
-                DateAppearance.TodayFont.Charset = DEFAULT_CHARSET
-                DateAppearance.TodayFont.Color = 15702829
-                DateAppearance.TodayFont.Height = -11
-                DateAppearance.TodayFont.Name = 'Segoe UI'
-                DateAppearance.TodayFont.Style = [fsBold]
-                DateAppearance.BadgeFont.Charset = DEFAULT_CHARSET
-                DateAppearance.BadgeFont.Color = clWhite
-                DateAppearance.BadgeFont.Height = -9
-                DateAppearance.BadgeFont.Name = 'Segoe UI'
-                DateAppearance.BadgeFont.Style = []
-                DateAppearance.ShowFocus = False
-                LineAppearance.Stroke.Color = 11119017
-                GlobalFont.Scale = 1.000000000000000000
-                GlobalFont.Style = []
+                OnClick = mcMediationClick
               end
             end
             object btF8: TButton
@@ -1348,12 +1174,15 @@ object KPdataentryFrm: TKPdataentryFrm
               TabOrder = 3
             end
           end
-          object GroupBox7: TGroupBox
-            Left = 251
-            Top = 6
-            Width = 222
-            Height = 563
-            Anchors = [akLeft, akTop, akBottom]
+          object gbSummonInfo: TGroupBox
+            AlignWithMargins = True
+            Left = 286
+            Top = 4
+            Width = 265
+            Height = 562
+            Margins.Left = 0
+            Margins.Right = 10
+            Align = alLeft
             Caption = 'Summons Information'
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
@@ -1362,10 +1191,12 @@ object KPdataentryFrm: TKPdataentryFrm
             Font.Style = [fsBold]
             ParentFont = False
             TabOrder = 1
+            OnClick = gbSummonInfoClick
+            ExplicitHeight = 558
             object Panel11: TPanel
-              Left = 12
-              Top = 235
-              Width = 201
+              Left = 14
+              Top = 240
+              Width = 235
               Height = 54
               Caption = 'Summons Time:'
               Font.Charset = ANSI_CHARSET
@@ -1376,206 +1207,63 @@ object KPdataentryFrm: TKPdataentryFrm
               ParentFont = False
               TabOrder = 1
               VerticalAlignment = taAlignTop
+              OnClick = gbSummonInfoClick
               DesignSize = (
-                201
+                235
                 54)
-              object DBEdit7: TDBEdit
+              object edSummonTime: TDBEdit
                 Left = 7
                 Top = 24
-                Width = 185
+                Width = 219
                 Height = 25
                 Anchors = [akLeft, akTop, akRight]
                 TabOrder = 0
+                OnClick = gbSummonInfoClick
               end
             end
-            object GroupBox8: TGroupBox
+            object gbSummon1: TGroupBox
               Left = 12
               Top = 16
-              Width = 201
+              Width = 245
               Height = 213
               Caption = 'Summons Date:'
               TabOrder = 0
-              DesignSize = (
-                201
-                213)
-              object TMSFNCCalendar3: TTMSFNCCalendar
-                Left = 8
-                Top = 20
-                Width = 185
-                Height = 185
-                ParentDoubleBuffered = False
-                Anchors = [akLeft, akTop, akRight, akBottom]
-                DoubleBuffered = True
+              OnClick = gbSummonInfoClick
+              object mcSummon: TMonthCalendar
+                AlignWithMargins = True
+                Left = 5
+                Top = 19
+                Width = 235
+                Height = 187
+                Margins.Top = 0
+                Margins.Bottom = 5
+                Align = alClient
+                MultiSelect = True
+                Date = 45468.000000000000000000
+                EndDate = 45468.000000000000000000
                 TabOrder = 0
-                Header.Arrow.ArrowLeftBitmap = <>
-                Header.Arrow.ArrowRightBitmap = <>
-                Header.Fill.Kind = gfkGradient
-                Header.Fill.Color = 16578806
-                Header.Fill.ColorTo = 16380654
-                Header.Font.Charset = DEFAULT_CHARSET
-                Header.Font.Color = 4539717
-                Header.Font.Height = -13
-                Header.Font.Name = 'Segoe UI'
-                Header.Font.Style = [fsBold]
-                Footer.Fill.Kind = gfkGradient
-                Footer.Fill.Color = 16578806
-                Footer.Fill.ColorTo = 16380654
-                Footer.Font.Charset = DEFAULT_CHARSET
-                Footer.Font.Color = 4539717
-                Footer.Font.Height = -13
-                Footer.Font.Name = 'Segoe UI'
-                Footer.Font.Style = []
-                Day = 9
-                Month = 6
-                Year = 2024
-                Date = 45452.000000000000000000
-                Events = <>
-                WeekNumberAppearance.Font.Charset = DEFAULT_CHARSET
-                WeekNumberAppearance.Font.Color = 8026746
-                WeekNumberAppearance.Font.Height = -11
-                WeekNumberAppearance.Font.Name = 'Segoe UI'
-                WeekNumberAppearance.Font.Style = []
-                DayNameAppearance.Font.Charset = DEFAULT_CHARSET
-                DayNameAppearance.Font.Color = 8026746
-                DayNameAppearance.Font.Height = -11
-                DayNameAppearance.Font.Name = 'Segoe UI'
-                DayNameAppearance.Font.Style = []
-                DateAppearance.Font.Charset = DEFAULT_CHARSET
-                DateAppearance.Font.Color = 8026746
-                DateAppearance.Font.Height = -11
-                DateAppearance.Font.Name = 'Segoe UI'
-                DateAppearance.Font.Style = []
-                DateAppearance.SelectedFill.Color = 16380654
-                DateAppearance.SelectedFont.Charset = DEFAULT_CHARSET
-                DateAppearance.SelectedFont.Color = 4539717
-                DateAppearance.SelectedFont.Height = -13
-                DateAppearance.SelectedFont.Name = 'Segoe UI'
-                DateAppearance.SelectedFont.Style = [fsBold]
-                DateAppearance.SelectedStroke.Color = 15702829
-                DateAppearance.DisabledFont.Charset = DEFAULT_CHARSET
-                DateAppearance.DisabledFont.Color = 13882323
-                DateAppearance.DisabledFont.Height = -11
-                DateAppearance.DisabledFont.Name = 'Segoe UI'
-                DateAppearance.DisabledFont.Style = []
-                DateAppearance.DateBeforeFont.Charset = DEFAULT_CHARSET
-                DateAppearance.DateBeforeFont.Color = 12303291
-                DateAppearance.DateBeforeFont.Height = -11
-                DateAppearance.DateBeforeFont.Name = 'Segoe UI'
-                DateAppearance.DateBeforeFont.Style = []
-                DateAppearance.DateAfterFont.Charset = DEFAULT_CHARSET
-                DateAppearance.DateAfterFont.Color = 12303291
-                DateAppearance.DateAfterFont.Height = -11
-                DateAppearance.DateAfterFont.Name = 'Segoe UI'
-                DateAppearance.DateAfterFont.Style = []
-                DateAppearance.TodayFont.Charset = DEFAULT_CHARSET
-                DateAppearance.TodayFont.Color = 15702829
-                DateAppearance.TodayFont.Height = -11
-                DateAppearance.TodayFont.Name = 'Segoe UI'
-                DateAppearance.TodayFont.Style = [fsBold]
-                DateAppearance.BadgeFont.Charset = DEFAULT_CHARSET
-                DateAppearance.BadgeFont.Color = clWhite
-                DateAppearance.BadgeFont.Height = -9
-                DateAppearance.BadgeFont.Name = 'Segoe UI'
-                DateAppearance.BadgeFont.Style = []
-                DateAppearance.ShowFocus = False
-                LineAppearance.Stroke.Color = 11119017
-                GlobalFont.Scale = 1.000000000000000000
-                GlobalFont.Style = []
+                OnClick = gbSummonInfoClick
               end
             end
-            object GroupBox9: TGroupBox
+            object gbSummon2: TGroupBox
               Left = 12
               Top = 310
-              Width = 201
+              Width = 245
               Height = 213
               Caption = 'Made this Date:'
               TabOrder = 2
-              DesignSize = (
-                201
-                213)
-              object TMSFNCCalendar4: TTMSFNCCalendar
-                Left = 8
-                Top = 21
-                Width = 185
-                Height = 185
-                ParentDoubleBuffered = False
-                Anchors = [akLeft, akTop, akRight, akBottom]
-                DoubleBuffered = True
+              object mcSummonMade: TMonthCalendar
+                AlignWithMargins = True
+                Left = 5
+                Top = 19
+                Width = 235
+                Height = 187
+                Margins.Top = 0
+                Margins.Bottom = 5
+                Align = alClient
+                Date = 45468.000000000000000000
                 TabOrder = 0
-                Header.Arrow.ArrowLeftBitmap = <>
-                Header.Arrow.ArrowRightBitmap = <>
-                Header.Fill.Kind = gfkGradient
-                Header.Fill.Color = 16578806
-                Header.Fill.ColorTo = 16380654
-                Header.Font.Charset = DEFAULT_CHARSET
-                Header.Font.Color = 4539717
-                Header.Font.Height = -13
-                Header.Font.Name = 'Segoe UI'
-                Header.Font.Style = [fsBold]
-                Footer.Fill.Kind = gfkGradient
-                Footer.Fill.Color = 16578806
-                Footer.Fill.ColorTo = 16380654
-                Footer.Font.Charset = DEFAULT_CHARSET
-                Footer.Font.Color = 4539717
-                Footer.Font.Height = -13
-                Footer.Font.Name = 'Segoe UI'
-                Footer.Font.Style = []
-                Day = 9
-                Month = 6
-                Year = 2024
-                Date = 45452.000000000000000000
-                Events = <>
-                WeekNumberAppearance.Font.Charset = DEFAULT_CHARSET
-                WeekNumberAppearance.Font.Color = 8026746
-                WeekNumberAppearance.Font.Height = -11
-                WeekNumberAppearance.Font.Name = 'Segoe UI'
-                WeekNumberAppearance.Font.Style = []
-                DayNameAppearance.Font.Charset = DEFAULT_CHARSET
-                DayNameAppearance.Font.Color = 8026746
-                DayNameAppearance.Font.Height = -11
-                DayNameAppearance.Font.Name = 'Segoe UI'
-                DayNameAppearance.Font.Style = []
-                DateAppearance.Font.Charset = DEFAULT_CHARSET
-                DateAppearance.Font.Color = 8026746
-                DateAppearance.Font.Height = -11
-                DateAppearance.Font.Name = 'Segoe UI'
-                DateAppearance.Font.Style = []
-                DateAppearance.SelectedFill.Color = 16380654
-                DateAppearance.SelectedFont.Charset = DEFAULT_CHARSET
-                DateAppearance.SelectedFont.Color = 4539717
-                DateAppearance.SelectedFont.Height = -13
-                DateAppearance.SelectedFont.Name = 'Segoe UI'
-                DateAppearance.SelectedFont.Style = [fsBold]
-                DateAppearance.SelectedStroke.Color = 15702829
-                DateAppearance.DisabledFont.Charset = DEFAULT_CHARSET
-                DateAppearance.DisabledFont.Color = 13882323
-                DateAppearance.DisabledFont.Height = -11
-                DateAppearance.DisabledFont.Name = 'Segoe UI'
-                DateAppearance.DisabledFont.Style = []
-                DateAppearance.DateBeforeFont.Charset = DEFAULT_CHARSET
-                DateAppearance.DateBeforeFont.Color = 12303291
-                DateAppearance.DateBeforeFont.Height = -11
-                DateAppearance.DateBeforeFont.Name = 'Segoe UI'
-                DateAppearance.DateBeforeFont.Style = []
-                DateAppearance.DateAfterFont.Charset = DEFAULT_CHARSET
-                DateAppearance.DateAfterFont.Color = 12303291
-                DateAppearance.DateAfterFont.Height = -11
-                DateAppearance.DateAfterFont.Name = 'Segoe UI'
-                DateAppearance.DateAfterFont.Style = []
-                DateAppearance.TodayFont.Charset = DEFAULT_CHARSET
-                DateAppearance.TodayFont.Color = 15702829
-                DateAppearance.TodayFont.Height = -11
-                DateAppearance.TodayFont.Name = 'Segoe UI'
-                DateAppearance.TodayFont.Style = [fsBold]
-                DateAppearance.BadgeFont.Charset = DEFAULT_CHARSET
-                DateAppearance.BadgeFont.Color = clWhite
-                DateAppearance.BadgeFont.Height = -9
-                DateAppearance.BadgeFont.Name = 'Segoe UI'
-                DateAppearance.BadgeFont.Style = []
-                DateAppearance.ShowFocus = False
-                LineAppearance.Stroke.Color = 11119017
-                GlobalFont.Scale = 1.000000000000000000
-                GlobalFont.Style = []
+                OnClick = gbSummonInfoClick
               end
             end
             object btF9: TButton
@@ -1623,7 +1311,7 @@ object KPdataentryFrm: TKPdataentryFrm
         object Panel18: TPanel
           Left = 0
           Top = 0
-          Width = 1018
+          Width = 1088
           Height = 55
           Align = alTop
           TabOrder = 0
@@ -2086,7 +1774,7 @@ object KPdataentryFrm: TKPdataentryFrm
         object Panel20: TPanel
           Left = 377
           Top = 55
-          Width = 641
+          Width = 711
           Height = 570
           Align = alClient
           TabOrder = 2
@@ -2630,7 +2318,7 @@ object KPdataentryFrm: TKPdataentryFrm
         object GroupBox35: TGroupBox
           Left = 0
           Top = 131
-          Width = 1018
+          Width = 1088
           Height = 494
           Align = alClient
           Caption = 'NOTICE OF EXECUTION:'
@@ -2642,7 +2330,7 @@ object KPdataentryFrm: TKPdataentryFrm
           ParentFont = False
           TabOrder = 2
           DesignSize = (
-            1018
+            1088
             494)
           object Label8: TLabel
             Left = 8
@@ -2662,7 +2350,7 @@ object KPdataentryFrm: TKPdataentryFrm
           object f52: TDBRichEdit
             Left = 8
             Top = 20
-            Width = 1001
+            Width = 1071
             Height = 445
             Anchors = [akLeft, akTop, akRight, akBottom]
             HideScrollBars = False
@@ -2674,7 +2362,7 @@ object KPdataentryFrm: TKPdataentryFrm
         object Panel16: TPanel
           Left = 0
           Top = 0
-          Width = 1018
+          Width = 1088
           Height = 55
           Align = alTop
           TabOrder = 1
@@ -2769,7 +2457,7 @@ object KPdataentryFrm: TKPdataentryFrm
         object Panel17: TPanel
           Left = 0
           Top = 55
-          Width = 1018
+          Width = 1088
           Height = 76
           Align = alTop
           TabOrder = 0
@@ -2934,7 +2622,7 @@ object KPdataentryFrm: TKPdataentryFrm
         object PageControl3: TPageControl
           Left = 0
           Top = 0
-          Width = 1018
+          Width = 1088
           Height = 404
           Cursor = crHandPoint
           ActivePage = TabSheet12
@@ -2949,13 +2637,13 @@ object KPdataentryFrm: TKPdataentryFrm
           object TabSheet12: TTabSheet
             Caption = #9616' Amicable Settlement Statement'
             DesignSize = (
-              1010
+              1080
               372)
             object AdvRichEditor5: TAdvRichEditor
               AlignWithMargins = True
               Left = 10
               Top = 32
-              Width = 965
+              Width = 1031
               Height = 303
               Cursor = crIBeam
               Margins.Left = 8
@@ -3066,7 +2754,7 @@ object KPdataentryFrm: TKPdataentryFrm
             Caption = #9616' Arbitration Award Statement'
             ImageIndex = 1
             DesignSize = (
-              1010
+              1080
               372)
             object AdvRichEditorFormatToolBar6: TAdvRichEditorFormatToolBar
               Left = 10
@@ -3135,7 +2823,7 @@ object KPdataentryFrm: TKPdataentryFrm
               AlignWithMargins = True
               Left = 10
               Top = 32
-              Width = 965
+              Width = 1031
               Height = 303
               Cursor = crIBeam
               Margins.Left = 8
@@ -3183,7 +2871,7 @@ object KPdataentryFrm: TKPdataentryFrm
         object GroupBox40: TGroupBox
           Left = 0
           Top = 463
-          Width = 1018
+          Width = 1088
           Height = 162
           Align = alBottom
           Caption = 'IF REPUDIATED, pls enter grounds of repudiation and date:'
@@ -3195,7 +2883,7 @@ object KPdataentryFrm: TKPdataentryFrm
           ParentFont = False
           TabOrder = 2
           DesignSize = (
-            1018
+            1088
             162)
           object DateTimePicker27: TDateTimePicker
             Left = 10
@@ -3216,7 +2904,7 @@ object KPdataentryFrm: TKPdataentryFrm
           object DBMemo2: TDBMemo
             Left = 10
             Top = 51
-            Width = 971
+            Width = 1037
             Height = 105
             Anchors = [akLeft, akTop, akRight, akBottom]
             Font.Charset = ANSI_CHARSET
@@ -3266,7 +2954,7 @@ object KPdataentryFrm: TKPdataentryFrm
         object Panel14: TPanel
           Left = 0
           Top = 404
-          Width = 1018
+          Width = 1088
           Height = 59
           Align = alBottom
           TabOrder = 1
@@ -3400,7 +3088,7 @@ object KPdataentryFrm: TKPdataentryFrm
         object GroupBox41: TGroupBox
           Left = 0
           Top = 0
-          Width = 1018
+          Width = 1088
           Height = 481
           Align = alClient
           Caption = 'MINUTES of PROCEEDINGS REPORT LOGs'
@@ -3412,13 +3100,13 @@ object KPdataentryFrm: TKPdataentryFrm
           ParentFont = False
           TabOrder = 0
           DesignSize = (
-            1018
+            1088
             481)
           object AdvRichEditor7: TAdvRichEditor
             AlignWithMargins = True
             Left = 8
             Top = 52
-            Width = 974
+            Width = 1040
             Height = 421
             Cursor = crIBeam
             Margins.Left = 8
@@ -3510,12 +3198,12 @@ object KPdataentryFrm: TKPdataentryFrm
         object Panel15: TPanel
           Left = 0
           Top = 481
-          Width = 1018
+          Width = 1088
           Height = 41
           Align = alBottom
           TabOrder = 1
           DesignSize = (
-            1018
+            1088
             41)
           object btMinutes: TButton
             Left = 11
@@ -3539,7 +3227,7 @@ object KPdataentryFrm: TKPdataentryFrm
         object GroupBox42: TGroupBox
           Left = 0
           Top = 522
-          Width = 1018
+          Width = 1088
           Height = 103
           Align = alBottom
           Caption = 'Uploaded Pertinent Files'
@@ -3564,7 +3252,7 @@ object KPdataentryFrm: TKPdataentryFrm
         Caption = #9632' KP Legal Forms'
         ImageIndex = 6
         DesignSize = (
-          1018
+          1088
           625)
         object Label11: TLabel
           Left = 8
@@ -3621,11 +3309,297 @@ object KPdataentryFrm: TKPdataentryFrm
     end
   end
   object PopUp: TPopupMenu
-    Left = 84
-    Top = 568
+    Left = 252
+    Top = 8
     object Refresh1: TMenuItem
       Caption = 'Refresh'
       OnClick = Refresh1Click
     end
+  end
+  object ImageList1: TImageList
+    Height = 23
+    Width = 23
+    Left = 295
+    Top = 12
+    Bitmap = {
+      494C010101000800040017001700FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      00000000000036000000280000005C0000001700000001002000000000001021
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00D2CFCD40D2CFCD40D2CFCD40D2CFCD40D2CFCD40D2CFCD40D2CF
+      CD40D2CFCD40D2CFCD40D2CFCD40D2CFCD40D2CFCD40FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00A69F9A80A69F9A80A69F
+      9A80A69F9A80A69F9A80A69F9A80A69F9A80A69F9A80A69F9A80A69F9A80A69F
+      9A80A69F9A80FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00796F68C0796F68C0796F
+      68C0796F68C0796F68C0796F68C0796F68C0796F68C0796F68C0796F68C0796F
+      68C0796F68C0FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00796F68C0796F68C0796F
+      68C0796F68C0796F68C0796F68C0796F68C0796F68C0796F68C0796F68C0796F
+      68C0796F68C0FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00A69F9A80A69F9A80A69F
+      9A80A69F9A80A69F9A80A69F9A80A69F9A80A69F9A80A69F9A80A69F9A80A69F
+      9A80A69F9A80FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00D2CFCD40D2CFCD40D2CFCD40D2CFCD40D2CFCD40D2CFCD40D2CF
+      CD40D2CFCD40D2CFCD40D2CFCD40D2CFCD40D2CFCD40FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D2CFCD40D2CFCD40D2CF
+      CD40D2CFCD40D2CFCD40D2CFCD40D2CFCD40D2CFCD40D2CFCD40D2CFCD40D2CF
+      CD40D2CFCD40FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00A69F9A80A69F9A80A69F9A80A69F9A80A69F9A80A69F9A80A69F
+      9A80A69F9A80A69F9A80A69F9A80A69F9A80A69F9A80FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000424D3E000000000000003E000000280000005C0000001700000001000100
+      00000000140100000000000000000000000000000000000000000000FFFFFF00
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000}
   end
 end

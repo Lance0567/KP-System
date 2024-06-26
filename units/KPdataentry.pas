@@ -11,7 +11,7 @@ uses
   Vcl.TMSFNCGraphicsTypes, Vcl.TMSFNCCustomControl, Vcl.TMSFNCCalendar,
   Vcl.TMSFNCPageControl, Vcl.TMSFNCTabSet, AdvPageControl, AdvRichEditorToolBar,
   AdvToolBar, AdvToolBarExt, AdvScrollControl, AdvRichEditorBase, AdvRichEditor,
-  richedit, dbMod, funcKPDataEntry;
+  richedit, dbMod, funcKPDataEntry, System.ImageList, Vcl.ImgList;
 
 type
   TKPdataentryFrm = class(TForm)
@@ -38,12 +38,8 @@ type
     AdvRichEditorFormatToolBar4: TAdvRichEditorFormatToolBar;
     reOverallRemarks: TAdvRichEditor;
     TabSheet2: TTabSheet;
-    GroupBox10: TGroupBox;
+    gbReminders: TGroupBox;
     rtReminders: TRichEdit;
-    DateTimePicker4: TDateTimePicker;
-    DateTimePicker3: TDateTimePicker;
-    DateTimePicker5: TDateTimePicker;
-    DateTimePicker6: TDateTimePicker;
     TabSheet3: TTabSheet;
     TabSheet4: TTabSheet;
     GroupBox35: TGroupBox;
@@ -187,25 +183,21 @@ type
     btF13: TButton;
     GroupBox21: TGroupBox;
     DBMemo1: TDBMemo;
-    Panel21: TPanel;
+    pHeader: TPanel;
     ckMediation: TCheckBox;
     Image1: TImage;
-    Panel22: TPanel;
-    GroupBox4: TGroupBox;
-    Panel9: TPanel;
+    pInformation: TPanel;
+    gbMediationInfo: TGroupBox;
+    pMediation: TPanel;
     edMediationTime: TDBEdit;
-    GroupBox5: TGroupBox;
-    TMSFNCCalendar1: TTMSFNCCalendar;
-    GroupBox6: TGroupBox;
-    TMSFNCCalendar2: TTMSFNCCalendar;
+    gbMediation1: TGroupBox;
+    gbMediation2: TGroupBox;
     btF8: TButton;
-    GroupBox7: TGroupBox;
+    gbSummonInfo: TGroupBox;
     Panel11: TPanel;
-    DBEdit7: TDBEdit;
-    GroupBox8: TGroupBox;
-    TMSFNCCalendar3: TTMSFNCCalendar;
-    GroupBox9: TGroupBox;
-    TMSFNCCalendar4: TTMSFNCCalendar;
+    edSummonTime: TDBEdit;
+    gbSummon1: TGroupBox;
+    gbSummon2: TGroupBox;
     btF9: TButton;
     btF9a: TButton;
     GroupBox42: TGroupBox;
@@ -216,6 +208,11 @@ type
     Refresh1: TMenuItem;
     btSaveEdit: TButton;
     AdvToolBarButton1: TAdvToolBarButton;
+    mcSummon: TMonthCalendar;
+    mcSummonMade: TMonthCalendar;
+    mcMediation: TMonthCalendar;
+    mcMediationMade: TMonthCalendar;
+    ImageList1: TImageList;
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormShow(Sender: TObject);
     procedure btCloseClick(Sender: TObject);
@@ -226,9 +223,14 @@ type
     procedure btSaveClick(Sender: TObject);
     procedure SubmitProcess;
     procedure btSaveEditClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure mcMediationClick(Sender: TObject);
+    procedure pHeaderClick(Sender: TObject);
+    procedure gbSummonInfoClick(Sender: TObject);
 
   private
     { Private declarations }
+    LastClickTime: TDateTime;
   public
     { Public declarations }
   end;
@@ -241,6 +243,29 @@ implementation
 {$R *.dfm}
 
 uses DB, abtPas, msgPas;
+
+
+{------------------------------------Form--------------------------------------}
+procedure TKPdataentryFrm.FormShow(Sender: TObject);
+begin
+  Clientheight := 750;
+  width := 1121;
+  // AdvPageControl1.ActivePageIndex := 0;
+  PageControl1.TabIndex := 0;
+  PageControl3.TabIndex := 0;
+  rtForms.lines.loadfromfile('./docs/forms.rtf');
+  rtReminders.lines.loadfromfile('./docs/reminder.rtf');
+  f52.Clear;
+  f52.lines.loadfromfile('./docs/noticeofexecution.rtf');
+
+  // Timer function in Reminders from Mediation
+  LastClickTime := 0;
+end;
+
+procedure TKPdataentryFrm.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Close;
+end;
 
 procedure TKPdataentryFrm.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
@@ -266,17 +291,103 @@ begin
   end;
 end;
 
-procedure TKPdataentryFrm.FormShow(Sender: TObject);
+{--------------------------------Buttons---------------------------------------}
+procedure TKPdataentryFrm.btCloseClick(Sender: TObject);
 begin
-  Clientheight := 750;
-  width := 1048;
-  // AdvPageControl1.ActivePageIndex := 0;
-  PageControl1.TabIndex := 0;
-  PageControl3.TabIndex := 0;
-  rtForms.lines.loadfromfile('./docs/forms.rtf');
-  rtReminders.lines.loadfromfile('./docs/reminder.rtf');
-  f52.Clear;
-  f52.lines.loadfromfile('./docs/noticeofexecution.rtf');
+  close;
+end;
+
+procedure TKPdataentryFrm.btSaveClick(Sender: TObject);
+begin
+  // Add New Record
+  if not (dbModFrm.qKP.State in [dsEdit]) then
+  dbModFrm.qKp.Edit;
+  dbModFrm.qKP.FieldByName('id').AsInteger := GetLatestId;
+  SubmitProcess;
+end;
+
+procedure TKPdataentryFrm.btSaveEditClick(Sender: TObject);
+begin
+  // Edit Record
+  if not (dbModFrm.qKP.State in [dsEdit]) then
+  dbModFrm.qKp.Edit;
+  SubmitProcess;
+end;
+
+procedure TKPdataentryFrm.Label11Click(Sender: TObject);
+var                                                                                                            
+  AppDir: String;
+begin
+  AppDir := ExtractFilePath(ParamStr(0));
+  ShellExecute(Handle, 'open', PCHar(AppDir + 'docs/KPhandbook.pdf'), nil, nil, SW_SHOWNORMAL);
+  {
+    //rtReminders.lines.loadfromfile('./docs/reminder.rtf');
+    //openfile(ExtractFilePath(Application.ExeName)+'.\docs\KPhandbook.pdf');
+    openfile(ExtractFilePath(Application.ExeName)+'./docs/KPhandbook.pdf');
+    //openfile(ExtractFilePath(Application.ExeName)+'./docs/KPhandbook.pdf');
+  }
+end;
+
+procedure TKPdataentryFrm.Label12Click(Sender: TObject);
+var
+  AppDir: String;
+begin
+  AppDir := ExtractFilePath(ParamStr(0));
+  ShellExecute(Handle, 'open', PCHar(AppDir + 'docs/kpPrimer.pdf'), nil, nil,
+    SW_SHOWNORMAL);
+end;
+
+{--------------------------------Calendar--------------------------------------}
+procedure TKPdataentryFrm.mcMediationClick(Sender: TObject);
+begin
+  // adjust Reminder group
+  gbReminders.Width := 200;
+  
+  // adjust Mediation group
+  gbMediationInfo.Width := 526;
+  gbMediation1.Width := 485;
+  gbMediation2.Width := 485;
+
+  // adjust Summon group
+  gbSummonInfo.Width := 265;
+  gbSummon1.Width := 245;
+  gbSummon2.Width := 245;
+end;
+
+procedure TKPdataentryFrm.gbSummonInfoClick(Sender: TObject);
+begin
+  // adjust Summon group
+  gbSummonInfo.Width := 526;
+  gbSummon1.Width := 485;
+  gbSummon2.Width := 485;
+
+  // adjust Mediation group
+  gbMediationInfo.Width := 265;
+  gbMediation1.Width := 245;
+  gbMediation2.Width := 245;
+end;
+
+{---------------------------------Panel----------------------------------------}
+procedure TKPdataentryFrm.pHeaderClick(Sender: TObject);
+begin
+  // Adjust Reminders
+  gbReminders.Width := 528;
+  gbMediationInfo.Width := 265;
+  gbSummonInfo.Width := 265;
+
+  // Calender adjust
+  gbMediationInfo.Width := 265;
+  gbMediation1.width := 245;
+  gbMediation2.width := 245;
+
+  gbSummonInfo.Width := 265;
+  gbSummon1.Width := 245;
+  gbSummon2.Width := 245;
+end;
+
+procedure TKPdataentryFrm.Refresh1Click(Sender: TObject);
+begin
+  frmMsg.showmodal;
 end;
 
 {------------------------------Save Record-------------------------------------}
@@ -287,6 +398,7 @@ var
 begin
   with dbModFrm do
   begin
+    {Lance's Code}
     // Assign values to fields
     // Complaints
     qKP.FieldByName('id_user').AsInteger := User.id;
@@ -323,58 +435,8 @@ begin
     qKP.Post;
     qKP.Refresh;
     self.Close;
+    {----------}
   end;
-end;
-
-{--------------------------------Buttons---------------------------------------}
-procedure TKPdataentryFrm.btCloseClick(Sender: TObject);
-begin
-  close;
-end;
-
-procedure TKPdataentryFrm.btSaveClick(Sender: TObject);
-begin
-  // Add New Record
-  if not (dbModFrm.qKP.State in [dsEdit]) then
-  dbModFrm.qKp.Edit;
-  dbModFrm.qKP.FieldByName('id').AsInteger := GetLatestId;
-  SubmitProcess;
-end;
-
-procedure TKPdataentryFrm.btSaveEditClick(Sender: TObject);
-begin
-  // Edit Record
-  if not (dbModFrm.qKP.State in [dsEdit]) then
-  dbModFrm.qKp.Edit;
-  SubmitProcess;
-end;
-
-procedure TKPdataentryFrm.Label11Click(Sender: TObject);
-var
-  AppDir: String;
-begin
-  AppDir := ExtractFilePath(ParamStr(0));
-  ShellExecute(Handle, 'open', PCHar(AppDir + 'docs/KPhandbook.pdf'), nil, nil, SW_SHOWNORMAL);
-  {
-    //rtReminders.lines.loadfromfile('./docs/reminder.rtf');
-    //openfile(ExtractFilePath(Application.ExeName)+'.\docs\KPhandbook.pdf');
-    openfile(ExtractFilePath(Application.ExeName)+'./docs/KPhandbook.pdf');
-    //openfile(ExtractFilePath(Application.ExeName)+'./docs/KPhandbook.pdf');
-  }
-end;
-
-procedure TKPdataentryFrm.Label12Click(Sender: TObject);
-var
-  AppDir: String;
-begin
-  AppDir := ExtractFilePath(ParamStr(0));
-  ShellExecute(Handle, 'open', PCHar(AppDir + 'docs/kpPrimer.pdf'), nil, nil,
-    SW_SHOWNORMAL);
-end;
-
-procedure TKPdataentryFrm.Refresh1Click(Sender: TObject);
-begin
-  frmMsg.showmodal;
 end;
 
 end.

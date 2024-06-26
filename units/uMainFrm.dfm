@@ -73,6 +73,10 @@ object MainFrm: TMainFrm
       ColorTo = clNone
       TabColor = clBtnFace
       TabColorTo = clNone
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         1069
         677)
@@ -18688,11 +18692,11 @@ object MainFrm: TMainFrm
       object Panel3: TPanel
         Left = 0
         Top = 42
-        Width = 1062
+        Width = 1060
         Height = 634
         Anchors = [akLeft, akTop, akRight, akBottom]
         TabOrder = 1
-        ExplicitWidth = 1060
+        ExplicitWidth = 1058
         ExplicitHeight = 630
         object Splitter1: TSplitter
           Left = 251
@@ -18707,7 +18711,7 @@ object MainFrm: TMainFrm
         object DBGrid1: TDBGrid
           Left = 260
           Top = 1
-          Width = 801
+          Width = 799
           Height = 632
           Align = alClient
           DataSource = dbModFrm.dsKP
@@ -18945,6 +18949,10 @@ object MainFrm: TMainFrm
       ColorTo = clNone
       TabColor = clBtnFace
       TabColorTo = clNone
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         1069
         677)
@@ -19061,7 +19069,7 @@ object MainFrm: TMainFrm
       object DBGrid2: TDBGrid
         Left = 0
         Top = 43
-        Width = 1062
+        Width = 1060
         Height = 634
         Anchors = [akLeft, akTop, akRight, akBottom]
         TabOrder = 1
@@ -19078,6 +19086,10 @@ object MainFrm: TMainFrm
       ColorTo = clNone
       TabColor = clBtnFace
       TabColorTo = clNone
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         1069
         677)
@@ -19150,7 +19162,7 @@ object MainFrm: TMainFrm
       object DBGrid3: TDBGrid
         Left = 0
         Top = 43
-        Width = 1062
+        Width = 1060
         Height = 634
         Anchors = [akLeft, akTop, akRight, akBottom]
         TabOrder = 1
